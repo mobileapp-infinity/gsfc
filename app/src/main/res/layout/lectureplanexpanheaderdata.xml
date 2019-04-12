@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/collage_dispaly_background"
+    android:orientation="horizontal"
+    android:weightSum="2">
+
+    <TextView
+        android:id="@+id/topic_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="3dp"
+        android:layout_weight="1.8"
+        android:gravity="center|left"
+        android:textColor="#0C7C66"
+        android:paddingLeft="5dp"
+        android:paddingTop="2dp"
+        android:text="Topic Name"
+        android:textSize="17dip"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:background="@drawable/collage_dispaly_background"
+        android:src="@drawable/ic_view_new" />
+</LinearLayout>

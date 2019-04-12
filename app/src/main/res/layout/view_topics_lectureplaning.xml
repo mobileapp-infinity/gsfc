@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lltopics"
+    android:orientation="vertical"
+    android:layoutDirection="ltr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<TextView
+    android:id="@+id/tvtopicname"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawablePadding="3dp"
+    android:layout_marginLeft="5dp"
+    android:padding="5dp"
+    android:drawableLeft="@drawable/ic_arrow_forward"/>
+
+
+</LinearLayout>

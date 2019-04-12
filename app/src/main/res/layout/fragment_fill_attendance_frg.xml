@@ -1,0 +1,410 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:isScrollContainer="false"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rec_student_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/dot_form" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:text="Alternate Method"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Method"
+                        android:textColor="@color/footer_"
+                        android:textSize="13dp" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"
+                        android:layout_toRightOf="@+id/tv1"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form">
+
+                    <Spinner
+                        android:id="@+id/spin_dist"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Student Roll Numbers"
+                        android:textColor="@color/footer_" />
+
+                    <EditText
+                        android:id="@+id/edt_attendance_student"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edt_style_form"
+                        android:lines="4"
+                        android:maxLines="6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_total_students"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:id="@+id/ll_total_stud"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:text="Total Student  ="
+
+                            android:textColor="@color/footer_" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="12dp"
+                            android:id="@+id/txt_total_stud"
+                            android:layout_height="wrap_content"
+                            android:text=""/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                            android:id="@+id/ll_present_stud"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Present Student ="
+                            android:textSize="12dp"
+                            android:textColor="@color/footer_" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12dp"
+                            android:id="@+id/txt_present_stud"
+                            android:text=""/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="3dp"
+                        android:id="@+id/ll_absent_stud"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Absent Student  ="
+                            android:textSize="12dp"
+                            android:textColor="@color/footer_" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="12dp"
+                            android:id="@+id/txt_absent_stud"
+                            android:layout_height="wrap_content"
+                            android:text=""/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Unit"
+                        android:textColor="@color/footer_"
+                        android:textSize="13dp" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"
+                        android:layout_toRightOf="@+id/tv2"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form">
+
+                    <Spinner
+                        android:id="@+id/spin_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp" />
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Topic"
+                        android:textColor="@color/footer_"
+                        android:textSize="13dp" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="visible"
+                        android:layout_toRightOf="@+id/tv3"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+
+
+                <EditText
+                    android:id="@+id/edt_topic"
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form"
+                  />
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teaching Method"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@+id/tv4"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                      <ListView
+                          android:layout_width="match_parent"
+                          android:id="@+id/lv_teaching_method"
+                          android:layout_height="match_parent"></ListView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teaching Aid"
+                        android:textColor="@color/footer_"
+                        android:textSize="13dp" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="visible"
+                        android:layout_toRightOf="@+id/tv9"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form">
+
+                    <Spinner
+                        android:id="@+id/spin_aid"
+                        android:layout_width="match_parent"
+                        android:padding="5dp"
+                        android:layout_height="28dp" />
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No of Posts on Flinnt"
+                        android:textColor="@color/footer_"
+                        android:textSize="13dp" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="visible"
+                        android:layout_toRightOf="@+id/tv8"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form">
+
+                    <Spinner
+                        android:id="@+id/spin_Flinnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

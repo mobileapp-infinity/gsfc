@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.infinity.infoway.agriculture">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permissio.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.markattendence.markattendence.permission.C2D_MESSAGE" />
+
+    <!--<application-->
+        <!--android:name=".app.App"-->
+        <!--android:allowBackup="true"-->
+        <!--android:hardwareAccelerated="true"-->
+        <!--android:icon="@drawable/logo"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:largeHeap="true"-->
+        <!--android:supportsRtl="true"-->
+        <!--android:theme="@style/AppTheme">-->
+
+    <application
+
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/jau_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.infinity.infoway.agriculture.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".activity.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+       <!-- <activity android:name=".activity.FacultyAttendance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.Login" />
+        <activity
+            android:name=".activity.Profile"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Employee_Attendance"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Timetable"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Remaining_Attendance"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Notification_Activity"
+            android:theme="@style/MyMaterialTheme.Base">
+            <intent-filter>
+                <action android:name="OPEN_ACTIVITY_1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ForgotPassword"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.EmployeeLeave"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Syllabus"
+            android:theme="@style/MyMaterialTheme.Base" />
+
+        <service
+            android:name=".service.MyFirebaseInstanceIDService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.MyFirebaseMessagingServicee"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <!-- <receiver -->
+        <!-- android:name="com.google.android.gcm.GCMBroadcastReceiver" -->
+        <!-- android:permission="com.google.android.c2dm.permission.SEND"> -->
+
+
+        <!-- <intent-filter> -->
+
+
+        <!-- &lt;!&ndash; Receives the actual messages. &ndash;&gt; -->
+        <!-- <action android:name="com.google.android.c2dm.intent.RECEIVE"/> -->
+        <!-- &lt;!&ndash; Receives the registration id. &ndash;&gt; -->
+        <!-- <action android:name="com.google.android.c2dm.intent.REGISTRATION"/> -->
+
+
+        <!-- <category android:name="com.markattendence.markattendence"/> -->
+
+
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+
+        <!--
+     Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(
+     https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logo" />
+        <!--
+             Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <!-- <receiver -->
+        <!-- android:name=".app.NotificationReceiver" -->
+        <!-- android:exported="true" -->
+        <!-- android:permission="com.google.android.c2dm.permission.SEND"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.android.c2dm.intent.RECEIVE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+
+        <!-- <service -->
+        <!-- android:name=".service.Background_Service" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" -->
+        <!-- android:stopWithTask="false" /> -->
+
+
+        <!-- <receiver -->
+        <!-- android:name=".app.AutoStartNotifyReceiver" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:permission="android.permission.RECEIVE_BOOT_COMPLETED"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+
+
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/logo" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity
+            android:name=".activity.Lectureplan_Detail"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Lectureplan"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Student_Attendance"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Fees_Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Main3Activity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.FeedBack"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.FeePayment"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Receipt_Activity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity android:name=".activity.CircularActivity" />
+        <activity android:name=".activity.Employee_news" />
+        <activity android:name=".activity.Leave_emp" />
+        <activity android:name=".activity.EmployeeAttendance" />
+        <activity
+            android:name=".activity.DirectivePageActivity"
+            android:theme="@style/MyMaterialTheme.Base"
+            android:windowSoftInputMode="adjustPan">
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity
+            android:name=".activity.NewEmpLecturePlanDetail"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.NewEmpLectPlan"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.NewsGroupWise"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.HomeworkActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Student_Main_Activity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity android:name=".activity.ResultActivity" />
+        <activity android:name=".activity.Timetable_employee" />
+        <activity
+            android:name=".activity.AssignmentActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.PendingfeesActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity android:name=".activity.ChangePasswordActivity" />
+        <activity
+            android:name=".activity.ExamDisplayTimeTable"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.ExamTimetableDetailActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.webViewDemo"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.FeeCircularActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.Leaveapplication"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.PlacementActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.ELearningActivity"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
+            android:name=".activity.FacultyAttendance"
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity android:name=".activity.FillAttendanceActivityfaculty"
+            android:windowSoftInputMode="adjustPan"></activity>
+    </application>
+
+</manifest>

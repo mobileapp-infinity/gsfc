@@ -1,0 +1,1009 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/footer_agree"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="@color/green">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Fill Attendance"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Attendance Date"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv1"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_atendance_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/calendar_bd"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="College Name"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv2"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_college_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/uni"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Department Name"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv3"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_dept_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/dept"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Course"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv4"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_course"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/course"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Semester"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv5"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_sem"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Subject"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv6"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/course"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Period/Lab Number"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv7"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_period_lab"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/dots"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resourse Occupied"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv8"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_resourse"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:drawableRight="@drawable/resourse"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Division"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv9"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/edt_div"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:background="@drawable/edt_style_form"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint=""
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_sname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Batch"
+                            android:textColor="@color/footer_"
+                            android:textSize="13dp" />
+
+                        <ImageView
+                            android:layout_width="7dp"
+                            android:layout_height="7dp"
+                            android:layout_gravity="right|top"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@+id/tv_sname"
+                            android:src="@drawable/star_from" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_batch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/batch_stud_fr1"
+                            android:layout_width="match_parent"
+
+                            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1.5"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+
+                            android:layout_gravity="center"
+                            android:src="@drawable/dot_form" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="5dp"
+                            android:text="Students Display"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="end|center">
+
+                        <CheckBox
+                            android:id="@+id/cb_check_fill_attendance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:backgroundTint="@color/black"
+                            android:buttonTint="@color/black"
+                            android:gravity="right|center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rec_student_display"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"></android.support.v7.widget.RecyclerView>
+
+                    <com.infinity.infoway.agriculture.activity.ExpandableHeightListView
+                        android:id="@+id/listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </com.infinity.infoway.agriculture.activity.ExpandableHeightListView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/dot_form" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:paddingLeft="5dp"
+                                android:text="Alternate Method"
+                                android:textColor="@color/black"
+                                android:textSize="13dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select Method"
+                                android:textColor="@color/footer_"
+                                android:textSize="13dp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_gravity="right|top"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toRightOf="@+id/tv1"
+                                android:src="@drawable/star_from"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_style_form">
+
+                            <Spinner
+                                android:id="@+id/spin_dist"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Student Roll Numbers "
+                                android:textColor="@color/footer_" />
+
+                            <EditText
+                                android:id="@+id/edt_attendance_student"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edt_style_form"
+                                android:lines="4"
+                                android:maxLines="6"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right"
+                                android:text="Write Roll Nos. separated by comma ( , )" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_total_students"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:id="@+id/ll_total_stud"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total Student  ="
+                                    android:textColor="@color/footer_"
+
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/txt_total_stud"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_present_stud"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Present Student ="
+                                    android:textColor="@color/footer_"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/txt_present_stud"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_absent_stud"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Absent Student  ="
+                                    android:textColor="@color/footer_"
+                                    android:textSize="12dp" />
+
+                                <TextView
+                                    android:id="@+id/txt_absent_stud"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="12dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Unit"
+                                android:textColor="@color/footer_"
+                                android:textSize="13dp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_gravity="right|top"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toRightOf="@+id/tv2"
+                                android:src="@drawable/star_from"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_style_form">
+
+                            <Spinner
+                                android:id="@+id/spin_unit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Topic"
+                                android:textColor="@color/footer_"
+                                android:textSize="13dp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_gravity="right|top"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toRightOf="@+id/tv3"
+                                android:src="@drawable/star_from"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+
+                        <EditText
+                            android:id="@+id/edt_topic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_style_form"
+                            android:padding="5dp"
+                            android:textSize="12dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/tv4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Teaching Method"
+                                    android:textColor="@color/footer_"
+                                    android:textSize="13dp" />
+
+                                <ImageView
+                                    android:layout_width="7dp"
+                                    android:layout_height="7dp"
+                                    android:layout_gravity="right|top"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_toRightOf="@+id/tv4"
+                                    android:src="@drawable/star_from"
+                                    android:visibility="visible" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/lv_teaching_method"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Teaching Aid"
+                                android:textColor="@color/footer_"
+                                android:textSize="13dp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_gravity="right|top"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toRightOf="@+id/tv9"
+                                android:src="@drawable/star_from"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_style_form">
+
+                            <Spinner
+                                android:id="@+id/spin_aid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No of Posts on Flinnt"
+                                android:textColor="@color/footer_"
+                                android:textSize="13dp" />
+
+                            <ImageView
+                                android:layout_width="7dp"
+                                android:layout_height="7dp"
+                                android:layout_gravity="right|top"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_toRightOf="@+id/tv8"
+                                android:src="@drawable/star_from"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_style_form">
+
+                            <Spinner
+                                android:id="@+id/spin_Flinnt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/ll_homework"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="HomeWork"
+                                android:textColor="@color/footer_" />
+
+                            <EditText
+                                android:id="@+id/edt_homework"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edt_style_form"
+                                android:lines="4"
+                                android:maxLines="6"
+                                android:textSize="12dp" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="50dp"></LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/save_attendance_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/news"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Save"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ivlogo"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="bottom"
+        android:visibility="gone"
+        android:background="@color/footer_agree"
+        android:layout_alignParentBottom="true"
+        android:layout_height="30dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="13dp"
+                android:id="@+id/txt_footer_devloped"
+                android:text="Powered By   :"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:layout_gravity="center"
+                android:textSize="13dp"
+                android:id="@+id/txt_footer_devloped_"
+                android:text="    Junagadh Agricultural University"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:src="@drawable/triangleinfi"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                android:background="@color/white" />
+            <ImageView
+                android:layout_width="60dp"
+                android:paddingLeft="5dp"
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/txt_infi_logo"
+                android:layout_height="70dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

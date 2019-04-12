@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    android:background="#fafafa"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lllecture2"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sy1"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/txtsrno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:id="@+id/txttopicname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Topic Name"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aid ->"
+                    android:textColor="@color/fees"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"/>
+
+
+                <TextView
+                    android:id="@+id/txtaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/fees"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linear11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/lllecture2"
+                android:padding="5dp">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+</LinearLayout>

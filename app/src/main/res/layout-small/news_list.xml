@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/news_background"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="3dp"
+            android:id="@+id/img_news"
+            android:src="@drawable/ic_event"
+            android:layout_weight="0.4"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="14/1/2018"
+            android:gravity="center|left"
+            android:textColor="#000"
+            android:id="@+id/date_news"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Makarsankranti"
+            android:id="@+id/name_news"
+            android:textColor="#000"
+            android:gravity="center|left"
+            android:paddingLeft="5dp"
+            android:layout_weight="1.8"/>
+       <Button
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:text="View"
+           android:layout_margin="3dp"
+           android:id="@+id/btn_view_news"
+           android:textSize="12dp"
+           android:background="@drawable/news_bg"
+           android:textAllCaps="false"
+           android:layout_weight="0.8"/>
+
+    </LinearLayout>
+
+</LinearLayout>

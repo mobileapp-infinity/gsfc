@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/llfaculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/lllecture"
+        android:padding="1dp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tvfaculty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Facutly"
+            android:gravity="center"
+            android:textColor="@color/fees"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Leave"
+            android:id="@+id/tvdivisionb"
+            android:textColor="@color/fees"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+</LinearLayout>
