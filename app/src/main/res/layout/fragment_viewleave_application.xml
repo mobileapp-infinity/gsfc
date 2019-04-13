@@ -19,14 +19,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sr No :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tv_clg_trust_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,14 +43,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Apply Date :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tv_clg_trustee_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,14 +67,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Leave Date:"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tv_clg_tust_postal_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,14 +90,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Leave Type :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tv_clg_tuste_phone_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -115,14 +115,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lecture No.  :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tv_clg_truste_mobile_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -139,14 +139,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remarks :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -167,14 +167,14 @@
 
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="View Detail :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
@@ -191,14 +191,14 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="View Image:"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
@@ -215,14 +215,14 @@
 
             android:padding="5dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status :"
                 android:textColor="@color/black"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tv_clg_truste_fax_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

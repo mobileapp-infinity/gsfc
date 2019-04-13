@@ -10,7 +10,7 @@
         android:orientation="horizontal"
         android:weightSum="4">
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/sub_r1esult"
             android:layout_width="40dp"
             android:layout_height="match_parent"
@@ -25,7 +25,7 @@
             android:layout_height="fill_parent"
             android:background="#000" />
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/total_marks_result"
             android:layout_width="30dp"
             android:layout_height="match_parent"
@@ -40,7 +40,7 @@
             android:layout_height="fill_parent"
             android:background="#000" />
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/obtain_marks_result"
             android:layout_width="35dp"
             android:layout_height="match_parent"
@@ -55,7 +55,7 @@
             android:layout_height="fill_parent"
             android:background="#000" />
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/weightage_result"
             android:layout_width="35dp"
             android:layout_height="match_parent"

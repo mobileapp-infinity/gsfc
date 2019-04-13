@@ -29,7 +29,7 @@
 
 
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -55,7 +55,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tv_adhar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tv_category"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -141,8 +141,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/tv_category"
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/tv_category2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="From Date"
@@ -156,14 +156,14 @@
                         android:layout_gravity="right|top"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@+id/tv_category"
+                        android:layout_toRightOf="@+id/tv_category2"
                         android:src="@drawable/star_from" />
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-            <EditText
+           <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:textCursorDrawable="@drawable/color_cursor"
@@ -183,8 +183,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/tv_category"
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/tv_category1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="To Date"
@@ -198,14 +198,14 @@
                         android:layout_gravity="right|top"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@+id/tv_category"
+                        android:layout_toRightOf="@+id/tv_category1"
                         android:src="@drawable/star_from" />
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-            <EditText
+           <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:textCursorDrawable="@drawable/color_cursor"
@@ -225,8 +225,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/tv_category"
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/tv_category13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Remarks"
@@ -240,14 +240,14 @@
                         android:layout_gravity="right|top"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="4dp"
-                        android:layout_toRightOf="@+id/tv_category"
+                        android:layout_toRightOf="@+id/tv_category13"
                         android:src="@drawable/star_from" />
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-            <EditText
+           <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                 android:layout_width="match_parent"
                 android:layout_height="28dp"
                 android:textCursorDrawable="@drawable/color_cursor"
@@ -279,7 +279,7 @@
                     android:orientation="horizontal"
                     android:padding="8dp">
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -307,7 +307,7 @@
                     android:orientation="horizontal"
                     android:padding="8dp">
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -334,7 +334,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:layout_height="wrap_content">
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:text="Submit"
                     android:textSize="15dp"

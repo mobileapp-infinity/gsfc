@@ -93,7 +93,7 @@
                     android:layout_height="90dp"
                     app:srcCompat="@drawable/profile"/>
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:text="Profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
                     android:layout_height="90dp"
                     app:srcCompat="@drawable/fees"
                     android:id="@+id/imgfees"/>
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:text="Fees"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -140,7 +140,7 @@
                     android:layout_height="90dp"
                     app:srcCompat="@drawable/attendance" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:text="Attendance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -181,7 +181,7 @@
                         android:layout_height="90dp"
                         app:srcCompat="@drawable/news" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/txtnews"
                         android:text="News"
                         android:layout_width="wrap_content"
@@ -206,7 +206,7 @@
                         android:id="@+id/imgtimetable" />
 
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:text="Timetable"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -231,7 +231,7 @@
                         app:srcCompat="@drawable/feedback"
                         android:id="@+id/imgfeedback" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:text="FeedBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -271,7 +271,7 @@
                     app:srcCompat="@drawable/syllabus" />
 
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:text="Syllabus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -294,7 +294,7 @@
                     app:srcCompat="@drawable/classwork" />
 
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:text="Class &#10; Work"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -319,7 +319,7 @@
                     app:srcCompat="@drawable/lessionplan"
                     />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:text="Lession &#10; Plan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

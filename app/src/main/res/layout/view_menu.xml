@@ -40,7 +40,7 @@
                         app:civ_border_color="@color/white"
                         app:civ_border_width="2dp" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/nav_logout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                         android:textColor="@color/white"
                         android:textSize="17dp" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/txtlogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                         android:visibility="gone" />
                 </RelativeLayout>
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/txtmenuname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="18sp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/txtmenucourse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     android:text="----------"
                     android:textSize="18sp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_memberno"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                 android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_attendance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -137,7 +137,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_fees"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_timetable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_change_psw"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                     android:text="Chnage Password"
                     android:textColor="@color/white"
                     android:textSize="16dp" />
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_pending_fees"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_syllabus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -201,7 +201,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_lessionplan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
 
 
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_feedback"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -230,7 +230,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_news"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -243,7 +243,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -256,7 +256,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_zz"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -269,7 +269,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_aa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -281,7 +281,7 @@
                     android:text="aaaaa"
                     android:textColor="@color/white"
                     android:textSize="16dp" />
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_bb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -294,7 +294,7 @@
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/nav_cc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

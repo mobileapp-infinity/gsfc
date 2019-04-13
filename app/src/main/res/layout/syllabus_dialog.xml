@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:layout_width="150dp"
             android:textColor="#fff"
             android:gravity="center"

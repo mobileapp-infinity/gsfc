@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appbar_layout_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity.Acollspan">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                android:id="@+id/page_nme"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/footer_agree"
+                android:height="300dp"
+
+               app:layout_collapseMode="pin"></com.infinity.infoway.agriculture.CommonCls.CustomTextView>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/z_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                app:layout_collapseMode="pin"></android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/mainimagelayout"
+
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                android:id="@+id/coupons_lst"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+               android:layout_height="match_parent"></com.infinity.infoway.agriculture.CommonCls.CustomTextView>
+            <LinearLayout
+
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/border_cat_main"
+                    android:orientation="vertical">
+
+                    <ImageView
+
+                        android:id="@+id/imgprofile"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/profile" />
+
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:fontFamily="monospace"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgfees"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/fees" />
+
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+
+                        android:id="@+id/textfee"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Fees"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/receipt_img"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/fee_rec" />
+
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/textattendence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Attendance"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout1"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:id="@+id/imgsyllabus"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/attendance" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Syllabus"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgtimetable"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/timetable" />
+
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Timetable"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                        <ImageView
+                            android:id="@+id/imglessionplan"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/lessionplan" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Lession &#10; Plan"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/new_icon_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_elerning"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/img_elerning"
+                        android:visibility="visible" />
+
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/txt_erning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="News"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/txt_placement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="FeedBack"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/img_placement"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/img_placement"
+                        android:visibility="visible" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/img_leave_app"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/img_leave_app"
+                        android:visibility="visible" />
+
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Class &#10; Work"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/ll_view_more"
+                android:visibility="visible"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/down_arrow"/>
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    android:text="View More..."/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/ll_views_hide"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/fees_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/txt_receipt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="News"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imgattendance"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/syllabus"
+                            android:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/txt_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="FeedBack"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/img_result"
+                            android:layout_width="90dp"
+
+                            android:layout_height="90dp"
+                            android:src="@drawable/result_icon"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/assignment_img"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/assignment"
+                            android:visibility="gone" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Class &#10; Work"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/studentlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgnews"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/news"
+                            android:visibility="visible" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/txtnews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="News"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/txtfeedback"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="FeedBack"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/img_dashboard"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/dashboard_2"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imgfeedback"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/activity_icon"
+                            android:visibility="gone" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Class &#10; Work"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/five_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/pending_fees_img"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@drawable/pendingfeesicon"
+                            android:visibility="visible" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Class &#10; Work"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:id="@+id/iv_mid_exam_tt"
+                            android:src="@drawable/exam_tt"
+                            android:visibility="visible" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MidExamTimeTable"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:id="@+id/img_feecircular"
+                            android:src="@drawable/feecircular"
+                            android:visibility="visible" />
+
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Class &#10; Work"
+                            android:textColor="@color/white"
+                            android:textSize="15dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

@@ -34,7 +34,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
 
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
 
                 </LinearLayout>
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
 
                     android:id="@+id/txtrecno"
                     android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                     android:layout_gravity="center_vertical">
 
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
 
                         android:id="@+id/txtviewpendingfees"
                         android:layout_width="wrap_content"

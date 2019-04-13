@@ -28,14 +28,14 @@
                 android:layout_weight="1.5"
                 android:orientation="horizontal">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Sr No  :  "
                     android:textColor="@color/white"
                     android:textSize="13dp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -71,13 +71,13 @@
 
             android:padding="2dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enrollment No  :"
                 android:textColor="@color/white" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -92,13 +92,13 @@
 
             android:padding="2dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Student Name  :"
                 android:textColor="@color/white" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -113,13 +113,13 @@
 
             android:padding="2dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Roll No  :"
                 android:textColor="@color/white" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -134,14 +134,14 @@
 
             android:padding="2dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Previous Lecture Status  :"
                 android:textColor="@color/white"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -155,14 +155,14 @@
             android:orientation="horizontal"
             android:padding="2dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status  :"
                 android:textColor="@color/white"
                 android:textSize="13dp" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""

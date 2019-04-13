@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@drawable/background"
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
@@ -28,7 +29,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -42,7 +43,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TextView
+   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
         android:id="@+id/tvpendingmsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
-        android:background="@drawable/background"
+
         android:orientation="vertical">
 
         <LinearLayout
@@ -84,7 +85,7 @@
                     android:background="@mipmap/fees" />
             </LinearLayout>
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tvfeecircular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,7 +101,7 @@
 
         </LinearLayout>
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/tvsemester"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@color/lllecture1"
+
             android:orientation="vertical"
             android:padding="0dp">
 
@@ -139,7 +140,7 @@
                     android:orientation="horizontal"
                     android:weightSum="1">
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tvhdivision"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -147,13 +148,13 @@
                         android:layout_weight="0.75"
                         android:text="Fee Date" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" : "
                         android:textStyle="bold" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tvfeedate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -173,20 +174,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.75"
                     android:text="Fee Type" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvfeetype"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -204,20 +205,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.75"
                     android:text="Total Fee" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvtotalfee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -234,20 +235,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.75"
                     android:text="Paid Fee" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvpaidfee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -264,20 +265,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.75"
                     android:text="Pending Fee" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvpendingfee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -294,20 +295,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.75"
                     android:text="Pending Fee Refund" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvpendingfeerefund"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -325,20 +326,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="0.75"
                     android:text="Due_Date" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvduedate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -357,7 +358,7 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvpaynow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -371,7 +372,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -385,7 +386,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"

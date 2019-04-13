@@ -99,7 +99,7 @@ public class ExamTimetableDetailActivity extends AppCompatActivity
                         Toast.makeText(ExamTimetableDetailActivity.this, "No records found", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(ExamTimetableDetailActivity.this, "pleasetry again later", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ExamTimetableDetailActivity.this, "please try again later", Toast.LENGTH_LONG).show();
                 }
 
             }

@@ -18,7 +18,7 @@
         android:paddingTop="5dp"
         android:weightSum="1">
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/lblListName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:textColor="@color/white"
             android:layout_weight="0.50" />
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/tvseparater"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_gravity="top"
             android:textStyle="bold"/>
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/lblListItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

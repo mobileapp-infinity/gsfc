@@ -93,7 +93,7 @@ public class ExamDisplayTimeTable extends AppCompatActivity {
                         Toast.makeText(ExamDisplayTimeTable.this, "No records found", Toast.LENGTH_LONG).show();
                     }
                 } else {
-                    Toast.makeText(ExamDisplayTimeTable.this, "pleasetry again later", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ExamDisplayTimeTable.this, "please try again later", Toast.LENGTH_LONG).show();
                 }
 
             }

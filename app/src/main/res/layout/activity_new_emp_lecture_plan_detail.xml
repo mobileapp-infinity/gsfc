@@ -39,11 +39,20 @@
                     android:background="@color/white"
                     android:gravity="center_vertical">
 
-                    <TextView
+                  <!-- <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Lecture Detail"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="17sp"
+                        android:textColor="@color/black" />-->
+
+                    <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lession Detail"
                         android:layout_marginLeft="10dp"
                         android:textSize="17sp"
                         android:textColor="@color/black" />
@@ -87,7 +96,7 @@
                         android:background="@mipmap/lecture_plan" />
                 </LinearLayout>
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvcoursename"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,7 +107,7 @@
                     android:textColor="@color/white"
                     android:textSize="17sp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvsemester"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -110,7 +119,7 @@
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tvdivision"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -164,7 +173,7 @@
                                 android:background="@mipmap/lesson_plan" />
                         </LinearLayout>
 
-                        <TextView
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                             android:id="@+id/faculty_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -178,7 +187,7 @@
                     </LinearLayout>
 
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/fac_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -232,7 +241,7 @@
                                 android:background="@mipmap/lesson_plan" />
                         </LinearLayout>
 
-                        <TextView
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                             android:id="@+id/tvsubjectname"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -246,7 +255,7 @@
                     </LinearLayout>
 
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tvLecture_Per_Week"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -292,7 +301,7 @@
                             android:background="@mipmap/syllabus" />
                     </LinearLayout>
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -304,7 +313,7 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/refbook"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -350,7 +359,7 @@
                             android:background="@drawable/ic_ftopics" />
                     </LinearLayout>
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -362,7 +371,7 @@
 
                 </LinearLayout>
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/txtd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

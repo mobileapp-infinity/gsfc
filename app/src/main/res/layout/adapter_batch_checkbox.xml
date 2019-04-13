@@ -18,13 +18,13 @@
         android:layout_marginLeft="5dp"
         android:orientation="vertical">
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/txt_check_lv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center|left"
             android:text=""
-            android:textSize="12dp"></TextView>
+           android:textSize="12dp"></com.infinity.infoway.agriculture.CommonCls.CustomTextView>
 
 
     </LinearLayout>

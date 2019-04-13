@@ -28,7 +28,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -68,8 +68,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv1"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Attendance Date"
@@ -82,12 +82,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv1"
+                            android:layout_toRightOf="@+id/tv2"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_atendance_date"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -113,8 +113,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv2"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="College Name"
@@ -127,12 +127,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv2"
+                            android:layout_toRightOf="@+id/tv3"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_college_name"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -157,8 +157,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv3"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Department Name"
@@ -171,12 +171,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv3"
+                            android:layout_toRightOf="@+id/tv4"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_dept_name"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -201,8 +201,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv4"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Course"
@@ -215,12 +215,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv4"
+                            android:layout_toRightOf="@+id/tv5"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_course"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -246,8 +246,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv5"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Semester"
@@ -260,12 +260,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv5"
+                            android:layout_toRightOf="@+id/tv6"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_sem"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -289,8 +289,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv6"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Subject"
@@ -303,12 +303,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv6"
+                            android:layout_toRightOf="@+id/tv7"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_sub"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -334,8 +334,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv7"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Period/Lab Number"
@@ -348,12 +348,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv7"
+                            android:layout_toRightOf="@+id/tv8"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_period_lab"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -379,8 +379,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv8"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Resourse Occupied"
@@ -393,12 +393,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv8"
+                            android:layout_toRightOf="@+id/tv9"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_resourse"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -424,8 +424,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
-                            android:id="@+id/tv9"
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                            android:id="@+id/tv10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Division"
@@ -438,12 +438,12 @@
                             android:layout_gravity="right|top"
                             android:layout_marginLeft="3dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/tv9"
+                            android:layout_toRightOf="@+id/tv10"
                             android:src="@drawable/star_from" />
 
                     </RelativeLayout>
 
-                    <EditText
+                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                         android:id="@+id/edt_div"
                         android:layout_width="match_parent"
                         android:layout_height="28dp"
@@ -469,7 +469,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                             android:id="@+id/tv_sname"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -527,7 +527,7 @@
                             android:layout_gravity="center"
                             android:src="@drawable/dot_form" />
 
-                        <TextView
+                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -594,7 +594,7 @@
                                 android:layout_gravity="center"
                                 android:src="@drawable/dot_form" />
 
-                            <TextView
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -616,7 +616,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
-                            <TextView
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                 android:id="@+id/tv1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -654,13 +654,13 @@
                             android:layout_marginTop="10dp"
                             android:orientation="vertical">
 
-                            <TextView
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Student Roll Numbers "
                                 android:textColor="@color/footer_" />
 
-                            <EditText
+                           <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                                 android:id="@+id/edt_attendance_student"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -669,7 +669,7 @@
                                 android:maxLines="6"
                                 android:textSize="12dp" />
 
-                            <TextView
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="right"
@@ -693,7 +693,7 @@
                                 android:layout_margin="3dp"
                                 android:orientation="horizontal">
 
-                                <TextView
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Total Student  ="
@@ -701,7 +701,7 @@
 
                                     android:textSize="12dp" />
 
-                                <TextView
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                     android:id="@+id/txt_total_stud"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -716,14 +716,14 @@
                                 android:layout_margin="3dp"
                                 android:orientation="horizontal">
 
-                                <TextView
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Present Student ="
                                     android:textColor="@color/footer_"
                                     android:textSize="12dp" />
 
-                                <TextView
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                     android:id="@+id/txt_present_stud"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -738,14 +738,14 @@
                                 android:layout_margin="3dp"
                                 android:orientation="horizontal">
 
-                                <TextView
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Absent Student  ="
                                     android:textColor="@color/footer_"
                                     android:textSize="12dp" />
 
-                                <TextView
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                     android:id="@+id/txt_absent_stud"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -760,8 +760,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp">
 
-                            <TextView
-                                android:id="@+id/tv2"
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                                android:id="@+id/tv12"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Unit"
@@ -774,7 +774,7 @@
                                 android:layout_gravity="right|top"
                                 android:layout_marginLeft="3dp"
                                 android:layout_marginTop="4dp"
-                                android:layout_toRightOf="@+id/tv2"
+                                android:layout_toRightOf="@+id/tv12"
                                 android:src="@drawable/star_from"
                                 android:visibility="gone" />
 
@@ -797,8 +797,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp">
 
-                            <TextView
-                                android:id="@+id/tv3"
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                                android:id="@+id/tv13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Topic"
@@ -811,14 +811,14 @@
                                 android:layout_gravity="right|top"
                                 android:layout_marginLeft="3dp"
                                 android:layout_marginTop="4dp"
-                                android:layout_toRightOf="@+id/tv3"
+                                android:layout_toRightOf="@+id/tv13"
                                 android:src="@drawable/star_from"
                                 android:visibility="visible" />
 
                         </RelativeLayout>
 
 
-                        <EditText
+                       <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                             android:id="@+id/edt_topic"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -838,8 +838,8 @@
 
                                 android:layout_height="match_parent">
 
-                                <TextView
-                                    android:id="@+id/tv4"
+                               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                                    android:id="@+id/tv14"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Teaching Method"
@@ -852,7 +852,7 @@
                                     android:layout_gravity="right|top"
                                     android:layout_marginLeft="3dp"
                                     android:layout_marginTop="4dp"
-                                    android:layout_toRightOf="@+id/tv4"
+                                    android:layout_toRightOf="@+id/tv14"
                                     android:src="@drawable/star_from"
                                     android:visibility="visible" />
 
@@ -877,8 +877,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp">
 
-                            <TextView
-                                android:id="@+id/tv9"
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                                android:id="@+id/tv19"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Teaching Aid"
@@ -891,7 +891,7 @@
                                 android:layout_gravity="right|top"
                                 android:layout_marginLeft="3dp"
                                 android:layout_marginTop="4dp"
-                                android:layout_toRightOf="@+id/tv9"
+                                android:layout_toRightOf="@+id/tv19"
                                 android:src="@drawable/star_from"
                                 android:visibility="visible" />
 
@@ -915,8 +915,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp">
 
-                            <TextView
-                                android:id="@+id/tv8"
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                                android:id="@+id/tv18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="No of Posts on Flinnt"
@@ -929,7 +929,7 @@
                                 android:layout_gravity="right|top"
                                 android:layout_marginLeft="3dp"
                                 android:layout_marginTop="4dp"
-                                android:layout_toRightOf="@+id/tv8"
+                                android:layout_toRightOf="@+id/tv18"
                                 android:src="@drawable/star_from"
                                 android:visibility="visible" />
 
@@ -956,13 +956,13 @@
                             android:orientation="vertical"
                             android:visibility="gone">
 
-                            <TextView
+                           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="HomeWork"
                                 android:textColor="@color/footer_" />
 
-                            <EditText
+                           <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                                 android:id="@+id/edt_homework"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -995,7 +995,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/save_attendance_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -102,7 +102,8 @@ public class Student_Attendance extends AppCompatActivity implements View.OnClic
         storage = new DataStorage("Login_Detail", Student_Attendance.this);
         Calendar newDate = Calendar.getInstance();
         newDate.set(Calendar.DAY_OF_MONTH, 1);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy", Locale.US);
+//    pppppppppppppp    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/yyyy", Locale.US);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM/yyyy", Locale.US);
         dateFormat.format(newDate.getTime());
 
         tbrow1 = (TableRow) findViewById(R.id.tbrow1);
@@ -147,13 +148,13 @@ public class Student_Attendance extends AppCompatActivity implements View.OnClic
 
         if (v == tvToDate)
         {
-            showAndSetDateDialog(tvToDate, tvFromDate.getText().toString());
+         //ppppppppppppppppppppppppp   showAndSetDateDialog(tvToDate, tvFromDate.getText().toString());
         }
 
 
         if (v == tvFromDate)
         {
-            myp.show();
+          //ppppppppppppppp  myp.show();
             //showAndSetDateDialog(tvFromDate);
             // createDialogWithoutDateField(tvFromDate);
         }

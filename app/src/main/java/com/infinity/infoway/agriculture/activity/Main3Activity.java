@@ -1,6 +1,7 @@
 package com.infinity.infoway.agriculture.activity;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
@@ -45,6 +46,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.infinity.infoway.agriculture.CommonCls.DialogUtils;
 import com.infinity.infoway.agriculture.R;
 import com.infinity.infoway.agriculture.adapter.Pageradapter;
 import com.infinity.infoway.agriculture.app.DataStorage;
@@ -101,6 +103,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     ImageView image;
     Toolbar toolbar;
     float slideoffset = 1;
+    TextView syl;
     TextView txt;
 
     @Override
@@ -340,6 +343,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         nav_Leave_app = (TextView) findViewById(R.id.nav_Leave_app);
         nav_Leave_app.setOnClickListener(this);
         nav_elrning = (TextView) findViewById(R.id.nav_elrning);
+        syl = (TextView) findViewById(R.id.syl);
         nav_elrning.setOnClickListener(this);
         nav_result.setOnClickListener(this);
         nav_activity = (TextView) findViewById(R.id.nav_acivity);
@@ -492,6 +496,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             txtnews.setText("Leave");
             //imgnews.setImageDrawable(getResources().getDrawable(R.drawable.leave));
             imgsyllabus.setImageDrawable(getResources().getDrawable(R.drawable.leave));
+
+
 //            txtfeedback.setText("Lecture \n Plan");
 //            imgfeedback.setImageDrawable(getResources().getDrawable(R.drawable.lectureplan));
             //imglessionplan.setImageDrawable(getResources().getDrawable(R.drawable.lectureplan));
@@ -511,9 +517,9 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             nav_feedback.setText("Lession Plan");
             nav_feedback.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.lesson_plan, 0, 0, 0);
 
-           // nav_lessionplan.setText("Pending Attendance");
+            // nav_lessionplan.setText("Pending Attendance");
             nav_lessionplan.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.time_table, 0, 0, 0);
-             nav_lessionplan.setVisibility(View.GONE);
+            nav_lessionplan.setVisibility(View.GONE);
             nav_syllabus.setVisibility(View.GONE);
             nav_pending_fees.setVisibility(View.GONE);
             nav_rec.setVisibility(View.GONE);
@@ -556,6 +562,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             img_feecircular.setVisibility(View.GONE);
             imgexam_tt.setVisibility(View.GONE);
             img_dashboard.setVisibility(View.VISIBLE);
+
             img_dashboard.setImageDrawable(getResources().getDrawable(R.drawable.activity_icon));
 //                imgfeedback.setVisibility(View.VISIBLE);
             nav_feedback.setVisibility(View.GONE);
@@ -729,16 +736,26 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.imgprofile:
                 Intent intent = new Intent(Main3Activity.this, Profile.class);
                 //Intent intent = new Intent(Main3Activity.this, ELearningActivity.class);
+
+                // ActivityOptions options =
+//                        ActivityOptions.makeCustomAnimation(Main3Activity.this, R.anim.fade_in, R.anim.fade_out);
+                ActivityOptions.makeCustomAnimation(Main3Activity.this, R.anim.righttoleft, R.anim.righttoleft);
+//                        ActivityOptions.makeCustomAnimation(Main3Activity.this, R.anim.bounce, R.anim.bounce);
+                //   startActivity(intent, options.toBundle());
+
                 startActivity(intent);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.receipt_img:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent fee_intent = new Intent(Main3Activity.this, Receipt_Activity.class);
                     startActivity(fee_intent);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
                     Intent fee_intent = new Intent(Main3Activity.this, EmployeeAttendance.class);
                     startActivity(fee_intent);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
 
                 break;
@@ -747,10 +764,12 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent intent_elerning = new Intent(Main3Activity.this, ELearningActivity.class);
                     startActivity(intent_elerning);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
 
                 } else {
                     Intent intent_elerning = new Intent(Main3Activity.this, NewsGroupWise.class);
                     startActivity(intent_elerning);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
                 break;
 
@@ -769,6 +788,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.img_leave_app:
                 Intent intent_leave_app = new Intent(Main3Activity.this, Leaveapplication.class);
                 startActivity(intent_leave_app);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
 
@@ -776,17 +796,71 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 Intent intent_img_feecircular = new Intent(Main3Activity.this, FeeCircularActivity.class);
                 intent_img_feecircular.putExtra("fc_file", String.valueOf(storage.read("fc_file", 3)));
                 startActivity(intent_img_feecircular);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.nav_fee_circular:
                 Intent intent_nav_fee_circular = new Intent(Main3Activity.this, FeeCircularActivity.class);
                 intent_nav_fee_circular.putExtra("fc_file", String.valueOf(storage.read("fc_file", 3)));
                 startActivity(intent_nav_fee_circular);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.nav_change_psw:
-                Intent change_psw = new Intent(Main3Activity.this, ChangePasswordActivity.class);
-                startActivity(change_psw);
+
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+                    DialogUtils.showDialog4YNo(Main3Activity.this, "Change Password", "You can change the password from Online HRD / Tour Programme Login.\n",
+                            "http://online.jau.in/student_network/index.php", new DialogUtils.DailogCallBackOkButtonClick() {
+                                @Override
+                                public void onDialogOkButtonClicked() {
+//                        try {
+//                            try {
+//                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + DataStorage.PACKAGE_NAME)));
+//                                finish();
+//                            } catch (android.content.ActivityNotFoundException anfe) {
+//                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + DataStorage.PACKAGE_NAME)));
+//                                finish();
+//                            }
+//                        } catch (Exception e) {
+//                            //	System.out.println("");
+//                        }
+                                }
+                            }, new DialogUtils.DailogCallBackCancelButtonClick() {
+                                @Override
+                                public void onDialogCancelButtonClicked() {
+
+                                }
+                            });
+                } else {
+
+
+//                Intent change_psw = new Intent(Main3Activity.this, ChangePasswordActivity.class);
+//                startActivity(change_psw);
+//                overridePendingTransition(R.anim.enter, R.anim.exit);
+                    DialogUtils.showDialog4YNo(Main3Activity.this, "Change Password", "You can change the password from Online HRD / Tour Programme Login.\n",
+                            "http://online.jau.in/jau_programmes/login.php", new DialogUtils.DailogCallBackOkButtonClick() {
+                                @Override
+                                public void onDialogOkButtonClicked() {
+//                        try {
+//                            try {
+//                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + DataStorage.PACKAGE_NAME)));
+//                                finish();
+//                            } catch (android.content.ActivityNotFoundException anfe) {
+//                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + DataStorage.PACKAGE_NAME)));
+//                                finish();
+//                            }
+//                        } catch (Exception e) {
+//                            //	System.out.println("");
+//                        }
+                                }
+                            }, new DialogUtils.DailogCallBackCancelButtonClick() {
+                                @Override
+                                public void onDialogCancelButtonClicked() {
+
+                                }
+                            });
+                }
+
 //                finish();
 //                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
                 break;
@@ -796,27 +870,33 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 Intent img_result_intent = new Intent(Main3Activity.this, ResultActivity.class);
                 //Intent img_result_intent = new Intent(Main3Activity.this, Leaveapplication.class);
                 startActivity(img_result_intent);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.imgtimetable:
                 startActivity(new Intent(Main3Activity.this, Timetable.class));
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.imgattendance:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent intentattendance = new Intent(Main3Activity.this, Syllabus.class);
                     startActivity(intentattendance);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
                     Intent intentattendance = new Intent(Main3Activity.this, EmployeeAttendance.class);
                     startActivity(intentattendance);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
                 break;
 
             case R.id.imgfees:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     startActivity(new Intent(Main3Activity.this, Fees_Activity.class));
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
                     startActivity(new Intent(Main3Activity.this, FacultyAttendance.class));
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
                 break;
 
@@ -825,10 +905,12 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent intentimgnews = new Intent(Main3Activity.this, NewsGroupWise.class);
                     startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
                     Intent intentimgnews = new Intent(Main3Activity.this, Notification_Activity.class);
                     intentimgnews.putExtra("type", "news");
                     startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
 
 
@@ -839,6 +921,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent intentimgnews = new Intent(Main3Activity.this, Leave_emp.class);
                     startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
                     Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_Attendance.class);
                     startActivity(intentimgsyllabus);
@@ -849,16 +932,19 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.assignment_img:
                 Intent intent_ass_img = new Intent(Main3Activity.this, AssignmentActivity.class);
                 startActivity(intent_ass_img);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.pending_fees_img:
                 Intent pending_fees = new Intent(Main3Activity.this, PendingfeesActivity.class);
                 startActivity(pending_fees);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.iv_mid_exam_tt:
                 Intent intet_tt_mid = new Intent(Main3Activity.this, ExamDisplayTimeTable.class);
                 startActivity(intet_tt_mid);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
 
@@ -867,10 +953,12 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent intent1 = new Intent(Main3Activity.this, Student_Main_Activity.class);
                     startActivity(intent1);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
 
                     Intent dashboard = new Intent(Main3Activity.this, DirectivePageActivity.class);
                     startActivity(dashboard);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                     finish();
                 }
                 break;
@@ -879,45 +967,49 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.nav_placement:
                 Intent intent1 = new Intent(Main3Activity.this, PlacementActivity.class);
                 startActivity(intent1);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.nav_elrning:
                 Intent intent2 = new Intent(Main3Activity.this, ELearningActivity.class);
                 startActivity(intent2);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.nav_Leave_app:
                 Intent intent3 = new Intent(Main3Activity.this, Leaveapplication.class);
                 startActivity(intent3);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.imglessionplan:
-                if (storage.CheckLogin("emp_id", Main3Activity.this))
-                {
+                if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent imgfeedback = new Intent(Main3Activity.this, NewEmpLectPlan.class);
                     //Intent imgfeedback = new Intent(Main3Activity.this, FacultyAttendance.class);
                     startActivity(imgfeedback);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
                     Intent imglessionplan = new Intent(Main3Activity.this, NewEmpLectPlan.class);
                     startActivity(imglessionplan);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
                 break;
 
             case R.id.imgfeedback:
-                if (storage.CheckLogin("stud_id", Main3Activity.this))
-                {
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent imgfeedback = new Intent(Main3Activity.this, HomeworkActivity.class);
                     startActivity(imgfeedback);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
                 break;
 
 
-            case R.id.notification_dashboard:
-                {
+            case R.id.notification_dashboard: {
                 Intent intent1_noty = new Intent(Main3Activity.this, Notification_Activity.class);
                 intent1_noty.putExtra("type", "notification");
                 startActivity(intent1_noty);
                 txt.setVisibility(View.GONE);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
             }
 
@@ -925,6 +1017,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.nav_rec: {
                 Intent intent2_rec = new Intent(Main3Activity.this, Receipt_Activity.class);
                 startActivity(intent2_rec);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
             }
 
@@ -942,28 +1035,34 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.nav_profile:
                 Intent intmenuprofile = new Intent(Main3Activity.this, Profile.class);
                 startActivity(intmenuprofile);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
             case R.id.nav_timetable:
                 Intent intentmenutimetable = new Intent(Main3Activity.this, Timetable.class);
                 startActivity(intentmenutimetable);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
             case R.id.nav_attendance:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent intentattendance = new Intent(Main3Activity.this, Student_Attendance.class);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                     startActivity(intentattendance);
                 } else {
                     Intent intentattendance = new Intent(Main3Activity.this, EmployeeAttendance.class);
                     startActivity(intentattendance);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
                 break;
 
             case R.id.nav_fees:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     startActivity(new Intent(Main3Activity.this, Fees_Activity.class));
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 } else {
                     startActivity(new Intent(Main3Activity.this, FacultyAttendance.class));
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
                 break;
 
@@ -976,35 +1075,40 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 //                    intent1.putExtra("type", "news");
 //                    startActivity(intent1);
 //                }
-                if (storage.CheckLogin("emp_id", Main3Activity.this))
-                {
+                if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent intentimgnews = new Intent(Main3Activity.this, NewsGroupWise.class);
                     startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 } else {
                     Intent intent1_noti = new Intent(Main3Activity.this, Notification_Activity.class);
                     // intent1.putExtra("type", "news");
                     startActivity(intent1_noti);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
                 break;
 
             case R.id.nav_syllabus:
                 Intent intentmenusyllabus = new Intent(Main3Activity.this, Syllabus.class);
                 startActivity(intentmenusyllabus);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
 
             case R.id.nav_pending_fees:
                 Intent pending_fees_nav = new Intent(Main3Activity.this, PendingfeesActivity.class);
                 startActivity(pending_fees_nav);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
             case R.id.nav_lessionplan:
                 if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent intentmenuplan = new Intent(Main3Activity.this, FacultyAttendance.class);
                     startActivity(intentmenuplan);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 } else {
                     Intent intentmenuplan = new Intent(Main3Activity.this, NewEmpLectPlan.class);
                     startActivity(intentmenuplan);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
 
                 break;
@@ -1013,29 +1117,34 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.nav_result:
                 Intent intent_nav_result = new Intent(Main3Activity.this, ResultActivity.class);
                 startActivity(intent_nav_result);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
 
             case R.id.nav_homework:
                 Intent intent_homework = new Intent(Main3Activity.this, HomeworkActivity.class);
                 startActivity(intent_homework);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
 
             case R.id.nav_asnmnt:
                 Intent intent_nav_as = new Intent(Main3Activity.this, AssignmentActivity.class);
                 startActivity(intent_nav_as);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
             case R.id.nav_exam_TT:
                 Intent intent_exam_tt = new Intent(Main3Activity.this, ExamDisplayTimeTable.class);
                 startActivity(intent_exam_tt);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
 
             case R.id.nav_acivity:
                 Intent act = new Intent(Main3Activity.this, Student_Main_Activity.class);
                 startActivity(act);
+                overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 break;
 
             /*case R.id.img_result:
@@ -1053,6 +1162,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent imgfeedback = new Intent(Main3Activity.this, NewEmpLectPlan.class);
                     startActivity(imgfeedback);
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
                 break;
 
@@ -1209,7 +1319,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                                                 finish();
 
                                             } catch
-                                                    (android.content.ActivityNotFoundException anfe) {
+                                            (android.content.ActivityNotFoundException anfe) {
                                                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + DataStorage.PACKAGE_NAME)));
                                                 finish();
 
@@ -1300,9 +1410,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public void get_student_data_from_student_ID()
-
-    {
+    public void get_student_data_from_student_ID() {
         System.out.println("calleddddddddddddddddddddddd---------general");
         if (storage.CheckLogin("stud_id", Main3Activity.this)) {
             System.out.println("stud_ID---from get_student_data_from_student_ID---" + String.valueOf(storage.read("stud_id", 3)));

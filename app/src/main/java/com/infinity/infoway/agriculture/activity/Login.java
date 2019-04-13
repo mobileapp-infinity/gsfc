@@ -779,8 +779,32 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.tvforgotpassword:
-                Intent intent = new Intent(Login.this, ForgotPassword.class);
-                startActivity(intent);
+//          ppppppppppppppppppppppppppppppppp      Intent intent = new Intent(Login.this, ForgotPassword.class);
+//                startActivity(intent);
+
+
+                DialogUtils.showDialog4YNo(Login.this, "Forgot Password ?", "You can get the password from Online HRD / Tour Programme Login.\n",
+                        "http://online.jau.in/", new DialogUtils.DailogCallBackOkButtonClick() {
+                            @Override
+                            public void onDialogOkButtonClicked() {
+//                        try {
+//                            try {
+//                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + DataStorage.PACKAGE_NAME)));
+//                                finish();
+//                            } catch (android.content.ActivityNotFoundException anfe) {
+//                                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=" + DataStorage.PACKAGE_NAME)));
+//                                finish();
+//                            }
+//                        } catch (Exception e) {
+//                            //	System.out.println("");
+//                        }
+                            }
+                        }, new DialogUtils.DailogCallBackCancelButtonClick() {
+                            @Override
+                            public void onDialogCancelButtonClicked() {
+
+                            }
+                        });
                 break;
 
             default:

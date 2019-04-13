@@ -28,7 +28,7 @@
                 android:padding="10dp"
                 android:src="@drawable/logo" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -61,7 +61,7 @@
             android:orientation="vertical"
             android:padding="15dp">
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -75,7 +75,7 @@
                 android:backgroundTint="@color/btn_color"
                 android:textColorHint="@color/silver">
 
-                <EditText
+               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                     android:id="@+id/etusername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                     android:textColorHint="@color/btn_color" />
             </android.support.design.widget.TextInputLayout>
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -99,7 +99,7 @@
                 android:backgroundTint="@color/btn_color"
                 android:textColorHint="@color/silver">
 
-                <EditText
+               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
                     android:id="@+id/etpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                     android:paddingLeft="10dp" />
             </android.support.design.widget.TextInputLayout>
 
-            <Button
+           <com.infinity.infoway.agriculture.CommonCls.CustomButton
                 android:id="@+id/btnlogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:id="@+id/tvforgotpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                 android:textColor="@color/btn_color"
                 android:textSize="16sp" />
 
-            <Button
+           <com.infinity.infoway.agriculture.CommonCls.CustomButton
                 android:id="@+id/btnloginsignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

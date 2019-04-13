@@ -15,7 +15,7 @@
             android:id="@+id/img_event"
             android:src="@drawable/ic_event"
             android:layout_weight="0.4"/>
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="14/1/2018"
@@ -23,7 +23,7 @@
             android:textColor="#000"
             android:id="@+id/date_event"
             android:layout_weight="1"/>
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Makarsankranti"

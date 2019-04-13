@@ -30,7 +30,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:layout_marginTop="45dp"
             android:background="#333333">
 
-            <TextView
+        <!--   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/t1"
@@ -66,9 +66,21 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:textSize="18dp"
+                android:layout_marginLeft="15dp"/>  -->
+
+
+            <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/t1"
+                android:text="Course"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="18dp"
                 android:layout_marginLeft="15dp"/>
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/asn"
@@ -79,7 +91,7 @@
                 android:textSize="18dp"
                 android:layout_marginLeft="15dp"/>
 
-            <TextView
+           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Download"

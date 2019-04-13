@@ -11,7 +11,7 @@
         android:padding="1dp"
         android:weightSum="2">
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:id="@+id/tvfaculty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
             android:textColor="@color/fees"
             android:layout_weight="1" />
 
-        <TextView
+       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Leave"

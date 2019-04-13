@@ -45,7 +45,7 @@
                 </LinearLayout>
 
 
-                <TextView
+               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                     android:id="@+id/tv_exam_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tvstarttime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                         android:visibility="visible"
                         android:textColor="@color/white" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
@@ -91,7 +91,7 @@
                         android:visibility="gone"
                         android:textColor="@color/white" />
 
-                    <TextView
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/tv_date_result"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                android:layout_height="40dp"
                android:background="@drawable/result_bg"
                android:layout_weight="4">
-               <TextView
+              <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                    android:layout_width="40dp"
                    android:layout_height="wrap_content"
                    android:text="Subject"
@@ -125,7 +125,7 @@
                    android:layout_width="1dp"
                    android:layout_height="fill_parent"
                    android:background="#000" />
-               <TextView
+              <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                    android:layout_width="30dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"
@@ -140,7 +140,7 @@
                    android:layout_width="1dp"
                    android:layout_height="fill_parent"
                    android:background="#000" />
-               <TextView
+              <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                    android:layout_width="35dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"
@@ -156,7 +156,7 @@
                    android:layout_height="fill_parent"
                    android:background="#000" />
 
-               <TextView
+              <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                    android:layout_width="35dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"

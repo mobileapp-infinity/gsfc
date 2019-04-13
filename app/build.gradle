@@ -62,6 +62,13 @@ dependencies
             compile 'com.github.blackfizz:eazegraph:1.2.2@aar'
             compile 'com.nineoldandroids:library:2.4.0'
             compile 'com.jjoe64:graphview:4.2.1'
+
+            compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+
+
+
+
+
         }
 
 repositories
