@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/mainimagelayout">-->
-            <LinearLayout
+          <!--  <LinearLayout
 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -666,8 +666,13 @@
 
 
 
-            </LinearLayout>
+            </LinearLayout>-->
             <!--</ScrollView>-->
+
+            <include layout="@layout/student_panel_layout" android:id="@+id/student_layout">
+
+            </include>
+            <include layout="@layout/employee_panel_layout" android:visibility="gone" android:id="@+id/employee1_layout"></include>
         </RelativeLayout>
 
     </ScrollView>
@@ -879,7 +884,7 @@
                         android:drawablePadding="15dp"
                         android:gravity="center_vertical"
                         android:padding="7dp"
-                        android:text="Attendance"
+                        android:text="My Attendance"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -905,7 +910,7 @@
                         android:drawablePadding="15dp"
                         android:gravity="center_vertical"
                         android:padding="7dp"
-                        android:text="Lession Plan"
+                        android:text="Lesson Plan"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
                    <com.infinity.infoway.agriculture.CommonCls.CustomTextView 
@@ -957,7 +962,7 @@
                         android:drawablePadding="15dp"
                         android:gravity="center_vertical"
                         android:padding="7dp"
-                        android:text="News"
+                        android:text="Announcement"
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
@@ -1071,7 +1076,7 @@
                         android:textColor="@color/white"
                         android:textSize="16dp" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView 
+                  <!-- <com.infinity.infoway.agriculture.CommonCls.CustomTextView
                         android:id="@+id/nav_change_psw"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -1080,9 +1085,9 @@
                         android:drawablePadding="15dp"
                         android:gravity="center_vertical"
                         android:padding="7dp"
-                        android:text="Chnage Password"
+                        android:text="Change Password"
                         android:textColor="@color/white"
-                        android:textSize="16dp" />
+                        android:textSize="16dp" />-->
 
 
 
@@ -1105,9 +1110,47 @@
                         android:gravity="center_vertical"
                         android:padding="7dp"
                         android:text="Feedback"
+
                         android:textColor="@color/white"
                         android:textSize="16dp" />
+                    <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/nav_lleave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@mipmap/plnner"
+                        android:drawablePadding="15dp"
+                        android:gravity="center_vertical"
+                        android:padding="7dp"
+                        android:text="Leave"
 
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+                    <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/nav_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@mipmap/web_p"
+                        android:drawablePadding="15dp"
+                        android:gravity="center_vertical"
+                        android:padding="7dp"
+                        android:text="Other Apps"
+
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+                    <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                        android:id="@+id/nav_change_psw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@mipmap/cpwd"
+                        android:drawablePadding="15dp"
+                        android:gravity="center_vertical"
+                        android:padding="7dp"
+                        android:text="Change Password"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
 
                    <com.infinity.infoway.agriculture.CommonCls.CustomTextView 
                         android:id="@+id/nav_share"
@@ -1188,12 +1231,22 @@ android:gravity="bottom"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
 
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <!--    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 style="@android:style/Widget.ActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@color/white"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical">-->
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                style="@android:style/Widget.ActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
                 android:clickable="true"
                 android:gravity="center"
                 android:orientation="vertical">

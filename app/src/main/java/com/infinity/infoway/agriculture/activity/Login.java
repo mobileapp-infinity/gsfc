@@ -364,7 +364,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 System.out.println("username:::" + etusername.getText().toString());
                 System.out.println("password::: final_Password" + final_Password);
                 System.out.println("password:::" + etpassword.getText().toString());
-                Call<LoginResponse> call = apiService.StudentLogin(mParams);
+//                Call<LoginResponse> call = apiService.StudentLogin(mParams);
+                Call<LoginResponse> call = apiService.student_login_for_sims(mParams);
 
                 call.enqueue(new Callback<LoginResponse>() {
                     @Override

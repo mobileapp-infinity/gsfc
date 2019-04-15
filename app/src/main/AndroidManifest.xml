@@ -89,7 +89,10 @@
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.Remaining_Attendance"
+            android:theme="@style/MyMaterialTheme.Base" /> <activity
+            android:name=".activity.MoreApplication"
             android:theme="@style/MyMaterialTheme.Base" />
+
         <activity
             android:name=".activity.Notification_Activity"
             android:theme="@style/MyMaterialTheme.Base">

@@ -320,7 +320,7 @@
                     />
 
                <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                    android:text="Lession &#10; Plan"
+                    android:text="Lesson &#10; Plan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"

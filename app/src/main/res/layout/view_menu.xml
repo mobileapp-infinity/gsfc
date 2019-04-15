@@ -210,7 +210,7 @@
                     android:drawablePadding="15dp"
                     android:gravity="center_vertical"
                     android:padding="7dp"
-                    android:text="Lession Plan"
+                    android:text="Lesson Plan"
                     android:textColor="@color/white"
                     android:textSize="16dp" />
 

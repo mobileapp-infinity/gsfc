@@ -46,6 +46,11 @@ import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 
 public interface ApiInterface {
+    @GET("student_login_check_api_for_jau")
+    Call<LoginResponse>student_login_for_sims (@QueryMap Map<String, String> params);
+
+
+
     @GET("student_login_check_api")
     Call<LoginResponse> StudentLogin(@QueryMap Map<String, String> params);
 

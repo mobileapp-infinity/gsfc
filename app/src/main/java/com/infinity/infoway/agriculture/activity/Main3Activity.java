@@ -82,8 +82,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     private static int currentPage = 0;
     private ArrayList<String> XMENArray = new ArrayList<String>();
     private static final int MENU_ADD = 0;
-    ImageView imgprofile, assignment_img, receipt_img, pending_fees_img, img_home_work, img_dashboard, imgtimetable, imgattendance, imgfees, imgnews, imgfeedback, imgsyllabus, imglessionplan, imgexam_tt, img_feecircular;
-    TextView nav_profile, nav_change_psw, nav_timetable, nav_attendance, nav_pending_fees, nav_fees, nav_news, nav_feedback, nav_syllabus, nav_lessionplan, nav_share, nav_logout, nav_rec, nav_fee_circular, nav_result, nav_activity, nav_homewrork, nav_assignment, nav_exam_time_table, nav_memberno, nav_version_name, nav_placement, nav_Leave_app, nav_elrning;
+    ImageView  assignment_img, receipt_img, pending_fees_img, img_home_work, img_dashboard, imgtimetable, imgattendance, imgfees, imgnews, imgfeedback, imgsyllabus,iv_rem_att, imglessionplan, imgexam_tt, img_feecircular,imgprofile,imgprofile_emp,imgattendance_emp,iv_leave_app_emp,imgnews_emp,imgtimetable_emp,img_Moreapp,img_Moreapp_emp;
+    TextView nav_profile, nav_change_psw, nav_timetable, nav_attendance, nav_pending_fees, nav_fees, nav_news, nav_feedback, nav_syllabus, nav_lessionplan, nav_share, nav_logout, nav_rec, nav_fee_circular, nav_result, nav_activity, nav_homewrork, nav_assignment, nav_exam_time_table, nav_memberno, nav_version_name, nav_placement, nav_Leave_app, nav_elrning,nav_more,nav_lleave;
     Context ctx;
     TextView nav_lessionplan_a, nav_feedback_a, nav_news_a, nav_share_a;
     ImageView notification_dashboard, img_result, img_elerning, img_placement, img_leave_app;
@@ -105,6 +105,42 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     float slideoffset = 1;
     TextView syl;
     TextView txt;
+    View student_layout;
+    View Emp_layout;
+
+
+    private android.widget.ImageView ivatt;
+
+    private android.widget.ImageView ivplacement,iv_att;
+    private android.widget.TextView textattendence;
+    private android.widget.LinearLayout layout1;
+    private android.widget.ImageView ivlessionplan;
+
+    private android.widget.TextView textView6;
+    private android.widget.ImageView ivassignment;
+    private android.widget.ImageView imgnewannouncement;
+    private android.widget.TextView txterning;
+    private android.widget.ImageView imgplacement;
+    private android.widget.TextView txtplacement;
+    private android.widget.ImageView imgleaveapp;
+    private android.widget.LinearLayout newiconll;
+    private android.widget.LinearLayout llviewmore;
+    private android.widget.TextView txtreceipt;
+
+    private android.widget.TextView txt1;
+    private android.widget.ImageView imgresult;
+    private android.widget.ImageView assignmentimg;
+    private android.widget.LinearLayout feeslayout;
+
+
+    private android.widget.ImageView imgdashboard;
+
+
+    private android.widget.ImageView pendingfeesimg;
+    private android.widget.ImageView ivmidexamtt;
+    private android.widget.ImageView imgfeecircular;
+    private android.widget.LinearLayout fivell;
+    private android.widget.LinearLayout llviewshide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +149,10 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         try {
             Intent intent = new Intent();
             String manufacturer = android.os.Build.MANUFACTURER;
+            student_layout = findViewById(R.id.student_layout);
+            Emp_layout = findViewById(R.id.employee1_layout);
+            Emp_layout.setVisibility(View.GONE);
+
 
             if ("xiaomi".equalsIgnoreCase(manufacturer)) {
                 intent.setComponent(new ComponentName("com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity"));
@@ -337,14 +377,34 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         nav_attendance.setOnClickListener(this);
         nav_fees = (TextView) findViewById(R.id.nav_fees);
         nav_fees.setOnClickListener(this);
+
+
+
         nav_result = (TextView) findViewById(R.id.nav_result);
         nav_placement = (TextView) findViewById(R.id.nav_placement);
         nav_placement.setOnClickListener(this);
         nav_Leave_app = (TextView) findViewById(R.id.nav_Leave_app);
         nav_Leave_app.setOnClickListener(this);
+
+        imgattendance_emp = (ImageView) findViewById(R.id.imgattendance_emp);
+        imgattendance_emp.setOnClickListener(this);
+        iv_leave_app_emp = (ImageView) findViewById(R.id.iv_leave_app_emp);
+        iv_leave_app_emp.setOnClickListener(this);
+        imgnews_emp = (ImageView) findViewById(R.id.imgnews_emp);
+        imgnews_emp.setOnClickListener(this);
+
+
+
         nav_elrning = (TextView) findViewById(R.id.nav_elrning);
-        syl = (TextView) findViewById(R.id.syl);
+        //     syl = (TextView) findViewById(R.id.syl);
         nav_elrning.setOnClickListener(this);
+        nav_more = (TextView) findViewById(R.id.nav_more);
+        //     syl = (TextView) findViewById(R.id.syl);
+        nav_more.setOnClickListener(this);
+
+        nav_lleave = (TextView) findViewById(R.id.nav_lleave);
+        //     syl = (TextView) findViewById(R.id.syl);
+        nav_lleave.setOnClickListener(this);
         nav_result.setOnClickListener(this);
         nav_activity = (TextView) findViewById(R.id.nav_acivity);
         nav_activity.setOnClickListener(this);
@@ -379,6 +439,70 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         nav_feedback_a = (TextView) findViewById(R.id.nav_aa);
         nav_news_a = (TextView) findViewById(R.id.nav_bb);
         nav_share_a = (TextView) findViewById(R.id.nav_cc);
+        imglessionplan = (ImageView) findViewById(R.id.imglessionplan);
+
+        imgtimetable = (ImageView) findViewById(R.id.imgtimetable);
+        imgtimetable.setOnClickListener(this);
+        imgtimetable_emp = (ImageView) findViewById(R.id.imgtimetable_emp);
+        imgtimetable_emp.setOnClickListener(this);
+
+
+        imglessionplan.setOnClickListener(this);
+
+        imgnews = (ImageView) findViewById(R.id.imgnews);
+        imgnews.setOnClickListener(this);
+
+        iv_rem_att = (ImageView) findViewById(R.id.iv_rem_att);
+        iv_rem_att.setOnClickListener(this);
+
+        imgprofile = (ImageView) findViewById(R.id.imgprofile);
+
+        imgprofile.setOnClickListener(this);
+        imgprofile_emp = (ImageView) findViewById(R.id.imgprofile_emp);
+
+        imgprofile_emp.setOnClickListener(this);
+
+        imgattendance_emp = (ImageView) findViewById(R.id.imgattendance_emp);
+        imgattendance_emp.setOnClickListener(this);
+
+
+        img_leave_app = (ImageView) findViewById(R.id.img_leave_app);
+        img_leave_app.setOnClickListener(this);
+
+        img_elerning = (ImageView) findViewById(R.id.img_elerning);
+        img_elerning.setOnClickListener(this);
+
+        imgsyllabus = (ImageView) findViewById(R.id.imgsyllabus);
+        imgsyllabus.setOnClickListener(this);
+        img_Moreapp = (ImageView) findViewById(R.id.img_Moreapp);
+        img_Moreapp.setOnClickListener(this);img_Moreapp_emp = (ImageView) findViewById(R.id.img_Moreapp_emp);
+        img_Moreapp_emp.setOnClickListener(this);
+
+
+
+
+        if (storage.CheckLogin("stud_id", ctx)) {
+            nav_fees.setVisibility(View.GONE);
+            nav_rec.setVisibility(View.GONE);
+            nav_activity.setVisibility(View.GONE);
+            nav_homewrork.setVisibility(View.GONE);
+            nav_result.setVisibility(View.GONE);
+            nav_feedback.setVisibility(View.GONE);
+            nav_lleave.setVisibility(View.GONE);
+
+
+        } else {
+//            nav_fees.setVisibility(View.GONE);
+//            nav_rec.setVisibility(View.GONE);
+//            nav_activity.setVisibility(View.GONE);
+//            nav_homewrork.setVisibility(View.GONE);
+//            nav_result.setVisibility(View.GONE);
+        }
+
+
+
+
+
 //        nav_lessionplan_a = (TextView) findViewById(R.id.nav_dd);
        /* if(!storage.CheckLogin("stud_id",ctx))
         {
@@ -401,6 +525,16 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         if (!storage.isOnline(Main3Activity.this)) {
             showDialog(DataStorage.DIALOG_ERROR_CONNECTION);
         }
+
+        if (storage.CheckLogin("stud_id", ctx)) {
+            student_layout.setVisibility(View.VISIBLE);
+            Emp_layout.setVisibility(View.GONE);
+        } else {
+            student_layout.setVisibility(View.GONE);
+            Emp_layout.setVisibility(View.VISIBLE);
+        }
+
+
         refreshedToken = FirebaseInstanceId.getInstance().getToken();
         System.out.println("refreshedToken:::::" + refreshedToken);
         //Log.d("refreshedToken", refreshedToken);
@@ -422,51 +556,50 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         assert pInfo != null;
         System.out.println("version name:::::::" + pInfo.versionName);
 
-
         nav_version_name.setText("  " + pInfo.versionName);
-        imgprofile = (ImageView) findViewById(R.id.imgprofile);
-        five_ll = (LinearLayout) findViewById(R.id.five_ll);
-        img_dashboard = (ImageView) findViewById(R.id.img_dashboard);
-        img_dashboard.setOnClickListener(this);
-        assignment_img = (ImageView) findViewById(R.id.assignment_img);
-        assignment_img.setOnClickListener(this);
-        imgprofile.setOnClickListener(this);
-        receipt_img = (ImageView) findViewById(R.id.receipt_img);
-        receipt_img.setOnClickListener(this);
-        pending_fees_img = (ImageView) findViewById(R.id.pending_fees_img);
-        pending_fees_img.setOnClickListener(this);
-        imgexam_tt = (ImageView) findViewById(R.id.iv_mid_exam_tt);
-        imgexam_tt.setOnClickListener(this);
-        img_feecircular = (ImageView) findViewById(R.id.img_feecircular);
-        img_feecircular.setOnClickListener(this);
-        imgtimetable = (ImageView) findViewById(R.id.imgtimetable);
-        imgtimetable.setOnClickListener(this);
-        imgfees = (ImageView) findViewById(R.id.imgfees);
-        imgfees.setOnClickListener(this);
-        imgnews = (ImageView) findViewById(R.id.imgnews);
-        imgnews.setOnClickListener(this);
-        imgattendance = (ImageView) findViewById(R.id.imgattendance);
-        imgattendance.setOnClickListener(this);
-        imgfeedback = (ImageView) findViewById(R.id.imgfeedback);
-        imgfeedback.setOnClickListener(this);
-        imgsyllabus = (ImageView) findViewById(R.id.imgsyllabus);
-        imgsyllabus.setOnClickListener(this);
-        imglessionplan = (ImageView) findViewById(R.id.imglessionplan);
-        imglessionplan.setOnClickListener(this);
-        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
-        textfee = (TextView) findViewById(R.id.textfee);
-        txtnews = (TextView) findViewById(R.id.txtnews);
-        txtfeedback = (TextView) findViewById(R.id.txtfeedback);
-        studentlayout = (LinearLayout) findViewById(R.id.studentlayout);
-        llactionbar = (LinearLayout) findViewById(R.id.llactionbar);
-        img_result = (ImageView) findViewById(R.id.img_result);
-        img_result.setOnClickListener(this);
-        img_elerning = (ImageView) findViewById(R.id.img_elerning);
-        img_elerning.setOnClickListener(this);
-        img_placement = (ImageView) findViewById(R.id.img_placement);
-        img_placement.setOnClickListener(this);
-        img_leave_app = (ImageView) findViewById(R.id.img_leave_app);
-        img_leave_app.setOnClickListener(this);
+//        imgprofile = (ImageView) findViewById(R.id.imgprofile);
+//        five_ll = (LinearLayout) findViewById(R.id.five_ll);
+//        img_dashboard = (ImageView) findViewById(R.id.img_dashboard);
+//        img_dashboard.setOnClickListener(this);
+//        assignment_img = (ImageView) findViewById(R.id.assignment_img);
+//        assignment_img.setOnClickListener(this);
+//        imgprofile.setOnClickListener(this);
+//      //  receipt_img = (ImageView) findViewById(R.id.receipt_img);
+//     //   receipt_img.setOnClickListener(this);
+//        pending_fees_img = (ImageView) findViewById(R.id.pending_fees_img);
+//        pending_fees_img.setOnClickListener(this);
+//        imgexam_tt = (ImageView) findViewById(R.id.iv_mid_exam_tt);
+//        imgexam_tt.setOnClickListener(this);
+//        img_feecircular = (ImageView) findViewById(R.id.img_feecircular);
+//        img_feecircular.setOnClickListener(this);
+//        imgtimetable = (ImageView) findViewById(R.id.imgtimetable);
+//        imgtimetable.setOnClickListener(this);
+//        imgfees = (ImageView) findViewById(R.id.imgfees);
+//        imgfees.setOnClickListener(this);
+//        imgnews = (ImageView) findViewById(R.id.imgnews);
+//        imgnews.setOnClickListener(this);
+//        imgattendance = (ImageView) findViewById(R.id.imgattendance);
+//        imgattendance.setOnClickListener(this);
+//        imgfeedback = (ImageView) findViewById(R.id.imgfeedback);
+//        imgfeedback.setOnClickListener(this);
+//        imgsyllabus = (ImageView) findViewById(R.id.imgsyllabus);
+//        imgsyllabus.setOnClickListener(this);
+//        imglessionplan = (ImageView) findViewById(R.id.imglessionplan);
+//        imglessionplan.setOnClickListener(this);
+//        mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+//        textfee = (TextView) findViewById(R.id.textfee);
+//        txtnews = (TextView) findViewById(R.id.txtnews);
+//        txtfeedback = (TextView) findViewById(R.id.txtfeedback);
+//        studentlayout = (LinearLayout) findViewById(R.id.studentlayout);
+//        llactionbar = (LinearLayout) findViewById(R.id.llactionbar);
+//        img_result = (ImageView) findViewById(R.id.img_result);
+//        img_result.setOnClickListener(this);
+//        img_elerning = (ImageView) findViewById(R.id.img_elerning);
+//        img_elerning.setOnClickListener(this);
+//        img_placement = (ImageView) findViewById(R.id.img_placement);
+//        img_placement.setOnClickListener(this);
+//        img_leave_app = (ImageView) findViewById(R.id.img_leave_app);
+//        img_leave_app.setOnClickListener(this);
 //        if (storage.read("emp_id", 3).equals("1716"))
 //        {
 //            img_dashboard.setVisibility(View.VISIBLE);
@@ -476,6 +609,53 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 //            {
 //            img_dashboard.setVisibility(View.INVISIBLE);
 //        }
+        /*student*/
+
+        this.llviewshide = (LinearLayout) findViewById(R.id.ll_views_hide);
+        this.fivell = (LinearLayout) findViewById(R.id.five_ll);
+        this.imgfeecircular = (ImageView) findViewById(R.id.img_feecircular);
+        this.ivmidexamtt = (ImageView) findViewById(R.id.iv_mid_exam_tt);
+        this.pendingfeesimg = (ImageView) findViewById(R.id.pending_fees_img);
+        this.studentlayout = (LinearLayout) findViewById(R.id.studentlayout);
+        this.imgfeedback = (ImageView) findViewById(R.id.imgfeedback);
+        this.imgdashboard = (ImageView) findViewById(R.id.img_dashboard);
+        this.txtfeedback = (TextView) findViewById(R.id.txtfeedback);
+        this.txtnews = (TextView) findViewById(R.id.txtnews);
+        this.imgnews = (ImageView) findViewById(R.id.imgnews);
+        this.feeslayout = (LinearLayout) findViewById(R.id.fees_layout);
+        this.assignmentimg = (ImageView) findViewById(R.id.assignment_img);
+        this.imgresult = (ImageView) findViewById(R.id.img_result);
+        this.txt1 = (TextView) findViewById(R.id.txt_1);
+        this.imgattendance = (ImageView) findViewById(R.id.imgattendance);
+        this.txtreceipt = (TextView) findViewById(R.id.txt_receipt);
+        this.llviewmore = (LinearLayout) findViewById(R.id.ll_view_more);
+        this.newiconll = (LinearLayout) findViewById(R.id.new_icon_ll);
+        this.imgleaveapp = (ImageView) findViewById(R.id.img_leave_app);
+        this.txtplacement = (TextView) findViewById(R.id.txt_placement);
+        this.imgplacement = (ImageView) findViewById(R.id.img_placement);
+        this.txterning = (TextView) findViewById(R.id.txt_erning);
+        this.imgnewannouncement = (ImageView) findViewById(R.id.img_new_announcement);
+        this.ivassignment = (ImageView) findViewById(R.id.iv_assignment);
+        this.textView6 = (TextView) findViewById(R.id.textView6);
+        this.imgtimetable = (ImageView) findViewById(R.id.imgtimetable);
+        this.ivlessionplan = (ImageView) findViewById(R.id.iv_lession_plan);
+        this.layout1 = (LinearLayout) findViewById(R.id.layout1);
+        this.textattendence = (TextView) findViewById(R.id.textattendence);
+        this.ivplacement = (ImageView) findViewById(R.id.iv_placement);
+        this.textfee = (TextView) findViewById(R.id.textfee);
+        this.ivatt = (ImageView) findViewById(R.id.iv_att);
+        this.iv_att = (ImageView) findViewById(R.id.iv_att);
+        this.imgprofile = (ImageView) findViewById(R.id.imgprofile);
+        imgprofile.setOnClickListener(this);
+        ivatt.setOnClickListener(this);
+        ivlessionplan.setOnClickListener(this);
+        ivplacement.setOnClickListener(this);
+        iv_att.setOnClickListener(this);
+        imgtimetable.setOnClickListener(this);
+        ivassignment.setOnClickListener(this);
+        ivlessionplan.setOnClickListener(this);
+        imgnewannouncement.setOnClickListener(this);
+
 
     }
 
@@ -486,35 +666,37 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             studentlayout.setVisibility(View.VISIBLE);
 
             //textfee.setText("Remaining Attendance");
-            textfee.setText("Pending Attendance");
+            //pppppppppp  textfee.setText("Pending Attendance");
 
 
             //imgfees.setImageDrawable(getResources().getDrawable(R.drawable.remainingattendance));
-            imgfees.setImageDrawable(getResources().getDrawable(R.drawable.panding));
+            //ppppppppppppppppp      imgfees.setImageDrawable(getResources().getDrawable(R.drawable.panding));
 
 
-            txtnews.setText("Leave");
+            //ppppppppppp       txtnews.setText("Leave");
             //imgnews.setImageDrawable(getResources().getDrawable(R.drawable.leave));
-            imgsyllabus.setImageDrawable(getResources().getDrawable(R.drawable.leave));
+            //pppppppppppppp     imgsyllabus.setImageDrawable(getResources().getDrawable(R.drawable.leave));
 
 
 //            txtfeedback.setText("Lecture \n Plan");
 //            imgfeedback.setImageDrawable(getResources().getDrawable(R.drawable.lectureplan));
             //imglessionplan.setImageDrawable(getResources().getDrawable(R.drawable.lectureplan));
-            imglessionplan.setImageDrawable(getResources().getDrawable(R.drawable.lessionplan));
+            //ppppppppppppppp       imglessionplan.setImageDrawable(getResources().getDrawable(R.drawable.lessionplan));
 
             //for  re arranging emp dashboard
             //imgnews.setImageDrawable(getResources().getDrawable(R.drawable.news));
-            imgnews.setVisibility(View.GONE);
-            img_elerning.setImageDrawable(getResources().getDrawable(R.drawable.news));
+            //        imgnews.setVisibility(View.GONE);
+            //       img_elerning.setImageDrawable(getResources().getDrawable(R.drawable.news));
             //img_placement.setImageDrawable(getResources().getDrawable(R.drawable.panding));
             nav_fees.setText("Pending Attendance");
             nav_fees.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.remaining_attendance, 0, 0, 0);
 
-            nav_news.setText("News");
+//            nav_news.setText("News");
+            nav_news.setText("Announcement");
             nav_news.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.news, 0, 0, 0);
 
-            nav_feedback.setText("Lession Plan");
+//            nav_feedback.setText("Lession Plan");
+            nav_feedback.setText("Lesson Plan");
             nav_feedback.setCompoundDrawablesWithIntrinsicBounds(R.mipmap.lesson_plan, 0, 0, 0);
 
             // nav_lessionplan.setText("Pending Attendance");
@@ -526,10 +708,10 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             nav_logout.setVisibility(View.VISIBLE);
 
 
-            imgattendance.setVisibility(View.GONE);
-            receipt_img.setImageDrawable(getResources().getDrawable(R.drawable.attendance));
-            five_ll.setVisibility(View.GONE);
-            img_feecircular.setVisibility(View.INVISIBLE);
+            //pppppppppppppp   imgattendance.setVisibility(View.GONE);
+            //ppppppppppppppppppppp  receipt_img.setImageDrawable(getResources().getDrawable(R.drawable.attendance));
+            //pppppppppppppp      five_ll.setVisibility(View.GONE);
+            //         img_feecircular.setVisibility(View.INVISIBLE);
             nav_assignment.setVisibility(View.GONE);
             nav_syllabus.setVisibility(View.GONE);
             nav_pending_fees.setVisibility(View.GONE);
@@ -543,38 +725,38 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             nav_placement.setVisibility(View.GONE);
 
             nav_fee_circular.setVisibility(View.GONE);
-            img_leave_app.setVisibility(View.INVISIBLE);
-            img_placement.setVisibility(View.INVISIBLE);
+            //       img_leave_app.setVisibility(View.INVISIBLE);
+            //       img_placement.setVisibility(View.INVISIBLE);
             //img_elerning.setVisibility(View.GONE);
 
             imgfeedback.setVisibility(View.GONE);
-            if (storage.read("emp_id", 3).equals("1716")) {
-                img_dashboard.setVisibility(View.VISIBLE);
-                img_dashboard.setImageDrawable(getResources().getDrawable(R.drawable.dashboard_2));
-//                img_dashboard.setPadding(0,0,15,0);
-                nav_logout.setVisibility(View.INVISIBLE);
-                imgexam_tt.setVisibility(View.GONE);
-            }
+//            if (storage.read("emp_id", 3).equals("1716")) {
+//                img_dashboard.setVisibility(View.VISIBLE);
+//                img_dashboard.setImageDrawable(getResources().getDrawable(R.drawable.dashboard_2));
+////                img_dashboard.setPadding(0,0,15,0);
+//                nav_logout.setVisibility(View.INVISIBLE);
+//                imgexam_tt.setVisibility(View.GONE);
+//            }
 
         } else if (storage.CheckLogin("stud_id", this)) {
-            assignment_img.setVisibility(View.VISIBLE);
-            pending_fees_img.setVisibility(View.GONE);
-            img_feecircular.setVisibility(View.GONE);
-            imgexam_tt.setVisibility(View.GONE);
-            img_dashboard.setVisibility(View.VISIBLE);
-
-            img_dashboard.setImageDrawable(getResources().getDrawable(R.drawable.activity_icon));
-//                imgfeedback.setVisibility(View.VISIBLE);
-            nav_feedback.setVisibility(View.GONE);
-            nav_news.setVisibility(View.VISIBLE);
-            nav_logout.setVisibility(View.VISIBLE);
-            imgfeedback.setVisibility(View.VISIBLE);
-            imgfeedback.setImageDrawable(getResources().getDrawable(R.drawable.homework_icon_2));
-            img_result.setVisibility(View.VISIBLE);
-            five_ll.setVisibility(View.VISIBLE);
+//            assignment_img.setVisibility(View.VISIBLE);
+//            pending_fees_img.setVisibility(View.GONE);
+//            img_feecircular.setVisibility(View.GONE);
+//            imgexam_tt.setVisibility(View.GONE);
+//            img_dashboard.setVisibility(View.VISIBLE);
+//
+//            img_dashboard.setImageDrawable(getResources().getDrawable(R.drawable.activity_icon));
+////                imgfeedback.setVisibility(View.VISIBLE);
+//            nav_feedback.setVisibility(View.GONE);
+//            nav_news.setVisibility(View.VISIBLE);
+//            nav_logout.setVisibility(View.VISIBLE);
+//            imgfeedback.setVisibility(View.VISIBLE);
+//            imgfeedback.setImageDrawable(getResources().getDrawable(R.drawable.homework_icon_2));
+//            img_result.setVisibility(View.VISIBLE);
+//            five_ll.setVisibility(View.VISIBLE);
         } else {
             nav_logout.setVisibility(View.VISIBLE);
-            img_dashboard.setVisibility(View.GONE);
+            ///pppppppp    img_dashboard.setVisibility(View.GONE);
 
         }
     }
@@ -734,7 +916,21 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imgprofile:
+
                 Intent intent = new Intent(Main3Activity.this, Profile.class);
+                //Intent intent = new Intent(Main3Activity.this, ELearningActivity.class);
+
+                // ActivityOptions options =
+//                        ActivityOptions.makeCustomAnimation(Main3Activity.this, R.anim.fade_in, R.anim.fade_out);
+                ActivityOptions.makeCustomAnimation(Main3Activity.this, R.anim.righttoleft, R.anim.righttoleft);
+//                        ActivityOptions.makeCustomAnimation(Main3Activity.this, R.anim.bounce, R.anim.bounce);
+                //   startActivity(intent, options.toBundle());
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+                break;  case R.id.imgprofile_emp:
+
+                 intent = new Intent(Main3Activity.this, Profile.class);
                 //Intent intent = new Intent(Main3Activity.this, ELearningActivity.class);
 
                 // ActivityOptions options =
@@ -785,13 +981,68 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
                 break;
 
-            case R.id.img_leave_app:
-                Intent intent_leave_app = new Intent(Main3Activity.this, Leaveapplication.class);
+                case R.id.img_Moreapp:
+
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+                    /*Staff link : http://online.jau.in/mobileapp/staff/index.php?uid=AGRI1560
+Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
+                    Intent intent_place = new Intent(Main3Activity.this, MoreApplication.class);
+                    intent_place.putExtra("url","http://online.jau.in/mobileapp/students/index.php?uid=2010457852");
+                    startActivity(intent_place);
+                } else {
+                    Intent intent_place = new Intent(Main3Activity.this, MoreApplication.class);
+                    intent_place.putExtra("url","http://online.jau.in/mobileapp/staff/index.php?uid=AGRI1560");
+                    startActivity(intent_place);
+                }
+
+                break; case R.id.nav_more:
+
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+                    /*Staff link : http://online.jau.in/mobileapp/staff/index.php?uid=AGRI1560
+Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
+                    Intent intent_place = new Intent(Main3Activity.this, MoreApplication.class);
+                    intent_place.putExtra("url","http://online.jau.in/mobileapp/students/index.php?uid=2010457852");
+                    startActivity(intent_place);
+                } else {
+                    Intent intent_place = new Intent(Main3Activity.this, MoreApplication.class);
+                    intent_place.putExtra("url","http://online.jau.in/mobileapp/staff/index.php?uid=AGRI1560");
+                    startActivity(intent_place);
+                }
+
+                break;
+  case R.id.img_Moreapp_emp:
+
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+                    /*Staff link : http://online.jau.in/mobileapp/staff/index.php?uid=AGRI1560
+Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
+                    Intent intent_place = new Intent(Main3Activity.this, MoreApplication.class);
+                    intent_place.putExtra("url","http://online.jau.in/mobileapp/students/index.php?uid=2010457852");
+                    startActivity(intent_place);
+                } else {
+                    Intent intent_place = new Intent(Main3Activity.this, MoreApplication.class);
+                    intent_place.putExtra("url","http://online.jau.in/mobileapp/staff/index.php?uid=AGRI1560");
+                    startActivity(intent_place);
+                }
+
+                break;
+
+//            case R.id.img_leave_app:
+//                Intent intent_leave_app = new Intent(Main3Activity.this, Leaveapplication.class);
+//                startActivity(intent_leave_app);
+//                overridePendingTransition(R.anim.enter, R.anim.exit);
+//                break;
+
+            case R.id.iv_leave_app_emp:
+//                Intent intent_leave_app = new Intent(Main3Activity.this, Leaveapplication.class);
+                Intent intent_leave_app = new Intent(Main3Activity.this, Leave_emp.class);
+                startActivity(intent_leave_app);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+                break;  case R.id.nav_lleave:
+//                Intent intent_leave_app = new Intent(Main3Activity.this, Leaveapplication.class);
+                 intent_leave_app = new Intent(Main3Activity.this, Leave_emp.class);
                 startActivity(intent_leave_app);
                 overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
-
-
             case R.id.img_feecircular:
                 Intent intent_img_feecircular = new Intent(Main3Activity.this, FeeCircularActivity.class);
                 intent_img_feecircular.putExtra("fc_file", String.valueOf(storage.read("fc_file", 3)));
@@ -876,9 +1127,13 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.imgtimetable:
                 startActivity(new Intent(Main3Activity.this, Timetable.class));
                 overridePendingTransition(R.anim.enter, R.anim.exit);
+                break; case R.id.imgtimetable_emp:
+                startActivity(new Intent(Main3Activity.this, Timetable.class));
+                overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
             case R.id.imgattendance:
+//            case R.id.iv_att:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     Intent intentattendance = new Intent(Main3Activity.this, Syllabus.class);
                     startActivity(intentattendance);
@@ -888,7 +1143,34 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                     startActivity(intentattendance);
                     overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
+
+
+            case R.id.imgsyllabus:
+//            case R.id.iv_att:
+               // if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+                    Intent intentattendance = new Intent(Main3Activity.this, Syllabus.class);
+                    startActivity(intentattendance);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+              //  }
+//                else {
+//                    Intent intentattendance = new Intent(Main3Activity.this, EmployeeAttendance.class);
+//                    startActivity(intentattendance);
+//                    overridePendingTransition(R.anim.enter, R.anim.exit);
+//                }
+
+                break; case R.id.imgattendance_emp:
+//            case R.id.iv_att:
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+                     intentattendance = new Intent(Main3Activity.this, Syllabus.class);
+                    startActivity(intentattendance);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                } else {
+                     intentattendance = new Intent(Main3Activity.this, EmployeeAttendance.class);
+                    startActivity(intentattendance);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                }
                 break;
+
 
             case R.id.imgfees:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
@@ -911,25 +1193,71 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                     intentimgnews.putExtra("type", "news");
                     startActivity(intentimgnews);
                     overridePendingTransition(R.anim.enter, R.anim.exit);
+                }case R.id.img_new_announcement:
+
+                if (storage.CheckLogin("emp_id", Main3Activity.this)) {
+                    Intent intentimgnews = new Intent(Main3Activity.this, NewsGroupWise.class);
+                    startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                }
+                else {
+                    Intent intentimgnews = new Intent(Main3Activity.this, Notification_Activity.class);
+                    intentimgnews.putExtra("type", "news");
+                    startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
 
 
-                break;
-
-            case R.id.imgsyllabus:
+                break;  case R.id.imgnews_emp:
 
                 if (storage.CheckLogin("emp_id", Main3Activity.this)) {
-                    Intent intentimgnews = new Intent(Main3Activity.this, Leave_emp.class);
+                    Intent intentimgnews = new Intent(Main3Activity.this, NewsGroupWise.class);
                     startActivity(intentimgnews);
                     overridePendingTransition(R.anim.enter, R.anim.exit);
                 } else {
-                    Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_Attendance.class);
-                    startActivity(intentimgsyllabus);
+                    Intent intentimgnews = new Intent(Main3Activity.this, Notification_Activity.class);
+                    intentimgnews.putExtra("type", "news");
+                    startActivity(intentimgnews);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
                 }
+
 
                 break;
 
-            case R.id.assignment_img:
+
+
+
+//            case R.id.imgsyllabus:
+//
+//                if (storage.CheckLogin("emp_id", Main3Activity.this)) {
+//                    Intent intentimgnews = new Intent(Main3Activity.this, Leave_emp.class);
+//                    startActivity(intentimgnews);
+//                    overridePendingTransition(R.anim.enter, R.anim.exit);
+//                }
+//
+//                else {
+//                    Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_Attendance.class);
+//                    startActivity(intentimgsyllabus);
+//                }
+//
+//                break;
+   case R.id.iv_att:
+
+//                if (storage.CheckLogin("emp_id", Main3Activity.this)) {
+//                    Intent intentimgnews = new Intent(Main3Activity.this, Leave_emp.class);
+//                    startActivity(intentimgnews);
+//                    overridePendingTransition(R.anim.enter, R.anim.exit);
+//                }
+//
+//                else {
+                    Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_Attendance.class);
+                    startActivity(intentimgsyllabus);
+               // }
+
+                break;
+
+//            case R.id.assignment_img:
+            case R.id.iv_assignment:
                 Intent intent_ass_img = new Intent(Main3Activity.this, AssignmentActivity.class);
                 startActivity(intent_ass_img);
                 overridePendingTransition(R.anim.enter, R.anim.exit);
@@ -964,9 +1292,15 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 break;
 
 
+//            case R.id.nav_placement:
             case R.id.nav_placement:
                 Intent intent1 = new Intent(Main3Activity.this, PlacementActivity.class);
                 startActivity(intent1);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+                break;
+            case R.id.iv_placement:
+                Intent intent21 = new Intent(Main3Activity.this, PlacementActivity.class);
+                startActivity(intent21);
                 overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
@@ -982,7 +1316,28 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
+
+                case R.id.img_leave_app:
+                 intent3 = new Intent(Main3Activity.this, Leaveapplication.class);
+                startActivity(intent3);
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+                break;
+
+
+
             case R.id.imglessionplan:
+                if (storage.CheckLogin("emp_id", Main3Activity.this)) {
+                    Intent imgfeedback = new Intent(Main3Activity.this, NewEmpLectPlan.class);
+                    //Intent imgfeedback = new Intent(Main3Activity.this, FacultyAttendance.class);
+                    startActivity(imgfeedback);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                } else {
+                    Intent imglessionplan = new Intent(Main3Activity.this, NewEmpLectPlan.class);
+                    startActivity(imglessionplan);
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                }
+                break;
+ case R.id.iv_lession_plan:
                 if (storage.CheckLogin("emp_id", Main3Activity.this)) {
                     Intent imgfeedback = new Intent(Main3Activity.this, NewEmpLectPlan.class);
                     //Intent imgfeedback = new Intent(Main3Activity.this, FacultyAttendance.class);
@@ -1046,11 +1401,11 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
             case R.id.nav_attendance:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
-                    Intent intentattendance = new Intent(Main3Activity.this, Student_Attendance.class);
+                     intentattendance = new Intent(Main3Activity.this, Student_Attendance.class);
                     overridePendingTransition(R.anim.slide_up, R.anim.blink);
                     startActivity(intentattendance);
                 } else {
-                    Intent intentattendance = new Intent(Main3Activity.this, EmployeeAttendance.class);
+                     intentattendance = new Intent(Main3Activity.this, EmployeeAttendance.class);
                     startActivity(intentattendance);
                     overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
@@ -1065,6 +1420,18 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                     overridePendingTransition(R.anim.slide_up, R.anim.blink);
                 }
                 break;
+
+            case R.id.iv_rem_att:
+
+                if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+//                    startActivity(new Intent(Main3Activity.this, Fees_Activity.class));
+//                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
+                } else {
+                    startActivity(new Intent(Main3Activity.this, FacultyAttendance.class));
+                    overridePendingTransition(R.anim.slide_up, R.anim.blink);
+                }
+                break;
+
 
             case R.id.nav_news:
 //                if (storage.CheckLogin("emp_id", Main3Activity.this)) {

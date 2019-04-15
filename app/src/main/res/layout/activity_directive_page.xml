@@ -344,7 +344,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="0.3"
                             android:paddingLeft="9dp"
-                            android:text="Lession Status"
+                            android:text="Lesson Status"
                             android:textColor="#FFED7CA3"
                             android:textSize="12dp"
                             android:textStyle="bold" />
