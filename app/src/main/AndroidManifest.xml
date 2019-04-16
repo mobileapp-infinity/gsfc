@@ -15,18 +15,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="com.markattendence.markattendence.permission.C2D_MESSAGE" />
 
-    <!--<application-->
-        <!--android:name=".app.App"-->
-        <!--android:allowBackup="true"-->
-        <!--android:hardwareAccelerated="true"-->
-        <!--android:icon="@drawable/logo"-->
-        <!--android:label="@string/app_name"-->
-        <!--android:largeHeap="true"-->
-        <!--android:supportsRtl="true"-->
-        <!--android:theme="@style/AppTheme">-->
-
     <application
-
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/jau_launcher"
@@ -34,6 +23,14 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.EmployeeFillAttendanceActivity">
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.infinity.infoway.agriculture.fileprovider"
@@ -42,10 +39,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
-        </provider>
-
-    <!--    <activity android:name=".activity.SplashScreen"> -->
-
+        </provider> <!-- <activity android:name=".activity.SplashScreen"> -->
         <activity android:name=".activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,26 +47,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
         <activity android:name=".activity.Acollspan">
-           <!-- <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-
-
-
-       <!-- <activity android:name=".activity.FacultyAttendance">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+            -->
+        </activity>
+        <!--
+ <activity android:name=".activity.FacultyAttendance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
@@ -89,10 +82,10 @@
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.Remaining_Attendance"
-            android:theme="@style/MyMaterialTheme.Base" /> <activity
+            android:theme="@style/MyMaterialTheme.Base" />
+        <activity
             android:name=".activity.MoreApplication"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.Notification_Activity"
             android:theme="@style/MyMaterialTheme.Base">
@@ -130,29 +123,17 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 <action android:name="com.google.c2dm.intent.RECEIVE" />
             </intent-filter>
-        </service>
-
-        <!-- <receiver -->
+        </service> <!-- <receiver -->
         <!-- android:name="com.google.android.gcm.GCMBroadcastReceiver" -->
         <!-- android:permission="com.google.android.c2dm.permission.SEND"> -->
-
-
         <!-- <intent-filter> -->
-
-
         <!-- &lt;!&ndash; Receives the actual messages. &ndash;&gt; -->
         <!-- <action android:name="com.google.android.c2dm.intent.RECEIVE"/> -->
         <!-- &lt;!&ndash; Receives the registration id. &ndash;&gt; -->
         <!-- <action android:name="com.google.android.c2dm.intent.REGISTRATION"/> -->
-
-
         <!-- <category android:name="com.markattendence.markattendence"/> -->
-
-
         <!-- </intent-filter> -->
         <!-- </receiver> -->
-
-
         <!--
      Set custom default icon. This is used when no icon is set for incoming notification messages.
      See README(
@@ -167,9 +148,7 @@
         -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorAccent" />
-
-        <!-- <receiver -->
+            android:resource="@color/colorAccent" /> <!-- <receiver -->
         <!-- android:name=".app.NotificationReceiver" -->
         <!-- android:exported="true" -->
         <!-- android:permission="com.google.android.c2dm.permission.SEND"> -->
@@ -177,15 +156,11 @@
         <!-- <action android:name="com.google.android.c2dm.intent.RECEIVE" /> -->
         <!-- </intent-filter> -->
         <!-- </receiver> -->
-
-
         <!-- <service -->
         <!-- android:name=".service.Background_Service" -->
         <!-- android:enabled="true" -->
         <!-- android:exported="true" -->
         <!-- android:stopWithTask="false" /> -->
-
-
         <!-- <receiver -->
         <!-- android:name=".app.AutoStartNotifyReceiver" -->
         <!-- android:enabled="true" -->
@@ -194,12 +169,9 @@
         <!-- android:permission="android.permission.RECEIVE_BOOT_COMPLETED"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
-
-
         <!-- <category android:name="android.intent.category.DEFAULT" /> -->
         <!-- </intent-filter> -->
         <!-- </receiver> -->
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/logo" />
@@ -291,8 +263,9 @@
         <activity
             android:name=".activity.FacultyAttendance"
             android:theme="@style/MyMaterialTheme.Base" />
-        <activity android:name=".activity.FillAttendanceActivityfaculty"
-            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".activity.FillAttendanceActivityfaculty"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

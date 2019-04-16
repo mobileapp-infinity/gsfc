@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_fill"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_main_student_fetch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="horizontal"
+
+        android:weightSum="4">
+
+        <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            android:id="@+id/txt_sr_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:padding="5dp" android:textColor="@color/black"
+            android:text="1." />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/grey" />
+
+        <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            android:id="@+id/txt_stud_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:text="Nirali pansuriya" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/grey" />
+
+        <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            android:id="@+id/txt_enroll_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:gravity="center"
+            android:padding="5dp"
+android:textColor="@color/black"
+            android:text="114580" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/grey" />
+
+        <CheckBox
+            android:id="@+id/cb_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:gravity="center"
+
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey" />
+
+</LinearLayout>

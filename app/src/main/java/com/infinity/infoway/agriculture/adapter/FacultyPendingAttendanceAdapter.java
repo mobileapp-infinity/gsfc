@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.infinity.infoway.agriculture.R;
+import com.infinity.infoway.agriculture.activity.EmployeeFillAttendanceActivity;
 import com.infinity.infoway.agriculture.activity.FillAttendanceActivityfaculty;
 import com.infinity.infoway.agriculture.model.FacultyPojo;
 
@@ -105,7 +106,8 @@ public class FacultyPendingAttendanceAdapter extends BaseAdapter
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(ctx, FillAttendanceActivityfaculty.class);
+             //ppppppppppppppppppppppppppppppp   Intent intent = new Intent(ctx, FillAttendanceActivityfaculty.class);
+                Intent intent = new Intent(ctx, EmployeeFillAttendanceActivity.class);
                 intent.putExtra("data",facultyPojo.getTable().get(i));
                 ctx.startActivity(intent);
             }

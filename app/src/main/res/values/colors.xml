@@ -12,17 +12,27 @@
     <color name="footer_agree">#2a3f54</color>
     <color name="btn_color">#0d8d73</color>
     <color name="tab">#f5f7e4</color>
+    <color name="method1">#10292E</color>
+    <color name="column">#106466</color>
+    <color name="method2">#50203A</color>
+    <color name="header_stud">#283B57</color>
     <color name="present">#043b39</color>
+    <color name="absn">#F4976C</color>
+    <color name="prsnt">#303C6C</color>
+    <color name="allpresent">#A8D1E7</color>
+    <color name="remaining_">#3B8BEA</color>
     <color name="absent">#08bdd3 </color>
     <color name="remaining">#fc4444</color>
     <color name="suspend">#13a76b</color>
     <color name="holiday">#8839b1</color>
     <color name="colorAccent1">#D67500</color>
     <color name="white">#FFFFFF</color>
+    <color name="orange_attendance">#DD5C4C</color>
     <color name="background">#F2E4F0</color>
     <color name="backgroundpink">#FFEFFA</color>
     <color name="black">#000000</color>
     <color name="loginscreen">#c96f1f</color>
+    <color name="bg_fill">#F2F5F8</color>
     <color name="lightblue">#4d7db3</color>
     <color name="loginscreendark">#c95f00</color>
     <color name="orange">#D67500</color>
@@ -97,4 +107,5 @@
     <color name="sy9">#A6A6A6</color>
     <color name="darksy9">#686868</color>
     <color name="syheader">#333333</color>
+    <color name="light_yello">#F4F9E5</color>
 </resources>

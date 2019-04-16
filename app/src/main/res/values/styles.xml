@@ -123,4 +123,9 @@
         <item name="android:textColor">@color/orange</item>
         <item name="android:textStyle">normal</item>
     </style>
+
+    <style name="CustomAppTheme" parent="Theme.AppCompat">
+        <item name="android:textColorPrimaryDisableOnly">@color/light_yello</item>
+        <item name="colorAccent">@color/orange_attendance</item>
+    </style>
 </resources>
