@@ -9,7 +9,7 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Date"
@@ -17,7 +17,7 @@
             android:paddingLeft="5dp"
             android:layout_weight="1" />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Name"

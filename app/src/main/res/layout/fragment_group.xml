@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
         tools:listitem="@layout/list_lecture"/>
-   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
         android:id="@+id/tvnorecord"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

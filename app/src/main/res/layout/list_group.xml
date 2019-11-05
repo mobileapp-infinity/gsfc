@@ -6,7 +6,7 @@
     android:orientation="horizontal"
     android:weightSum="2">
 
-   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
         android:id="@+id/collage_name"
         android:layout_width="0dp"
         android:layout_height="match_parent"

@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+
+    android:padding="7dp"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,71 +19,72 @@
         android:padding="3dp">
 
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="2dp"
-            android:textSize="12dp"
+       android:textSize="@dimen/text_size_u"
             android:id="@+id/txt_date"
             android:textColor="@color/footer_"
             android:text=""/>
 
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/footer_"
             android:padding="2dp"
-            android:textSize="12dp"
-            android:id="@+id/txt_sem"
+           android:textSize="@dimen/text_size_u"
+           android:id="@+id/txt_sem"
             android:text=""/>
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/footer_"
             android:padding="2dp"
-            android:textSize="12dp"
-            android:id="@+id/txt_a_bx"
+           android:textSize="@dimen/text_size_u"
+           android:id="@+id/txt_a_bx"
             android:text=""/>
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/footer_"
             android:padding="2dp"
-            android:textSize="12dp"
-            android:id="@+id/txt_sub"
+           android:textSize="@dimen/text_size_u"
+           android:id="@+id/txt_sub"
             android:text=""/>
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/footer_"
             android:padding="2dp"
-            android:textSize="12dp"
-            android:id="@+id/txt_lect"
+           android:textSize="@dimen/text_size_u"
+           android:id="@+id/txt_lect"
             android:text=""/>
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/footer_"
             android:padding="2dp"
             android:visibility="gone"
-            android:textSize="12dp"
-            android:text=""/>
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           android:textSize="@dimen/text_size_u"
+           android:text=""/>
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/footer_"
             android:padding="2dp"
-            android:textSize="12dp"
-            android:id="@+id/txt_class"
+           android:textSize="@dimen/text_size_u"
+           android:id="@+id/txt_class"
             android:text=""/>
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:text="Fill Attendance"
             android:layout_margin="5dp"
             android:padding="8dp"
-            android:id="@+id/txt_fill_attendance"
+           android:textSize="@dimen/text_size_u"
+           android:id="@+id/txt_fill_attendance"
             android:textColor="@color/white"
             android:background="@drawable/bg_child_collage_dispaly"
             android:layout_gravity="center|right"

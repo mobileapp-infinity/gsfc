@@ -46,7 +46,7 @@
                 </LinearLayout>
 
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/sub_name_exam_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tvstarttime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                         android:visibility="gone"
                         android:textColor="@color/white" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
@@ -91,7 +91,7 @@
                         android:visibility="gone"
                         android:textColor="@color/white" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv_date_exam_detail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
                 android:layout_height="40dp"
                 android:background="@color/attendance"
                 android:layout_weight="4">
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:text="Total Marks :"
@@ -122,7 +122,7 @@
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:layout_weight=".6"/>
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
@@ -133,7 +133,7 @@
                     android:layout_weight="1.4"/>
 
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -144,7 +144,7 @@
                     android:textSize="13dp"
                     android:textStyle="bold" />
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="35dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -162,7 +162,7 @@
                 android:background="@color/attendance"
                 android:orientation="horizontal"
                 >
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13dp"
@@ -171,7 +171,7 @@
                     android:layout_weight=".4"
                     android:textColor="@color/white"
                     android:text="Start Time :"/>
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
@@ -182,7 +182,7 @@
                     android:textColor="@color/black"
                     />
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13dp"
@@ -191,7 +191,7 @@
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:text="End Time :"/>
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12dp"
@@ -207,7 +207,7 @@
                     android:visibility="gone"
                     android:layout_height="wrap_content">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"

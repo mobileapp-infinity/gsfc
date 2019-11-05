@@ -10,7 +10,7 @@
         android:orientation="horizontal"
         android:weightSum="3">
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Date"
@@ -20,7 +20,7 @@
             android:paddingLeft="5dp"
             android:layout_weight="1" />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Name"
@@ -29,7 +29,7 @@
             android:id="@+id/day_next_holiday"
             android:layout_weight="1" />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Number"

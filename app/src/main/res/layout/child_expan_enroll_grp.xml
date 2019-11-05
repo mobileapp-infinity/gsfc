@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="2dp"
+            android:orientation="horizontal">
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Description  :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/Font_size_large" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/tv_desc_enroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/footer_"
+                android:textSize="@dimen/Font_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/tv_click_enroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="Click to Enroll"
+                android:textColor="@color/pink"
+                android:textSize="@dimen/Font_size_large" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/tv_click_decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dp"
+
+                android:text="Click to Decline"
+
+                android:textColor="@color/pink"
+                android:textSize="@dimen/Font_size_large" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

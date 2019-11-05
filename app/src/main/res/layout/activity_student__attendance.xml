@@ -30,11 +30,11 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Attendance"
+                    android:text="My Attendance"
                     android:layout_marginLeft="10dp"
                     android:textSize="17sp"
                     android:textColor="@color/black" />
@@ -76,7 +76,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_weight="1">
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="S:-suspend"
@@ -86,7 +86,7 @@
                     android:textColor="@color/green"
                     android:layout_weight="1"/>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="0dp"
                     android:text="H:-holiday"
                     android:textSize="15dp"
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:weightSum="2"
                 android:layout_weight="1">
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:text="A:-absent"
@@ -112,7 +112,7 @@
                     android:textColor="@color/green"
                     android:layout_weight="1"/>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="0dp"
                     android:text="P:-present"
                     android:textSize="15dp"
@@ -129,7 +129,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="213dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -174,7 +174,7 @@
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/calendar" />
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/tvFromDate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -185,7 +185,7 @@
 
             </LinearLayout>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomButton
+           <com.infinity.infoway.gsfc.CommonCls.CustomButton
                 android:id="@+id/btnviewattendance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -198,7 +198,7 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -225,7 +225,7 @@
                     android:layout_height="30dp"
                     android:src="@drawable/calendar" />
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/tvToDate"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -261,7 +261,7 @@
                     android:background="@color/fees">
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/textView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -271,7 +271,7 @@
                         android:textSize="18dp" />
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:text="1"
@@ -283,7 +283,7 @@
 
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:text="2"
@@ -294,7 +294,7 @@
                         android:layout_weight="1" />
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:text="3"
@@ -305,7 +305,7 @@
                         android:textColor="@android:color/white"/>
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:text="4"
@@ -316,7 +316,7 @@
                         android:textColor="@android:color/white"/>
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:text="5"
@@ -326,7 +326,7 @@
                         android:gravity="center"
                         android:textColor="@android:color/white"/>
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp"
                         android:text="6"
@@ -336,7 +336,7 @@
                         android:gravity="center"
                         android:textColor="@android:color/white"/>
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -347,7 +347,7 @@
                         android:textColor="@android:color/white"
                         android:textSize="18dp" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent" android:layout_height="wrap_content"
                         android:textSize="18dp" android:text="8"
                         android:layout_weight="1"

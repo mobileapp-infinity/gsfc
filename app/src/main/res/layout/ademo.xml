@@ -19,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:id="@+id/page_nme"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/footer_agree"
                 android:height="300dp"
 
-               app:layout_collapseMode="pin"></com.infinity.infoway.agriculture.CommonCls.CustomTextView>
+               app:layout_collapseMode="pin"></com.infinity.infoway.gsfc.CommonCls.CustomTextView>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/z_toolbar"
                 android:layout_width="match_parent"
@@ -60,11 +60,11 @@
             android:gravity="center"
             android:orientation="vertical"
             android:paddingBottom="20dp">
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:id="@+id/coupons_lst"
                 android:layout_width="match_parent"
                 android:visibility="gone"
-               android:layout_height="match_parent"></com.infinity.infoway.agriculture.CommonCls.CustomTextView>
+               android:layout_height="match_parent"></com.infinity.infoway.gsfc.CommonCls.CustomTextView>
             <LinearLayout
 
                 android:id="@+id/layout1"
@@ -91,7 +91,7 @@
                         android:layout_height="120dp"
                         android:src="@drawable/profile" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                         android:layout_height="90dp"
                         android:src="@drawable/fees" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                         android:id="@+id/textfee"
                         android:layout_width="80dp"
@@ -143,7 +143,7 @@
                         android:layout_height="90dp"
                         android:src="@drawable/fee_rec" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/textattendence"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -184,7 +184,7 @@
                             android:layout_height="90dp"
                             android:src="@drawable/attendance" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Syllabus"
@@ -207,7 +207,7 @@
                             android:src="@drawable/timetable" />
 
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -232,7 +232,7 @@
                             android:layout_height="90dp"
                             android:src="@drawable/lessionplan" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -271,7 +271,7 @@
                         android:src="@drawable/img_elerning"
                         android:visibility="visible" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/txt_erning"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -290,7 +290,7 @@
                     android:orientation="vertical">
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/txt_placement"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -325,7 +325,7 @@
                         android:src="@drawable/img_leave_app"
                         android:visibility="visible" />
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Class &#10; Work"
@@ -348,7 +348,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:src="@drawable/down_arrow"/>
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -382,7 +382,7 @@
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:id="@+id/txt_receipt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -408,7 +408,7 @@
                         android:orientation="vertical">
 
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:id="@+id/txt_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -444,7 +444,7 @@
                             android:src="@drawable/assignment"
                             android:visibility="gone" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Class &#10; Work"
@@ -479,7 +479,7 @@
                             android:src="@drawable/news"
                             android:visibility="visible" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:id="@+id/txtnews"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -498,7 +498,7 @@
                         android:orientation="vertical">
 
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:id="@+id/txtfeedback"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -533,7 +533,7 @@
                             android:src="@drawable/activity_icon"
                             android:visibility="gone" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Class &#10; Work"
@@ -567,7 +567,7 @@
                             android:src="@drawable/pendingfeesicon"
                             android:visibility="visible" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Class &#10; Work"
@@ -592,7 +592,7 @@
                             android:src="@drawable/exam_tt"
                             android:visibility="visible" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="MidExamTimeTable"
@@ -617,7 +617,7 @@
                             android:src="@drawable/feecircular"
                             android:visibility="visible" />
 
-                       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Class &#10; Work"

@@ -34,7 +34,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -84,7 +84,7 @@
                     android:textColorHint="@color/btn_color">
 
 
-                    <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                    <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                         android:id="@+id/etname"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
                     android:textColorHint="@color/orange">
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                   <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                         android:id="@+id/etemail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
 
                     android:visibility="gone">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                   <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                         android:id="@+id/etwebsite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
                     android:textColorHint="@color/orange">
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                   <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                         android:id="@+id/etmobile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
                     android:backgroundTint="@color/orange"
                     android:textColorHint="@color/orange">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                   <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                         android:id="@+id/etmessage"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
@@ -200,7 +200,7 @@
                 android:orientation="vertical">
 
 
-                <com.infinity.infoway.agriculture.CommonCls.CustomButton
+                <com.infinity.infoway.gsfc.CommonCls.CustomButton
                     android:id="@+id/btnsubmit"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"

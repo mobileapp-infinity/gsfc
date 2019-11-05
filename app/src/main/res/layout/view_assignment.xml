@@ -22,7 +22,7 @@
             android:background="@color/attendance"
             android:layout_height="wrap_content">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:id="@+id/subname1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

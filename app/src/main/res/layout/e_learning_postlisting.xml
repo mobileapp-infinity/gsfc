@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/light_yello"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/footer_agree"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:titleTextColor="@color/green">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical">
+
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="E-Learning-Manage Post"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_u_small" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ll_elerning"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border_cat_main_bg_transperant"
+            android:queryHint="Search by Post"></SearchView>
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/search"
+            android:divider="@null"
+            android:dividerHeight="10dp"></ListView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add_black_24dp"
+            app:backgroundTint="@color/gy_btn" />
+    </RelativeLayout>
+
+
+    <!-- <LinearLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dp"
+         android:orientation="horizontal">
+         <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Group Name"
+             android:textColor="@color/black"
+             android:textSize="@dimen/text_size_u" />
+         <com.infinity.infoway.agriculture.CommonCls.CustomBoldTextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text=" *"
+             android:textColor="@color/red"
+             android:textSize="@dimen/Font_size" />
+     </LinearLayout>
+ <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+     android:layout_width="match_parent"
+     android:layout_margin="5dp"
+     android:background="@drawable/border_cat_main_bg_transperant"
+     android:layout_height="wrap_content" />-->
+
+</LinearLayout>

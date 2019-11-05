@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.infinity.infoway.agriculture.activity.Remaining_Attendance">
+    tools:context="com.infinity.infoway.gsfc.activity.Remaining_Attendance">
 
 
     <android.support.design.widget.AppBarLayout
@@ -31,7 +31,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

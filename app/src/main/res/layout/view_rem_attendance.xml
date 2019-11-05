@@ -28,7 +28,7 @@
                     android:background="@mipmap/attendance"/>
             </LinearLayout>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:id="@+id/txtdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,149 +54,149 @@
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Course Name"
-                android:layout_weight="0.50"
-                android:padding="5dp"
-                android:layout_marginLeft="5dp"
-                />
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textStyle="bold"
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
-                />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Course Name"
+                    android:layout_weight="0.50"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    />
+
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textStyle="bold"
+
+                    />
 
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/txtcoursename"
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/txtcoursename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:layout_weight="0.50"
+                    android:layout_marginLeft="5dp"
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="--"
-                android:layout_weight="0.50"
-                android:layout_marginLeft="5dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-                />
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sem Name"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"
+                    android:layout_weight="0.50"
+                    />
+
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textStyle="bold"
+                    />
 
 
-        </LinearLayout>
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/txtsemname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:layout_weight="0.50"
+                    android:layout_marginLeft="5dp"
+
+                    />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            </LinearLayout>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
 
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sem Name"
-                android:layout_marginLeft="5dp"
-                android:padding="5dp"
-                android:layout_weight="0.50"
-               />
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textStyle="bold"
-                />
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Division"
+                    android:layout_weight="0.50"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"/>
+
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textStyle="bold"
+                    />
 
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/txtsemname"
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/txtDivision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:text="--"
+                    android:layout_marginLeft="5dp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="--"
-                android:layout_weight="0.50"
-                android:layout_marginLeft="5dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
-                />
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lec No"
+                    android:layout_weight="0.50"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp" />
 
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Division"
-                android:layout_weight="0.50"
-                android:padding="5dp"
-                android:layout_marginLeft="5dp"/>
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textStyle="bold"
-               />
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textStyle="bold" />
 
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/txtDivision"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.50"
-                android:text="--"
-                android:layout_marginLeft="5dp"/>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lec No"
-                android:layout_weight="0.50"
-                android:layout_marginLeft="5dp"
-                android:padding="5dp" />
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=":"
-                android:textStyle="bold" />
-
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/txtlecno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="--"
-                android:layout_weight="0.50"
-                android:layout_marginLeft="5dp"
-                />
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/txtlecno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:layout_weight="0.50"
+                    android:layout_marginLeft="5dp"
+                    />
 
             </LinearLayout>
 

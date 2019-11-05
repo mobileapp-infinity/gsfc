@@ -37,7 +37,7 @@
 
                 </LinearLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                     android:id="@+id/txtrecno"
                     android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     android:layout_gravity="center_vertical">
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                         android:id="@+id/txtdate"
                         android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
 
 
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                     android:id="@+id/txtcoursename"
                     android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
                     android:layout_gravity="center_vertical">
 
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                         android:id="@+id/txtsem"
                         android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
             android:layout_marginTop="5dp"
             android:weightSum="1">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
                 android:layout_marginLeft="5dp"
                 android:textSize="16dp" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -181,7 +181,7 @@
                 android:textStyle="bold"
                 android:layout_marginLeft="5dp"/>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -196,7 +196,7 @@
         </LinearLayout>
 
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                 android:id="@+id/Receipt"
                 android:layout_width="wrap_content"

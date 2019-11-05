@@ -50,15 +50,15 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-        <style name="MyDialogTheme" parent="android:Theme.Dialog">
-            <!-- Fill the screen -->
+    <style name="MyDialogTheme" parent="android:Theme.Dialog">
+        <!-- Fill the screen -->
 
-            <item name="android:windowNoTitle">true</item>
-            <item name="android:windowIsFloating">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
 
-            <!-- Just to prove it's working -->
+        <!-- Just to prove it's working -->
 
-        </style>
+    </style>
 
 
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -119,13 +119,31 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">normal</item>
     </style>  <style name="ExpandAppBarExpand" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/orange</item>
-        <item name="android:textStyle">normal</item>
+    <item name="android:textSize">24sp</item>
+    <item name="android:textColor">@color/orange</item>
+    <item name="android:textStyle">normal</item>
+</style>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="android:textColor">@color/colorPrimary</item>
+
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+    <style name="CustomAppTheme" parent="Theme.AppCompat">
+        <item name="android:textColorPrimaryDisableOnly">@color/footer_agree</item>
+        <item name="colorAccent">@color/green</item>
+        <item name="android:colorForeground">@color/orange_attendance</item>
     </style>
 
-    <style name="CustomAppTheme" parent="Theme.AppCompat">
-        <item name="android:textColorPrimaryDisableOnly">@color/light_yello</item>
-        <item name="colorAccent">@color/orange_attendance</item>
+
+    <style name="CustomAppTheme1" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/method2</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/grey</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/orange_attendance</item>
     </style>
 </resources>

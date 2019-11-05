@@ -36,16 +36,16 @@
                 android:layout_height="90dp"
                 android:src="@drawable/new_profile" />
 
-            <TextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profile"
-                android:lines="2"
                 android:gravity="center"
+                android:lines="2"
+                android:text="Profile"
 
-                android:textSize="15dp"
                 android:textColor="@color/black"
+                android:textSize="13dp"
                 android:visibility="visible" />
 
         </LinearLayout>
@@ -64,54 +64,49 @@
                 android:layout_height="90dp"
                 android:src="@drawable/new_remaining_att" />
 
-            <TextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
 
                 android:id="@+id/textfee"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Pending Attendance"
-
-                android:textSize="15dp"
-                android:textColor="@color/black"
                 android:lines="2"
+                android:text="Pending Attendance"
+                android:textColor="@color/black"
+                android:textSize="13dp"
                 android:visibility="visible" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_assign_emp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+
             android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-
-            <!--<ImageView-->
-                <!--android:id="@+id/iv_att"-->
-                <!--android:layout_width="90dp"-->
-                <!--android:layout_height="90dp"-->
-                <!--android:src="@drawable/new_attendance" />    -->
+            android:orientation="vertical"
+            android:visibility="visible">
 
             <ImageView
-                android:id="@+id/imgattendance_emp"
+                android:id="@+id/img_assignment_emp"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/new_attendance" />
-
-            <TextView
-                android:id="@+id/textattendence"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/att"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:gravity="center"
-                android:lines="2"
+                android:src="@drawable/new_assignment"
                 android:visibility="visible" />
 
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="2"
+                android:text="Assignment"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="visible" />
 
         </LinearLayout>
+
 
     </LinearLayout>
 
@@ -127,6 +122,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,15 +137,15 @@
                     android:src="@drawable/new_timetable" />
 
 
-                <TextView
-                    android:id="@+id/textView6"
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/com.infinity.infoway.agriculture.CommonCls.CustomTextView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Time Table"
-                    android:textColor="@color/black"
-                    android:textSize="15dp"
                     android:gravity="center"
                     android:lines="2"
+                    android:text="Time Table"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
                     android:visibility="visible" />
 
             </LinearLayout>
@@ -168,20 +164,19 @@
                     android:src="@drawable/new_announcement"
                     android:visibility="visible" />
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/txt_erning"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Announcement"
-
                     android:lines="2"
+                    android:textSize="13dp"
+
+                    android:text="Announcement"
                     android:textColor="@color/black"
                     android:visibility="visible" />
 
             </LinearLayout>
-
-
 
 
             <LinearLayout
@@ -193,25 +188,25 @@
 
 
                 <!--<ImageView-->
-                    <!--android:id="@+id/iv_assignment"-->
-                    <!--android:layout_width="90dp"-->
-                    <!--android:layout_height="90dp"-->
-                    <!--android:src="@drawable/new_lessionplan" />-->
+                <!--android:id="@+id/iv_assignment"-->
+                <!--android:layout_width="90dp"-->
+                <!--android:layout_height="90dp"-->
+                <!--android:src="@drawable/new_lessionplan" />-->
                 <ImageView
                     android:id="@+id/imglessionplan"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:src="@drawable/new_lessionplan" />
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:lines="2"
                     android:text="Lesson Plan"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
 
-                    android:lines="2"
+                    android:textSize="13dp"
                     android:visibility="visible" />
 
 
@@ -225,14 +220,81 @@
         android:id="@+id/new_icon_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="13dp"
         android:orientation="horizontal"
         android:weightSum="3">
+
+
+
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:visibility="gone"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_el_emp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/new_e_learning" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="2"
+                android:text="E-Learning"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_att"-->
+            <!--android:layout_width="90dp"-->
+            <!--android:layout_height="90dp"-->
+            <!--android:src="@drawable/new_attendance" />    -->
+
+            <ImageView
+                android:id="@+id/imgattendance_emp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/new_attendance" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/textattendence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="2"
+                android:text="@string/att"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -243,20 +305,29 @@
                 android:layout_height="90dp"
                 android:src="@drawable/new_leave" />
 
-            <TextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Leave"
-                android:lines="2"
                 android:gravity="center"
-                android:textSize="15dp"
+                android:lines="2"
+                android:text="Leave"
                 android:textColor="@color/black"
+                android:textSize="13dp"
                 android:visibility="visible" />
 
         </LinearLayout>
+    </LinearLayout>
 
 
-        <LinearLayout
+    <LinearLayout
+        android:id="@+id/ll_4th_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+   <!--     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -264,6 +335,31 @@
             android:orientation="vertical">
 
 
+            <ImageView
+                android:id="@+id/iv_el_emp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/new_e_learning" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="2"
+                android:text="E-Learning"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="visible" />
+
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
 
             <ImageView
@@ -273,15 +369,42 @@
                 android:src="@drawable/new_online_jau"
                 android:visibility="visible" />
 
-            <TextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:id="@+id/txt_placement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:lines="2"
                 android:text="Other Apps"
                 android:textColor="@color/black"
-                android:textSize="15dp"
+                android:textSize="13dp"
+                android:visibility="visible" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/new_online_jau"
+                android:visibility="visible" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/tx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:lines="2"
+                android:text="Other Apps"
+                android:textColor="@color/black"
+                android:textSize="13dp"
                 android:visibility="visible" />
         </LinearLayout>
 
@@ -295,22 +418,24 @@
             android:visibility="invisible">
 
             <ImageView
-                android:id="@+id/img_leave_app"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/img_leave_app"
+                android:src="@drawable/new_assignment"
                 android:visibility="visible" />
 
-            <TextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Class &#10; Work"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                android:visibility="gone" />
+                android:gravity="center"
+                android:lines="2"
+                android:text="Assignment"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="visible" />
 
         </LinearLayout>
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/ll_view_more"
@@ -327,7 +452,7 @@
             android:layout_gravity="center"
             android:src="@drawable/down_arrow" />
 
-        <TextView
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -350,35 +475,35 @@
             android:id="@+id/fees_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="13dp"
             android:orientation="horizontal"
             android:weightSum="3">
 
 
-         <!--   <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+            <!--   <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:gravity="center_horizontal"
+                   android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txt_receipt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="News"
-                    android:textColor="@color/white"
-                    android:visibility="gone" />
+                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                       android:id="@+id/txt_receipt"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:gravity="center"
+                       android:text="News"
+                       android:textColor="@color/white"
+                       android:visibility="gone" />
 
-                <ImageView
-                    android:id="@+id/imgattendance"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/syllabus"
-                    android:visibility="visible" />
+                   <ImageView
+                       android:id="@+id/imgattendance"
+                       android:layout_width="90dp"
+                       android:layout_height="90dp"
+                       android:src="@drawable/syllabus"
+                       android:visibility="visible" />
 
-            </LinearLayout>-->
+               </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -388,15 +513,15 @@
                 android:orientation="vertical">
 
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/txt_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="FeedBack"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:visibility="gone" />
+                    android:textSize="13dp"
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/img_result"
@@ -424,12 +549,12 @@
                     android:src="@drawable/assignment"
                     android:visibility="gone" />
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Class &#10; Work"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:visibility="gone" />
 
             </LinearLayout>
@@ -438,12 +563,11 @@
         </LinearLayout>
 
 
-
         <LinearLayout
             android:id="@+id/five_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="13dp"
             android:orientation="horizontal"
             android:visibility="visible"
             android:weightSum="3">
@@ -463,12 +587,12 @@
                     android:src="@drawable/pendingfeesicon"
                     android:visibility="visible" />
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Class &#10; Work"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:visibility="gone" />
 
             </LinearLayout>
@@ -488,12 +612,12 @@
                     android:src="@drawable/exam_tt"
                     android:visibility="visible" />
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MidExamTimeTable"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:visibility="gone" />
 
             </LinearLayout>
@@ -513,12 +637,12 @@
                     android:src="@drawable/feecircular"
                     android:visibility="visible" />
 
-                <TextView
+                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Class &#10; Work"
                     android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:visibility="gone" />
 
             </LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:background="@color/light_yello"
+
+    android:orientation="vertical">
+    <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:gravity="center"
+        android:id="@+id/txt_no_available_grp_my"
+        android:textColor="@color/green"
+        android:textSize="@dimen/Font_size"
+        android:layout_gravity="center"
+        android:text="No Groups Available Yet"
+        android:layout_height="match_parent" />
+    <ExpandableListView
+        android:id="@+id/expan_elerning_mygrp"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:groupIndicator="@color/transparent"
+        android:divider="@color/transparent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </ExpandableListView>
+</LinearLayout>

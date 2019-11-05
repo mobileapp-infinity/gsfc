@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_yello"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/footer_agree"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/green">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center_vertical">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Assignment"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_u_small" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_elerning"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                        android:id="@+id/tv_gp_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Courses"
+                        android:textColor="@color/gy_btn"
+
+                        android:textSize="@dimen/text_size_u_small" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/tv_gp_name"
+                        android:src="@drawable/star_from"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spin_assign_course"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="35dp"
+                        android:padding="10dp"
+                        android:textSize="@dimen/text_size_u" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                        android:id="@+id/tv_asgn_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assignment Name"
+                        android:textColor="@color/gy_btn"
+
+                        android:textSize="@dimen/text_size_u_small" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/tv_asgn_name"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomEditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:background="@null"
+                        android:id="@+id/edt_assign_name"
+                        android:hint="Assignment Name"
+                        android:minHeight="35dp"
+                        android:padding="10dp"
+                        android:textSize="@dimen/text_size_u" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right|center"
+                        android:layout_weight="0.5"
+                        android:padding="5dp"
+                        android:src="@drawable/contract"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                        android:id="@+id/tv_grp_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upload File"
+                        android:textColor="@color/gy_btn"
+
+                        android:textSize="@dimen/text_size_u_small" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/tv_grp_type"
+                        android:src="@drawable/star_from"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomEditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/edt_style_form_"
+                        android:hint="Upload File"
+                        android:minHeight="35dp"
+                        android:padding="10dp"
+                        android:textSize="@dimen/text_size_u" />
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right|center"
+                        android:layout_weight="0.8"
+                        android:id="@+id/btn_upload_file_assign"
+                        android:background="@drawable/border_cat_main_pink"
+                        android:text="Upload here"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                        android:id="@+id/tv_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/gy_btn"
+
+                        android:textSize="@dimen/text_size_u_small" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/tv_desc"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+                <com.infinity.infoway.gsfc.CommonCls.CustomEditText
+                    android:id="@+id/edt_desc_e_lerning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form"
+                    android:lines="6"
+                    android:maxLines="6"
+                    android:padding="10dp"
+                    android:textSize="@dimen/text_size_u"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:textColor="@color/gy_btn"
+
+                        android:textSize="@dimen/text_size_u_small" />
+
+                    <ImageView
+                        android:layout_width="7dp"
+                        android:layout_height="7dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toRightOf="@+id/tv_date"
+                        android:src="@drawable/star_from" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edt_style_form"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomEditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:background="@null"
+                        android:id="@+id/edt_assign_dat"
+                        android:hint="MM/DD/YYYY"
+                        android:minHeight="35dp"
+                        android:padding="10dp"
+                        android:textSize="@dimen/text_size_u" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right|center"
+                        android:layout_weight="0.5"
+                        android:padding="5dp"
+                        android:src="@drawable/calc"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+            android:id="@+id/tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spin_topic"
+            android:layout_margin="10dp"
+            android:background="@drawable/border_cat_main_grey_btn"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="  Save  "
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_u" />
+    </LinearLayout>
+
+
+</ScrollView>
+

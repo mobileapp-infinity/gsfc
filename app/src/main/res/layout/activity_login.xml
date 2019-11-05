@@ -22,13 +22,13 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="150dp"
+                android:layout_width="220dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:padding="10dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/gsfc_new_logo" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -39,6 +39,7 @@
                 android:textStyle="bold"
                 android:visibility="gone" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,9 +49,9 @@
             android:visibility="visible">
 
             <ListView
+                android:id="@+id/lv_login"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:id="@+id/lv_login"></ListView>
+                android:layout_height="120dp"></ListView>
         </LinearLayout>
 
         <LinearLayout
@@ -61,7 +62,7 @@
             android:orientation="vertical"
             android:padding="15dp">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -75,17 +76,22 @@
                 android:backgroundTint="@color/btn_color"
                 android:textColorHint="@color/silver">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/etusername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@null"
                     android:drawableLeft="@drawable/ic_profile_orange"
+
                     android:hint="Username"
                     android:paddingLeft="10dp"
                     android:textColorHint="@color/btn_color" />
             </android.support.design.widget.TextInputLayout>
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@color/green"/>
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -99,19 +105,24 @@
                 android:backgroundTint="@color/btn_color"
                 android:textColorHint="@color/silver">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+                <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/etpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:drawableLeft="@drawable/ic_lock"
                     android:hint="Password"
-                    android:textColorHint="@color/colorPrimary"
                     android:inputType="textPassword"
-                    android:paddingLeft="10dp" />
-            </android.support.design.widget.TextInputLayout>
+                    android:background="@null"
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomButton
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/colorPrimary" />
+            </android.support.design.widget.TextInputLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@color/green"/>
+            <com.infinity.infoway.gsfc.CommonCls.CustomButton
                 android:id="@+id/btnlogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +135,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:id="@+id/tvforgotpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,7 +146,7 @@
                 android:textColor="@color/btn_color"
                 android:textSize="16sp" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomButton
+            <com.infinity.infoway.gsfc.CommonCls.CustomButton
                 android:id="@+id/btnloginsignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

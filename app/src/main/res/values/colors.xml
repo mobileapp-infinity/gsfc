@@ -14,6 +14,7 @@
     <color name="tab">#f5f7e4</color>
     <color name="method1">#10292E</color>
     <color name="column">#106466</color>
+    <color name="color_expense_dash_board">#188f7e</color>
     <color name="method2">#50203A</color>
     <color name="header_stud">#283B57</color>
     <color name="present">#043b39</color>
@@ -26,7 +27,9 @@
     <color name="suspend">#13a76b</color>
     <color name="holiday">#8839b1</color>
     <color name="colorAccent1">#D67500</color>
+    <color name="calendar">#00887A</color>
     <color name="white">#FFFFFF</color>
+    <color name="e_lerning_bg">#828E90</color>
     <color name="orange_attendance">#DD5C4C</color>
     <color name="background">#F2E4F0</color>
     <color name="backgroundpink">#FFEFFA</color>
@@ -34,6 +37,7 @@
     <color name="loginscreen">#c96f1f</color>
     <color name="bg_fill">#F2F5F8</color>
     <color name="lightblue">#4d7db3</color>
+    <color name="header_expan">#376F70</color>
     <color name="loginscreendark">#c95f00</color>
     <color name="orange">#D67500</color>
     <color name="blue">#1b1b3d</color>
@@ -45,6 +49,11 @@
     <color name="lightgreen">#0D8D73</color>
     <color name="profile">#007872</color>
     <color name="fees">#FF008f8e</color>
+    <color name="syheader">#333333</color>
+
+    <!--<color name="gy_btn">#314455</color>-->
+    <color name="gy_btn">#2A3F54</color>
+
     <color name="red">#b20000</color>
     <color name="news">#2692C5</color>
     <color name="list_divider">#d9d9d9</color>
@@ -82,7 +91,7 @@
     <color name="lllecture2">#80DCF1ED</color>
     <color name="rllectureheader2">#16A085</color>
     <color name="llimagelecture2">#0C7C66</color>
-
+<color name="violet">#2A1B3C</color>
     <color name="lllecture3">#80DEE3E6</color>
     <color name="rllectureheader3">#3D518A</color>
 
@@ -106,6 +115,7 @@
     <color name="darksy8">#146193</color>
     <color name="sy9">#A6A6A6</color>
     <color name="darksy9">#686868</color>
-    <color name="syheader">#333333</color>
     <color name="light_yello">#F4F9E5</color>
+    <!--<color name="gy_btn">#314455</color>-->
+    <color name="pink">#CC2D6F</color>
 </resources>

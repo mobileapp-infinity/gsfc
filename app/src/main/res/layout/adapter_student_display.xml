@@ -28,14 +28,14 @@
                 android:layout_weight="1.5"
                 android:orientation="horizontal">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Sr No  :  "
                     android:textColor="@color/white"
                     android:textSize="13dp" />
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
@@ -50,6 +50,7 @@
                 android:layout_gravity="center"
                 android:layout_weight=".5"
                 android:gravity="end|center">
+
 
                 <CheckBox
                     android:layout_width="wrap_content"
@@ -71,13 +72,13 @@
 
             android:padding="2dp">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enrollment No  :"
                 android:textColor="@color/white" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -92,13 +93,13 @@
 
             android:padding="2dp">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Student Name  :"
                 android:textColor="@color/white" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -113,13 +114,13 @@
 
             android:padding="2dp">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Roll No  :"
                 android:textColor="@color/white" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -134,14 +135,14 @@
 
             android:padding="2dp">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Previous Lecture Status  :"
                 android:textColor="@color/white"
                 android:textSize="13dp" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -155,14 +156,14 @@
             android:orientation="horizontal"
             android:padding="2dp">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status  :"
                 android:textColor="@color/white"
                 android:textSize="13dp" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""

@@ -25,7 +25,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_atendance_date"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_college_name"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -114,7 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -133,7 +133,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_dept_name"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -158,7 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -177,7 +177,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_course"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -206,7 +206,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -225,7 +225,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_sem"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -249,7 +249,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -268,7 +268,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_sub"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -294,7 +294,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -313,7 +313,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_period_lab"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -339,7 +339,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -358,7 +358,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_resourse"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -384,7 +384,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -403,7 +403,7 @@
 
                 </RelativeLayout>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomEditText
+               <com.infinity.infoway.gsfc.CommonCls.CustomEditText
                     android:id="@+id/edt_div"
                     android:layout_width="match_parent"
                     android:layout_height="28dp"
@@ -429,7 +429,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:id="@+id/tv_sname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

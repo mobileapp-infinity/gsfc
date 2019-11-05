@@ -24,7 +24,7 @@
                 android:layout_gravity="right"
                 android:gravity="right"
                 android:layout_height="wrap_content">
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:id="@+id/header_sub"
                     android:gravity="center"
@@ -71,7 +71,7 @@
                 android:layout_marginTop="5dp"
                 android:weightSum="1">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/tvhdivision"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -82,14 +82,14 @@
                     android:layout_weight="0.75"
                     />
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" : "
                     android:textColor="#fff"
                     android:textStyle="bold"/>
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="---"
@@ -110,7 +110,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="5dp"
             android:weightSum="1">
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Subject"
@@ -119,14 +119,14 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.75" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" : "
                 android:textColor="#fff"
                 android:textStyle="bold"/>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="---"
@@ -144,7 +144,7 @@
             android:layout_marginTop="5dp"
             android:weightSum="1">
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Content"
@@ -153,14 +153,14 @@
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.75" />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" : "
                 android:textColor="#fff"
                 android:textStyle="bold"/>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="---"

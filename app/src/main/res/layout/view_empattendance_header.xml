@@ -14,7 +14,7 @@
     android:layoutDirection="ltr"
     android:orientation="horizontal">
 
-   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
         android:id="@+id/tvsrno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
         android:textColor="@color/fees"
         android:gravity="center"/>
 
-   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
         android:id="@+id/lblListHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         android:gravity="center"
         android:textColor="#0D8D73"
         android:text="03/05/2016"/>
-   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
         android:id="@+id/tvlateby"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         android:gravity="center"
         android:text="00:00"/>
 
-   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+   <com.infinity.infoway.gsfc.CommonCls.CustomTextView
         android:id="@+id/tvearlyby"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

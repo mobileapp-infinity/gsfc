@@ -2,170 +2,147 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layoutDirection="ltr"
-    android:background="@color/white"
-    android:baselineAligned="false">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layoutDirection="ltr"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/linear1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/rllectureheader2"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-<LinearLayout
-    android:layout_width="35dp"
-    android:layout_height="match_parent"
-    android:minHeight="35dp"
-    android:layout_gravity="center"
-    android:gravity="center"
-    android:padding="3dp"
-    android:background="@color/llimagelecture2">
-
-    <ImageView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@mipmap/lecture_plan"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
 
-</LinearLayout>
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/tvcoursename"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:textSize="17sp"
-                android:layout_marginLeft="5dp"
-                android:text="B.E.(Information Tech)"
-                android:textColor="@color/white" />
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/tvsemester"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text="Sem-3(A)"
-                android:layout_gravity="bottom"
-                android:layout_marginRight="5dp"
-                android:textColor="@color/white" />
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/tvdivision"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:visibility="gone"
-                android:text="Div-A"
-                android:textColor="@color/white"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="3"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@color/lllecture2"
-            android:layout_marginBottom="5dp"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
+            android:text="Batch"
+            android:textColor="@color/fees"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.75"
+            />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/tvsubjectname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="2"
-                android:textSize="14sp"
-                android:layout_marginTop="5dp"
-                android:text="Advance Engineering Mathematics" />
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" : "
+            android:textStyle="bold"/>
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/tvLecture_Per_Week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp"
-                android:text="2 lectures per week"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                />
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lectures per week"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:visibility="gone"
-                android:layout_gravity="center"
-                android:textColor="@color/fees"/>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:id="@+id/tvbatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:padding="5dp">
+            android:text="---"
+            android:paddingLeft="10dp"
+            android:layout_weight="0.25"
+            />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="5dp"
-                android:text="Referance Book "
-                android:textColor="@color/fees"
-                android:textSize="17sp"
-                android:visibility="gone"
-                android:textStyle="bold" />
-
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:id="@+id/tvreferancebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center"
-                android:visibility="gone"
-                android:layout_gravity="center"
-                android:text="ahsjh sdnhjkajsk jasdkjkmjskjkl jslj"
-                android:textColor="@color/fees" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/lltopics"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone"
-            android:padding="5dp">
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Topics"
-                android:gravity="center"
-                android:padding="3dp"
-                android:background="@color/rllectureheader1"
-                android:textColor="@color/white"
-                android:textAllCaps="true"/>
-        </LinearLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Facutly"
+            android:textColor="@color/fees"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.75"
+            />
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" : "
+            android:textStyle="bold"/>
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:id="@+id/tvfaculty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:paddingLeft="10dp"
+            android:layout_weight="0.25"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:weightSum="1">
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Subject"
+            android:textColor="@color/fees"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="0.75"
+            />
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" : "
+            android:textStyle="bold"/>
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:id="@+id/tvsubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:paddingLeft="10dp"
+            android:layout_weight="0.25"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="fill"
+        android:weightSum="1">
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classroom     "
+            android:textColor="@color/fees"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="fill"
+
+            />
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" : "
+            android:textStyle="bold"/>
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:id="@+id/tvclassroom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:layout_gravity="fill"
+            android:paddingLeft="10dp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/list_divider"/>
 </LinearLayout>
+

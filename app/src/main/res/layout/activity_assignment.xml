@@ -30,7 +30,7 @@
                 android:background="@color/white"
                 android:gravity="center_vertical">
 
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -50,8 +50,9 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:id="@+id/l2"
+            android:padding="5dp"
             android:orientation="horizontal"
             android:weightSum="3"
             android:layout_marginTop="45dp"
@@ -69,37 +70,39 @@
                 android:layout_marginLeft="15dp"/>  -->
 
 
-            <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/t1"
+                android:gravity="center"
                 android:text="Course"
-                android:layout_gravity="center"
                 android:layout_weight="1"
+                android:layout_gravity="center"
                 android:textColor="@color/white"
-                android:textSize="18dp"
-                android:layout_marginLeft="15dp"/>
+                android:textSize="@dimen/Font_size_large"
+               />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/asn"
+               android:layout_weight="1"
+               android:gravity="center"
                 android:text="Assignment-Name"
                 android:layout_gravity="center"
-                android:layout_weight="1"
                 android:textColor="@color/white"
-                android:textSize="18dp"
-                android:layout_marginLeft="15dp"/>
+               android:textSize="@dimen/Font_size_large"                />
 
-           <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Download"
-                android:textSize="18dp"
-                android:layout_weight="1"
+                android:textSize="@dimen/Font_size_large"
                 android:layout_gravity="center"
-                android:gravity="end"
-                android:layout_marginRight="10dp"
+                android:gravity="center"
+               android:layout_marginLeft="5dp"
+
+               android:layout_weight="1"
                 android:textColor="@color/white"/>
         </LinearLayout>
 

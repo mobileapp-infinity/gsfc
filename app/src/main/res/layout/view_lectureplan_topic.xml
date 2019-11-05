@@ -8,81 +8,81 @@
     android:orientation="vertical"
     android:baselineAligned="false">
 
-        
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lllecture2"
+        android:orientation="vertical">
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lllecture2"
-            android:orientation="vertical">
+            android:background="@color/sy1"
+            android:orientation="horizontal">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/txtsrno"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/sy1"
-                android:orientation="horizontal">
+                android:text="1"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"/>
 
-
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                    android:id="@+id/txtsrno"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:padding="5dp"
-                    android:layout_marginLeft="5dp"/>
-
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                    android:id="@+id/txttopicname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Topic Name"
-                    android:textSize="16sp"
-                    android:textColor="@color/white"
-                    android:padding="5dp"
-                    android:layout_marginLeft="5dp"/>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/txttopicname"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aid ->"
-                    android:textColor="@color/fees"
-                    android:layout_marginLeft="5dp"
-                    android:padding="5dp"/>
-
-
-               <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-                    android:id="@+id/txtaid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/fees"
-                    android:layout_marginLeft="5dp"
-                    android:padding="5dp"/>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/linear11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/lllecture2"
-                android:padding="5dp">
-
-            </LinearLayout>
+                android:text="Topic Name"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:layout_marginLeft="5dp"/>
 
 
         </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aid ->"
+                android:textColor="@color/fees"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"/>
+
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/txtaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fees"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linear11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/lllecture2"
+            android:padding="5dp">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>

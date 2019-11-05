@@ -12,7 +12,7 @@
         android:layout_marginTop="5dp"
         android:weightSum="1">
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Batch"
@@ -21,13 +21,13 @@
             android:layout_weight="0.75"
             />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" : "
             android:textStyle="bold"/>
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvbatch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_marginTop="5dp"
         android:weightSum="1">
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Facutly"
@@ -54,13 +54,13 @@
             android:layout_weight="0.75"
             />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" : "
             android:textStyle="bold"/>
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvfaculty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
         android:layout_marginTop="5dp"
         android:weightSum="1">
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Subject"
@@ -87,13 +87,13 @@
             android:layout_weight="0.75"
             />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" : "
             android:textStyle="bold"/>
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvsubject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,35 +114,35 @@
              android:layout_gravity="fill"
         android:weightSum="1">
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
-            android:layout_width="match_parent"
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Classroom"
+            android:text="Classroom     "
             android:textColor="@color/fees"
             android:layout_marginLeft="5dp"
             android:layout_gravity="fill"
-            android:layout_weight="0.73"
+
             />
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" : "
             android:textStyle="bold"/>
 
-       <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+       <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvclassroom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="---"
             android:layout_gravity="fill"
             android:paddingLeft="10dp"
-            android:layout_weight="0.25" />
+             />
     </LinearLayout>
-<View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:layout_marginTop="3dp"
-    android:background="@color/list_divider"/>
+        <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/list_divider"/>
     </LinearLayout>
 

@@ -6,7 +6,7 @@
     android:layoutDirection="ltr"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<com.infinity.infoway.agriculture.CommonCls.CustomTextView
+<com.infinity.infoway.gsfc.CommonCls.CustomTextView
     android:id="@+id/tvtopicname"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
