@@ -5,65 +5,131 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/rlsubject"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
         android:gravity="center"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:background="@color/attendance">
+
+        <!--   <com.infinity.infoway.agriculture.CommonCls.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/t1"
+                android:text="Subject"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:layout_marginLeft="15dp"/>  -->
 
 
-        <RelativeLayout
-            android:id="@+id/rlsubject"
-            android:layout_width="match_parent"
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/subname1"
+            android:gravity="center"
+            android:text=""
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Font_size_large"
+            />
+
+        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/asn"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/Font_size_large"                />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@color/attendance"
-            android:layout_height="wrap_content">
+            android:layout_marginLeft="5dp"
 
-           <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-                android:id="@+id/subname1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Subject Name"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center_vertical"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/llimage"
-                android:textColor="@color/white" />
-
-
-
-
-            <LinearLayout
-                android:id="@+id/llimage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:gravity="center"
-                android:layout_centerVertical="true"
-                android:background="@color/attendance"
-                android:layout_alignParentRight="true">
-                <ImageView
-                    android:id="@+id/image_download_assign"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/pdf" />
-
-
-            </LinearLayout>
-        </RelativeLayout>
-        <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/image_final_ass"-->
-        <!--android:paddingTop="50dp"/>-->
+            android:layout_weight="1"
+            android:textColor="@color/white">
+            <ImageView
+                android:id="@+id/image_download_assign"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center|right"
+                android:background="@drawable/pdf" />
+        </LinearLayout>
     </LinearLayout>
 
+    <!--
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rlsubject"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/attendance"
+                android:layout_height="wrap_content">
+
+               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                    android:id="@+id/subname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subject Name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/llimage"
+                    android:textColor="@color/white" />
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/llimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:background="@color/attendance"
+                    android:layout_alignParentRight="true">
+                    <ImageView
+                        android:id="@+id/image_download_assign"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/pdf" />
+
+
+                </LinearLayout>
+            </RelativeLayout>
+            &lt;!&ndash;<ImageView&ndash;&gt;
+            &lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;
+            &lt;!&ndash;android:id="@+id/image_final_ass"&ndash;&gt;
+            &lt;!&ndash;android:paddingTop="50dp"/>&ndash;&gt;
+        </LinearLayout>
+
+    -->
 
 </LinearLayout>
 

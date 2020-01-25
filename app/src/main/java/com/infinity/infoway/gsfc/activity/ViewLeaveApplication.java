@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -39,7 +40,7 @@ public class ViewLeaveApplication extends AppCompatActivity
     DataStorage storage;
     RequestQueue queue;
     CustomBoldTextView tv_no_records_leave;
-
+    SwipeRefreshLayout swipe_refresh;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -76,7 +77,16 @@ public class ViewLeaveApplication extends AppCompatActivity
                 onBackPressed();
             }
         });
-
+        swipe_refresh=  (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
+        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+        {
+            @Override
+            public void onRefresh()
+            {
+                shuffle();
+                swipe_refresh.setRefreshing(false);
+            }
+        });
 
         Display_leave_API_CAll();
 //        ViewLeaveAdapter adapter = new ViewLeaveAdapter(ctx);
@@ -92,11 +102,13 @@ public class ViewLeaveApplication extends AppCompatActivity
         });
     }
 
-
+    public void shuffle()
+    {
+        Display_leave_API_CAll();
+    }
     private void Display_leave_API_CAll()
     {
         DialogUtils.showProgressDialog(ViewLeaveApplication.this, "");
-
 
         String URLs = URl.get_student_leave_application_data_API + "&stud_id=" + String.valueOf(storage.read("stud_id", 3)) + "&year_id=" + String.valueOf(storage.read("swd_year_id", 3)) + "";
 

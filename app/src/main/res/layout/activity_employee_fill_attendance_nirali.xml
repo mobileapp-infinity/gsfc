@@ -1,0 +1,606 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_yello"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/ll_fill_att"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rel_bottom"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/footer_agree"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/green">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center_vertical">
+
+                    <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="Fill Attendance"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!--<ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:id="@+id/ll_fill_att"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">-->
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/border_cat_main_orange"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:id="@+id/tv_course_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:text="1 - B.F.Sc"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_u" />
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:id="@+id/tv_lect_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:text="Lecture -2"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_u"
+                            android:visibility="gone" />
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:id="@+id/tv_class_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:text="Class -2"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_u"
+                            android:visibility="gone" />
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:id="@+id/tv_dept_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:text="1 - Aquaculture"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:orientation="horizontal">
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:id="@+id/tv_sub_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:text="AQC 101 - Principles of Aquaculture"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/ll_method1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/method1"
+                        android:orientation="horizontal"
+                        android:padding="7dp"
+                        android:visibility="visible">
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Method 1 : (by Students)"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_u" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right|center"
+                            android:padding="3dp">
+
+                            <ImageView
+                                android:id="@+id/iv_down_arrow"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="right|center"
+                                android:src="@drawable/ar_down" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_method1inner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical"
+
+                        android:visibility="visible">
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                            android:id="@+id/tv_column"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border_column"
+                            android:padding="7dp"
+                            android:text="Columns.."
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_u" />
+
+                        <LinearLayout
+                            android:id="@+id/header_lin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/header_stud"
+                            android:gravity="center"
+
+                            android:orientation="horizontal"
+                            android:weightSum="4.2">
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:gravity="center"
+                                android:padding="3dp"
+                                android:text="Roll No"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/Font_size" />
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                                android:id="@+id/name_student"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:padding="3dp"
+                                android:text="Name of Student"
+
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/Font_size" />
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                                android:id="@+id/enroll"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.5"
+                                android:gravity="center"
+                                android:padding="3dp"
+                                android:text="Enrollment"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/Font_size" />
+
+
+                            <Switch
+                                android:id="@+id/cb_check_fill_attendance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".7"
+                                android:gravity="center"
+
+                                android:showText="true"
+                                android:textOff=" A"
+                                android:textOn=" P"
+                                android:theme="@style/CustomAppTheme" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.infinity.infoway.gsfc.activity.ExpandableHeightListView
+                                android:id="@+id/lv_expan_stud"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"></com.infinity.infoway.gsfc.activity.ExpandableHeightListView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_method2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/method2"
+                        android:orientation="horizontal"
+                        android:padding="7dp"
+                        android:visibility="visible">
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp"
+                            android:text="Method 2 : (by Roll Numbers)"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_u" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right|center"
+                            android:padding="3dp">
+
+                            <ImageView
+                                android:id="@+id/iv_down_arrow_method2"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="right|center"
+                                android:src="@drawable/ar_down" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_method_2_inner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/ll_method_21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="5dp"
+                                android:gravity="center|left"
+                                android:orientation="horizontal">
+
+                                <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Attendance For : "
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/text_size_u" />
+
+                                <Switch
+                                    android:id="@+id/switch_method"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:showText="true"
+                                    android:textOff="A"
+                                    android:textOn="P"
+                                    android:theme="@style/CustomAppTheme" />
+                            </LinearLayout>
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomEditText
+                                android:id="@+id/edt_roll_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/edt_style_form"
+                                android:hint="Enter Comma Separeted Roll Numbers "
+                                android:lines="5"
+                                android:maxLines="5"
+                                android:padding="5dp"
+                                android:textSize="@dimen/text_size_u" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lin_config"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/ll_teching_method"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|left"
+                                android:gravity="center|left"
+                                android:text="Teaching Method :"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_u"></com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView>
+
+                            <com.infinity.infoway.gsfc.CommonCls.ExpandableHeightGridView
+                                android:id="@+id/lv_teaching_method_att"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:numColumns="2"></com.infinity.infoway.gsfc.CommonCls.ExpandableHeightGridView>
+
+
+                        </LinearLayout>
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:layout_margin="3dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center|left"
+                            android:text="No of Posts on Flinnt :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_u"></com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView>
+
+                        <LinearLayout
+                            android:id="@+id/ll_flinnt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/edt_style_form"
+                            android:orientation="vertical">
+
+                            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                android:id="@+id/spin_flint"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:gravity="center"
+                                android:minHeight="30dp"
+                                android:padding="5dp"></com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_aid_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+
+                            android:orientation="vertical">
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|left"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center|left"
+                                android:text="Teaching Aid :"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_u"></com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView>
+
+                            <LinearLayout
+                                android:id="@+id/ll_aid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:background="@drawable/edt_style_form"
+                                android:orientation="vertical">
+
+                                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                    android:id="@+id/spin_aid"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:minHeight="30dp"
+                                    android:padding="5dp"></com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center|left"
+                            android:text="Unit :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_u"></com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView>
+
+                        <LinearLayout
+                            android:id="@+id/ll_unit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/edt_style_form"
+                            android:orientation="vertical">
+
+                            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                android:id="@+id/spin_unit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:minHeight="30dp"
+                                android:padding="5dp"></com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+
+                        </LinearLayout>
+
+                        <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|left"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center|left"
+                            android:text="Topic :"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_u"></com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_topic_configuration_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_style_form"
+                            android:orientation="vertical">
+
+                            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                android:id="@+id/spin_topic_configuration_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:minHeight="30dp"
+                                android:padding="5dp"
+                                android:visibility="gone"></com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+
+                            <com.infinity.infoway.gsfc.CommonCls.CustomEditText
+                                android:id="@+id/ed_topic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:lines="2"
+                                android:hint="Enter Topic"
+                                android:maxLines="2"
+                                android:padding="3dp"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_size_u"
+                                android:visibility="visible"></com.infinity.infoway.gsfc.CommonCls.CustomEditText>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rel_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/ll_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/edt_style_form"
+                android:visibility="gone">
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/spin_topic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:minHeight="30dp"
+                    android:padding="5dp"></com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+            </LinearLayout>
+
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomBoldTextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_topic"
+                android:layout_margin="10dp"
+                android:background="@drawable/border_cat_main_grey_btn"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_u" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

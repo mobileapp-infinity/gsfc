@@ -3,7 +3,9 @@ package com.infinity.infoway.gsfc.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Lablist
+import java.io.Serializable;
+
+public class Lablist implements Serializable
 {
     @SerializedName("lect_name")
     private String lect_name;

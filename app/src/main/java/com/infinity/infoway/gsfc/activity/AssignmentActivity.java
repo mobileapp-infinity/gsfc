@@ -132,7 +132,7 @@ public class AssignmentActivity extends AppCompatActivity {
         Call<ArrayList<assignment_response>> call = apiService.get_student_assignment_detail(String.valueOf(storage.read("stud_id", 3)), String.valueOf(storage.read("swd_year_id", 3)));
 
         System.out.println("assignment response :::::: "+call.request());
-        System.out.println("assignment response :::::: "+call.toString());
+
         call.enqueue(new Callback<ArrayList<assignment_response>>()
         {
             @Override
@@ -143,7 +143,7 @@ public class AssignmentActivity extends AppCompatActivity {
                 {
                     l2.setVisibility(View.VISIBLE);
                     Log.d("attlist", String.valueOf(response.body().size()));
-                    if (response.body().size() >= 1)
+                    if (response.body().size() >=1)
                     {
                         ArrayList<assignment_response> assignment = response.body();
                         Log.d("syllabus", String.valueOf(assignment));
@@ -170,7 +170,8 @@ public class AssignmentActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ArrayList<assignment_response>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<assignment_response>> call, Throwable t)
+            {
                 progressDialog.dismiss();
                 //  Log.e("employeeattendancerespo", t.toString());
             }
@@ -222,9 +223,10 @@ public class AssignmentActivity extends AppCompatActivity {
             download = (ImageView) vi.findViewById(R.id.image_download_assign);
 //            image_final_ass = (ImageView) vi.findViewById(R.id.image_final_ass);
             TextView subname = (TextView) vi.findViewById(R.id.subname1);
+            TextView asn = (TextView) vi.findViewById(R.id.asn);
 
             // subname.setText(syllabusdetail.get(position).getSubname());
-            RelativeLayout rlsubject = (RelativeLayout) vi.findViewById(R.id.rlsubject);
+            LinearLayout rlsubject = (LinearLayout) vi.findViewById(R.id.rlsubject);
             LinearLayout llimage = (LinearLayout) vi.findViewById(R.id.llimage);
 
             rlsubject.setBackgroundResource(R.color.attendance);
@@ -435,7 +437,11 @@ public class AssignmentActivity extends AppCompatActivity {
                 });
             }
 
-            subname.setText(assignment_response.get(position).getSub_fullname() + "                         " + assignment_response.get(position).getAm_name());
+            subname.setText(assignment_response.get(position).getSub_fullname()+"");
+            asn.setText(assignment_response.get(position).getAm_name()+"");
+
+
+//            subname.setText(assignment_response.get(position).getSub_fullname() + "                         " + assignment_response.get(position).getAm_name());
 
             return vi;
         }

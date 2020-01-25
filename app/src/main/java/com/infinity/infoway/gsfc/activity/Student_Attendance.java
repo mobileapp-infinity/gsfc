@@ -98,7 +98,6 @@ public class Student_Attendance extends AppCompatActivity implements View.OnClic
 
     public void findviews()
     {
-
         storage = new DataStorage("Login_Detail", Student_Attendance.this);
         Calendar newDate = Calendar.getInstance();
         newDate.set(Calendar.DAY_OF_MONTH, 1);
@@ -246,8 +245,8 @@ public class Student_Attendance extends AppCompatActivity implements View.OnClic
         params.put("year", String.valueOf(myp.getSelectedYear()));
         Log.d("Year", String.valueOf(myp.getSelectedYear()));
 
-        params.put("month", String.valueOf(myp.getSelectedMonth() + 1));
-        Log.d("Month", String.valueOf(myp.getSelectedMonth() + 1));
+        params.put("month", String.valueOf(myp.getSelectedMonth()+1));
+        Log.d("Month", String.valueOf(myp.getSelectedMonth()+1));
 
         params.put("stud_id", String.valueOf(storage.read("stud_id", 3)));
         Log.d("Stud_id", String.valueOf(storage.read("stud_id", 3)));
@@ -289,11 +288,14 @@ public class Student_Attendance extends AppCompatActivity implements View.OnClic
                 {
 
 
+
                     System.out.println("student attendance display :::::::"+call.request());
 
                     //Log.d("attlist", String.valueOf(response.body().size()));
                     if (response.body().size() >= 1)
                     {
+
+                        System.out.println("stud data size ::::::::::"+response.body().size());
                         TableRow tbrow2 = new TableRow(Student_Attendance.this);
                         TableRow.LayoutParams lp2 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                         tbrow2.setLayoutParams(lp2);
@@ -310,7 +312,7 @@ public class Student_Attendance extends AppCompatActivity implements View.OnClic
                         tbrow2.setGravity(Gravity.CENTER);
                         tbrow2.setBackgroundColor(getResources().getColor(R.color.blueattendance));
 
-                        for (int j = 0; j < response.body().get(0).getall_lecture().size(); j++)
+                        for (int j = 0; j <response.body().get(0).getall_lecture().size(); j++)
                         {
                             TextView t1v2 = new TextView(Student_Attendance.this);
                             t1v2.setTextColor(getResources().getColor(R.color.white));

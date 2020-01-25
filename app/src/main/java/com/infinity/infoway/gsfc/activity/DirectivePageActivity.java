@@ -213,7 +213,7 @@ public class DirectivePageActivity extends AppCompatActivity implements View.OnC
             }
         });
 
-        updateApp();
+      //  updateApp();
         init();
         studentChartAttendanceData();
         prepareBirthData();
@@ -312,7 +312,7 @@ public class DirectivePageActivity extends AppCompatActivity implements View.OnC
 
     }
 
-    public void updateApp()
+/*    public void updateApp()
     {
 
         PackageInfo pInfo = null;
@@ -364,10 +364,10 @@ public class DirectivePageActivity extends AppCompatActivity implements View.OnC
                                             //	System.out.println("");
                                         }
 
-                                               /*Intent i=new Intent(MainActivity.this,MainActivity.class);
+                                               *//*Intent i=new Intent(MainActivity.this,MainActivity.class);
                                                i.putExtra("Exit me", true);
                                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                               startActivity(i);*/
+                                               startActivity(i);*//*
                                     }
                                 })
 
@@ -412,10 +412,10 @@ public class DirectivePageActivity extends AppCompatActivity implements View.OnC
                                             //	System.out.println("");
                                         }
 
-                                               /*Intent i=new Intent(MainActivity.this,MainActivity.class);
+                                               *//*Intent i=new Intent(MainActivity.this,MainActivity.class);
                                                i.putExtra("Exit me", true);
                                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                               startActivity(i);*/
+                                               startActivity(i);*//*
                                     }
                                 }).create();
 
@@ -433,7 +433,7 @@ public class DirectivePageActivity extends AppCompatActivity implements View.OnC
             }
         });
 
-    }
+    }*/
 
     public void init()
     {

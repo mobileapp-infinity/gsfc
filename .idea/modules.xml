@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Atmiya.iml" filepath="$PROJECT_DIR$/Atmiya.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GSFC.iml" filepath="$PROJECT_DIR$/GSFC.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

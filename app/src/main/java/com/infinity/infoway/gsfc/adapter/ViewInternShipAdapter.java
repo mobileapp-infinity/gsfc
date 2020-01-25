@@ -130,19 +130,24 @@ public class ViewInternShipAdapter extends BaseAdapter {
             }
         });
 
-        if (viewInternShipPojo.getData().get(position).getSra_approve().contentEquals("1"))
-        {
-            viewHolder.tv_status.setText("  " + "Approve");
-            viewHolder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
-        } else if (viewInternShipPojo.getData().get(position).getSra_approve().contentEquals("-1"))
-        {
-            viewHolder.tv_status.setText("  " + "Reject");
-            viewHolder.tv_status.setTextColor(context.getResources().getColor(R.color.red));
-        } else if (viewInternShipPojo.getData().get(position).getSra_approve().contentEquals("0")) {
-            viewHolder.tv_status.setText("  " + "Panding");
-            viewHolder.tv_status.setTextColor(context.getResources().getColor(R.color.red));
 
+        if (viewInternShipPojo.getData().get(position).getSra_approve()!=null&&!viewInternShipPojo.getData().get(position).getSra_approve().contentEquals(""))
+        {
+            if (viewInternShipPojo.getData().get(position).getSra_approve().contentEquals("1"))
+            {
+                viewHolder.tv_status.setText("  " + "Approve");
+                viewHolder.tv_status.setTextColor(context.getResources().getColor(R.color.green));
+            } else if (viewInternShipPojo.getData().get(position).getSra_approve().contentEquals("-1"))
+            {
+                viewHolder.tv_status.setText("  " + "Reject");
+                viewHolder.tv_status.setTextColor(context.getResources().getColor(R.color.red));
+            } else if (viewInternShipPojo.getData().get(position).getSra_approve().contentEquals("0")) {
+                viewHolder.tv_status.setText("  " + "Pending");
+                viewHolder.tv_status.setTextColor(context.getResources().getColor(R.color.red));
+
+            }
         }
+
         return convertView;
     }
 

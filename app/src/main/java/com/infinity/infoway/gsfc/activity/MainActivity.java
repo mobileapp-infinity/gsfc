@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         UpdateUserinterface();
 
-        updateApp();
+        //updateApp();
 
         init();
     }
@@ -747,7 +747,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return root;
         }
     }
-
+/*
     public void updateApp() {
         PackageInfo pInfo = null;
         try {
@@ -784,10 +784,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             //	System.out.println("");
                                         }
 
-                                               /*Intent i=new Intent(MainActivity.this,MainActivity.class);
+                                               *//*Intent i=new Intent(MainActivity.this,MainActivity.class);
                                                i.putExtra("Exit me", true);
                                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                               startActivity(i);*/
+                                               startActivity(i);*//*
                                     }
                                 })
 
@@ -823,10 +823,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                             //	System.out.println("");
                                         }
 
-                                               /*Intent i=new Intent(MainActivity.this,MainActivity.class);
+                                               *//*Intent i=new Intent(MainActivity.this,MainActivity.class);
                                                i.putExtra("Exit me", true);
                                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                               startActivity(i);*/
+                                               startActivity(i);*//*
                                     }
                                 }).create();
 
@@ -843,7 +843,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-    }
+    }*/
 
 
     private void init() {

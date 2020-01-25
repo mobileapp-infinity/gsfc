@@ -39,9 +39,11 @@ public class FacultyAttendance extends AppCompatActivity {
 
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.post(new Runnable() {
+        toolbar.post(new Runnable()
+        {
             @Override
-            public void run() {
+            public void run()
+            {
                 Drawable d = ResourcesCompat.getDrawable(getResources(), R.drawable.backarrow, null);
                 toolbar.setNavigationIcon(d);
                 // toolbar.setBackgroundColor(Color.GREEN);
@@ -49,9 +51,11 @@ public class FacultyAttendance extends AppCompatActivity {
         });
 
         setSupportActionBar(toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 onBackPressed();
             }
         });
@@ -59,12 +63,19 @@ public class FacultyAttendance extends AppCompatActivity {
 
         findViews();
 
-        Api_call_Faculty_Pending_Attendance_bind();
-
 
     }
 
-    public void findViews() {
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        Api_call_Faculty_Pending_Attendance_bind();
+    }
+
+    public void findViews()
+    {
         queue = Volley.newRequestQueue(this);
 
         storage = new DataStorage("Login_Detail", FacultyAttendance.this);
@@ -74,53 +85,42 @@ public class FacultyAttendance extends AppCompatActivity {
 
     FacultyPojo facultyPojo;
 
-    public void Api_call_Faculty_Pending_Attendance_bind()
-    {
+    public void Api_call_Faculty_Pending_Attendance_bind() {
 
         String URLs = URl.faculty_bind_api + "&emp_id=" + String.valueOf(storage.read("emp_id", 3)) + "&year_id=" + String.valueOf(storage.read("emp_year_id", 3)) + "";
         URLs = URLs.replace(" ", "%20");
         System.out.println("faculty_bind_api calls    " + URLs + "");
         StringRequest req = new StringRequest(Request.Method.GET, URLs,
-                new com.android.volley.Response.Listener<String>()
-                {
+                new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response)
-                    {
+                    public void onResponse(String response) {
                         //DialogUtils.hideProgressDialog();
                         response = response + "";
-                        System.out.println("THIS IS faculty_bind_api RESPONSE      " + response + "");
+                       // System.out.println("THIS IS faculty_bind_api RESPONSE      " + response + "");
                         //response = "{\"Faculty\":" + response + "}";
 
 
-                        System.out.println("THIS IS faculty_bind_api RESPONSE     " + response + "");
-                        if (response.length() > 10)
-                        {
+                       // System.out.println("THIS IS faculty_bind_api RESPONSE     " + response + "");
+                        if (response.length() > 10) {
 
 
                             Gson gson = new Gson();
 
 
                             facultyPojo = gson.fromJson(response, FacultyPojo.class);
-                            if (facultyPojo != null && facultyPojo.getTable().size() > 0)
-                            {
+                            if (facultyPojo != null && facultyPojo.getTable().size() > 0) {
 
                                 FacultyPendingAttendanceAdapter adapter = new FacultyPendingAttendanceAdapter(FacultyAttendance.this, facultyPojo);
                                 lv_faculty_attendance.setAdapter(adapter);
-                            }
-                            else
-                            {
-                                DialogUtils.Show_Toast(FacultyAttendance.this,"No Records Found");
+                            } else {
+                                DialogUtils.Show_Toast(FacultyAttendance.this, "No Records Found");
                             }
 
-                        }
-
-                        else
-                        {
-                            DialogUtils.Show_Toast(FacultyAttendance.this,"No Records Found");
+                        } else {
+                            DialogUtils.Show_Toast(FacultyAttendance.this, "No Records Found");
                         }
                     }
-                }, new com.android.volley.Response.ErrorListener()
-        {
+                }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 //DialogUtils.hideProgressDialog();

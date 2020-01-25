@@ -45,6 +45,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.infinity.infoway.gsfc.CommonCls.DialogUtils;
+import com.infinity.infoway.gsfc.CommonCls.MySharedPrefereces;
+import com.infinity.infoway.gsfc.HrAppAPI.URLS;
+import com.infinity.infoway.gsfc.HrAppActivities.LoginActivity;
+import com.infinity.infoway.gsfc.HrAppPojo.LoginPojo;
 import com.infinity.infoway.gsfc.R;
 import com.infinity.infoway.gsfc.adapter.Pageradapter;
 import com.infinity.infoway.gsfc.app.DataStorage;
@@ -63,6 +75,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -103,7 +117,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     Toolbar toolbar;
     float slideoffset = 1;
     TextView syl;
-    TextView txt,nav_punch_in_out,nav_internship_work_rpt;
+    TextView txt, nav_punch_in_out, nav_internship_work_rpt;
     View student_layout;
     View Emp_layout;
     Login_Master login_master;
@@ -135,7 +149,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
     ImageView img_assignment_emp;
 
-    private ImageView imgdashboard;
+    private ImageView imgdashboard, iv_payroll;
 
     int final_count_stud_ann_emp, final_count_emp_ann_emp, final_emp_ann_count;
 
@@ -146,12 +160,10 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     private LinearLayout llviewshide;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        try
-        {
+        try {
             Intent intent = new Intent();
 
             String manufacturer = android.os.Build.MANUFACTURER;
@@ -161,29 +173,21 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             Emp_layout.setVisibility(View.GONE);
 
 
-            if ("xiaomi".equalsIgnoreCase(manufacturer))
-            {
+            if ("xiaomi".equalsIgnoreCase(manufacturer)) {
                 intent.setComponent(new ComponentName("com.miui.securitycenter", "com.miui.permcenter.autostart.AutoStartManagementActivity"));
-            }
-            else if ("oppo".equalsIgnoreCase(manufacturer))
-            {
+            } else if ("oppo".equalsIgnoreCase(manufacturer)) {
                 intent.setComponent(new ComponentName("com.coloros.safecenter", "com.coloros.safecenter.permission.startup.StartupAppListActivity"));
-            }
-            else if ("vivo".equalsIgnoreCase(manufacturer))
-            {
+            } else if ("vivo".equalsIgnoreCase(manufacturer)) {
                 intent.setComponent(new ComponentName("com.iqoo.secure.MainActivity", "com.iqoo.secure.safeguard.SoftPermissionDetailActivity"));
             }
 
             List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
 
-            if (list.size() > 0)
-            {
+            if (list.size() > 0) {
                 startActivity(intent);
             }
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             //Crashlytics.logException(e);
         }
 //        if (String.valueOf(storage.read("is_director", 3)).equals(1))
@@ -196,8 +200,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
 
         Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("message"))
-        {
+        if (intent != null && intent.hasExtra("message")) {
             String message = intent.getStringExtra("message");
             Log.e("message", "" + message);
         }
@@ -221,11 +224,9 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         mLayout.setDragView(llactionbar);
         // mLayout.setDragView(i1);
 
-        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener()
-        {
+        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
-            public void onPanelSlide(View panel, float slideOffset)
-            {
+            public void onPanelSlide(View panel, float slideOffset) {
                 slideoffset = slideOffset;
                 Log.i(TAG, "onPanelSlide, offset " + slideOffset);
             }
@@ -236,8 +237,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        mLayout.setFadeOnClickListener(new View.OnClickListener()
-        {
+        mLayout.setFadeOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
@@ -245,8 +245,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         });
 
 
-        if (getIntent().getBooleanExtra("Exit me", false))
-        {
+        if (getIntent().getBooleanExtra("Exit me", false)) {
             finish();
             System.exit(0);
 
@@ -292,13 +291,14 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         //************** for login data store only for students not of employee***************
         //get_student_data_from_student_ID();
 
+        /*send token to firebase 3aug 2019 for push notification*/
         sendIdToserver(refreshedToken);
 
         UpdateUserinterface();
 
-        updateApp();
+        //updateApp();
 
-         init();
+        init();
 
         notification();
 
@@ -320,8 +320,7 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
 
     @Override
-    public boolean onTouchEvent(MotionEvent ev)
-    {
+    public boolean onTouchEvent(MotionEvent ev) {
         return false;
     }
 
@@ -330,6 +329,9 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (mLayout != null) {
+            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+        }
 
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
@@ -342,11 +344,9 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
 
-        new Handler().postDelayed(new Runnable()
-        {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 doubleBackToExitPressedOnce = false;
             }
         }, 4000);
@@ -380,9 +380,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             myQuittingDialogBox.show();*/
     }
 
-
-    public void MenuSlice()
-    {
+/*nirali intialize app controls 3aug*/
+    public void MenuSlice() {
 //  View headerLayout = mNavigationView.getHeaderView(0);
         imgmenuprofile = (CircleImageView) findViewById(R.id.imgmenuprofile);
         ll_view_more = (LinearLayout) findViewById(R.id.ll_view_more);
@@ -543,7 +542,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    public void findviews() {
+    public void findviews()
+    {
         iv_internship_work_report = (ImageView) findViewById(R.id.iv_internship_work_report);
         iv_internship_work_report.setOnClickListener(this);
         notification_dashboard = (ImageView) findViewById(R.id.notification_dashboard);
@@ -553,14 +553,18 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         storage = new DataStorage("Login_Detail", ctx);
         login_master = new Login_Master("Login_Master", this);
 
-        if (!storage.isOnline(Main3Activity.this)) {
+        if (!storage.isOnline(Main3Activity.this))
+        {
             showDialog(DataStorage.DIALOG_ERROR_CONNECTION);
         }
 
-        if (storage.CheckLogin("stud_id", ctx)) {
+        if (storage.CheckLogin("stud_id", ctx))
+        {
             student_layout.setVisibility(View.VISIBLE);
             Emp_layout.setVisibility(View.GONE);
-        } else {
+        }
+        else
+            {
             student_layout.setVisibility(View.GONE);
             Emp_layout.setVisibility(View.VISIBLE);
         }
@@ -569,9 +573,12 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         refreshedToken = FirebaseInstanceId.getInstance().getToken();
         System.out.println("refreshedToken:::::" + refreshedToken);
         //Log.d("refreshedToken", refreshedToken);
-        if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+        if (storage.CheckLogin("stud_id", Main3Activity.this))
+        {
             //  Log.d("stud_id", String.valueOf(storage.read("stud_id",3)));
-        } else {
+        }
+        else
+            {
             // Log.d("emp_id", String.valueOf(storage.read("emp_id",3)));
         }
         nav_memberno = (TextView) findViewById(R.id.nav_memberno);
@@ -579,9 +586,12 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
 
         PackageInfo pInfo = null;
-        try {
-            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-        } catch (PackageManager.NameNotFoundException e) {
+        try
+        {
+            pInfo = getPackageManager().getPackageInfo(getPackageName(),0);
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
             e.printStackTrace();
         }
         assert pInfo != null;
@@ -598,6 +608,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         this.studentlayout = (LinearLayout) findViewById(R.id.studentlayout);
         this.imgfeedback = (ImageView) findViewById(R.id.imgfeedback);
         this.imgdashboard = (ImageView) findViewById(R.id.img_dashboard);
+        this.iv_payroll = (ImageView) findViewById(R.id.iv_payroll);
+        this.iv_payroll.setOnClickListener(this);
         this.txtfeedback = (TextView) findViewById(R.id.txtfeedback);
         this.txtnews = (TextView) findViewById(R.id.txtnews);
         this.imgnews = (ImageView) findViewById(R.id.imgnews);
@@ -642,12 +654,14 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         emp_nav_el = (TextView) findViewById(R.id.emp_nav_el);
         emp_nav_el.setOnClickListener(this);
 
-        iv_el_emp = (ImageView) findViewById(R.id.iv_el_emp);
-        iv_el_emp.setOnClickListener(this);
+//        iv_el_emp = (ImageView) findViewById(R.id.iv_el_emp);
+        // iv_el_emp.setOnClickListener(this);
     }
 
-    public void UpdateUserinterface() {
-        if (storage.CheckLogin("emp_id", this)) {
+    public void UpdateUserinterface()
+    {
+        if (storage.CheckLogin("emp_id", this))
+        {
             ll_view_more.setVisibility(View.GONE);
             ll_views_hide.setVisibility(View.VISIBLE);
             studentlayout.setVisibility(View.VISIBLE);
@@ -694,14 +708,11 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             imgfeedback.setVisibility(View.GONE);
 
 
-        }
-        else if (storage.CheckLogin("stud_id", this))
-        {
+        } else if (storage.CheckLogin("stud_id", this)) {
             this.nav_internship_work_rpt.setVisibility(View.VISIBLE);
             this.nav_punch_in_out.setVisibility(View.VISIBLE);
-        }
-        else
-            {
+            this.iv_payroll.setVisibility(View.GONE);
+        } else {
             nav_logout.setVisibility(View.VISIBLE);
             ///pppppppp    img_dashboard.setVisibility(View.GONE);
 
@@ -757,13 +768,17 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
 
     @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+    {
 //        Intent intent = new Intent(Main3Activity.this, Notification_Activity.class);
         Intent intent;
-        if (storage.CheckLogin("stud_id", Main3Activity.this)) {
+        if (storage.CheckLogin("stud_id", Main3Activity.this))
+        {
             intent = new Intent(Main3Activity.this, AnnouncementStudentActiivty.class);
 
-        } else {
+        }
+        else
+            {
             intent = new Intent(Main3Activity.this, AnnouncementFaculty.class);
 
         }
@@ -779,7 +794,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -787,7 +803,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_notification) {
+        if (id == R.id.action_notification)
+        {
             return true;
         }
 
@@ -796,12 +813,15 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
     // call the updating code on the main thread,
 // so we can call this asynchronously
-    public void updateHotCount(final int new_hot_number) {
+    public void updateHotCount(final int new_hot_number)
+    {
         //if (tvActionNotification == null) return;
 
-        runOnUiThread(new Runnable() {
+        runOnUiThread(new Runnable()
+        {
             @Override
-            public void run() {
+            public void run()
+            {
                 if (new_hot_number == 0)
                     tvActionNotification.setVisibility(View.INVISIBLE);
                 else {
@@ -812,11 +832,13 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    static abstract class MyMenuItemStuffListener implements View.OnClickListener, View.OnLongClickListener {
+    static abstract class MyMenuItemStuffListener implements View.OnClickListener, View.OnLongClickListener
+    {
         private String hint;
         private View view;
 
-        MyMenuItemStuffListener(View view, String hint) {
+        MyMenuItemStuffListener(View view, String hint)
+        {
             this.view = view;
             this.hint = hint;
             view.setOnClickListener(this);
@@ -827,7 +849,8 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         // @Override abstract public void onClick(View v);
 
         @Override
-        public boolean onLongClick(View v) {
+        public boolean onLongClick(View v)
+        {
             final int[] screenPos = new int[2];
             final Rect displayFrame = new Rect();
             view.getLocationOnScreen(screenPos);
@@ -849,9 +872,14 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    RequestQueue queue;
+    MySharedPrefereces mySharedPrefereces;
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
+        mySharedPrefereces = new MySharedPrefereces(Main3Activity.this);
+        queue = Volley.newRequestQueue(Main3Activity.this);
         switch (v.getId()) {
 
             case R.id.emp_nav_el:
@@ -877,6 +905,90 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
 
+            /********nirali *****for hr app combine with gsfc 4dec 2019*********/
+            case R.id.iv_payroll:
+                /*nirali**** 4dec 2019 for HR app automatically login*/
+                String PASSWORD = String.valueOf(storage.read("emp_password", 3));
+                String pssword = PASSWORD;
+                /*encrypt password for special characters allowed ***** 27aug 2019 nirali*/
+                try {
+                    pssword = URLEncoder.encode(pssword, "utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                DialogUtils.showProgressDialog(Main3Activity.this, "");
+//        String url = URLS.LoginCheck + "&userName=" + edtuname.getText().toString() + "&passWord=" + edtpassword.getText().toString() + "";
+                String url = URLS.LoginCheck + "&userName=" + String.valueOf(storage.read("emp_username", 3)) + "&passWord=" + pssword + "";
+                url.replace(" ", "%20");
+
+                System.out.println("LoginCheck URL " + url + "");
+                StringRequest request = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        DialogUtils.hideProgressDialog();
+
+                        System.out.println("response of LoginCheck !!!!!!!!!!! " + response);
+                        response = response + "";
+                        if (response.length() > 5)
+                        {
+                            response = "{\"Data\":" + response + "}";
+
+                            System.out.println("sucess response LoginCheck !!!!!!!!!!!!!!!!!!!" + response + "");
+                            Gson gson = new Gson();
+                            LoginPojo loginPojo = gson.fromJson(response, LoginPojo.class);
+                            if (loginPojo != null)
+                            {
+                                if (loginPojo.getData() != null)
+                                {
+                                    if (loginPojo.getData().get(0) != null)
+                                    {
+                                        if (loginPojo.getData().size() > 0)
+                                        {
+                                            if (loginPojo.getData().get(0).getStatus().contentEquals("1"))
+                                            {
+                                                //DialogUtils.Show_Toast(LoginActivity.this,"Login Sucessfully");
+                                                //********* store login data of user ****************
+                                                mySharedPrefereces.storeLoginData(loginPojo.getData().get(0).getStatus() + "", loginPojo.getData().get(0).getUsrm_id() + "", loginPojo.getData().get(0).getEmp_code() + "", loginPojo.getData().get(0).getUsrm_name() + "", loginPojo.getData().get(0).getUsrm_dis_name() + "", loginPojo.getData().get(0).getComp_id() + "", loginPojo.getData().get(0).getUsrm_brm_id() + "", loginPojo.getData().get(0).getCom_name() + "", loginPojo.getData().get(0).getFin_year() + "", loginPojo.getData().get(0).getFin_id() + "", loginPojo.getData().get(0).getFin_start_date() + "", loginPojo.getData().get(0).getFin_end_date() + "", loginPojo.getData().get(0).getEmp_id() + "", loginPojo.getData().get(0).getDepartment() + "", loginPojo.getData().get(0).getReportingto() + "", loginPojo.getData().get(0).getUserphoto() + "", loginPojo.getData().get(0).getDesignation() + "", loginPojo.getData().get(0).getBranch() + "", loginPojo.getData().get(0).getFullName() + "");
+
+
+                                                Intent payroll_intent = new Intent(Main3Activity.this, com.infinity.infoway.gsfc.HrAppActivities.MainActivity.class);
+                                                startActivity(payroll_intent);
+                                               // finish();
+
+                                            }
+                                            else
+                                                {
+                                                //  DialogUtils.Show_Toast(LoginActivity.this,"Invalid UserName/Password");
+                                            }
+                                        }
+
+
+                                    }
+                                }
+                            }
+                        }
+
+
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        DialogUtils.Show_Toast(Main3Activity.this, "Please Try Again Later");
+                        DialogUtils.hideProgressDialog();
+                        System.out.println("errorrrrrrrrrr " + error);
+                        System.out.println("errorrrrrrrrrr in api" + error.networkResponse);
+                    }
+                });
+                request.setRetryPolicy(new DefaultRetryPolicy(0, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+                queue.add(request);
+
+
+
+
+                break;
+
             case R.id.emp_nav_asnmnt:
                 Intent nav_emp_nav_asnmnt = new Intent(Main3Activity.this, AssignmentEmployeeActivity.class);
                 startActivity(nav_emp_nav_asnmnt);
@@ -888,13 +1000,13 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.nav_internship_work_rpt:
-                Intent punch_intent =new Intent(Main3Activity.this,ViewInternshipWorkReportActivity.class);
+                Intent punch_intent = new Intent(Main3Activity.this, ViewInternshipWorkReportActivity.class);
 
                 startActivity(punch_intent);
                 break;
 
             case R.id.nav_punch_in_out:
-                Intent punch_in_out = new Intent(Main3Activity.this,PunchInPunchOutActivity.class);
+                Intent punch_in_out = new Intent(Main3Activity.this, PunchInPunchOutActivity.class);
 
                 startActivity(punch_in_out);
                 break;
@@ -985,10 +1097,10 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 
                 break;*/
 
-            case R.id.iv_el_emp:
+           /* case R.id.iv_el_emp:
                 Intent iniv_el_emp = new Intent(Main3Activity.this, E_Learning_List.class);
                 startActivity(iniv_el_emp);
-                break;
+                break;*/
            /* case R.id.img_Moreapp_emp:
 
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
@@ -1258,6 +1370,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 //
 //                else {
                 Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_Attendance.class);
+//                Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_attendance_backup.class);
                 startActivity(intentimgsyllabus);
                 // }
 
@@ -1319,7 +1432,8 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                 break;
 
             case R.id.nav_Leave_app:
-                Intent intent3 = new Intent(Main3Activity.this, Leaveapplication.class);
+//                Intent intent3 = new Intent(Main3Activity.this, Leaveapplication.class);
+                Intent intent3 = new Intent(Main3Activity.this, ViewLeaveApplication.class);
                 startActivity(intent3);
                 overridePendingTransition(R.anim.enter, R.anim.exit);
                 break;
@@ -1417,6 +1531,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
             case R.id.nav_attendance:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
                     intentattendance = new Intent(Main3Activity.this, Student_Attendance.class);
+//                    intentattendance = new Intent(Main3Activity.this, Student_attendance_backup.class);
                     overridePendingTransition(R.anim.slide_up, R.anim.blink);
                     startActivity(intentattendance);
                 } else {
@@ -1631,6 +1746,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
         }
     }
 
+/*
     public void updateApp() {
         PackageInfo pInfo = null;
         try {
@@ -1668,10 +1784,12 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                                             //	System.out.println("");
                                         }
 
-                                               /*Intent i=new Intent(MainActivity.this,MainActivity.class);
+                                               */
+/*Intent i=new Intent(MainActivity.this,MainActivity.class);
                                                i.putExtra("Exit me", true);
                                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                               startActivity(i);*/
+                                               startActivity(i);*//*
+
                                     }
                                 })
 
@@ -1711,10 +1829,12 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                                             //	System.out.println("");
                                         }
 
-                                               /*Intent i=new Intent(MainActivity.this,MainActivity.class);
+                                               */
+/*Intent i=new Intent(MainActivity.this,MainActivity.class);
                                                i.putExtra("Exit me", true);
                                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                               startActivity(i);*/
+                                               startActivity(i);*//*
+
                                     }
                                 }).create();
 
@@ -1732,10 +1852,10 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
         });
 
     }
+*/
 
 
-    private void init()
-    {
+    private void init() {
 
 
         final long DELAY_MS = 600;//delay in milliseconds before task is to be executed
@@ -1745,8 +1865,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
         Call<LoginResponse> call = apiService.getSliderImages(String.valueOf(storage.read("im_domain_name", 3)), String.valueOf(storage.read("intitute_id", 3)));
         call.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response)
-            {
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 // Toast.makeText(MainActivity.this,  "products found", Toast.LENGTH_LONG).show();
                 if (response.isSuccessful()) {
                     ArrayList<String> resp = response.body().geturl();
@@ -1786,8 +1905,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t)
-            {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
                 // Log error here since request failed
                 //Toast.makeText(PrivacyAndTermsCondition.this, "Error", Toast.LENGTH_LONG).show();
                 //  Log.e("termserror", t.toString());
@@ -1796,22 +1914,17 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
     }
 
 
-    public void get_student_data_from_student_ID()
-    {
+    public void get_student_data_from_student_ID() {
         System.out.println("calleddddddddddddddddddddddd---------general");
-        if (storage.CheckLogin("stud_id", Main3Activity.this))
-        {
+        if (storage.CheckLogin("stud_id", Main3Activity.this)) {
             System.out.println("stud_ID---from get_student_data_from_student_ID---" + String.valueOf(storage.read("stud_id", 3)));
 
             ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
             Call<LoginResponse> call = apiInterface.get_student_data_from_stud_id(String.valueOf(storage.read("stud_id", 3)));
-            call.enqueue(new Callback<LoginResponse>()
-            {
+            call.enqueue(new Callback<LoginResponse>() {
                 @Override
-                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response)
-                {
-                    if (response.isSuccessful())
-                    {
+                public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                    if (response.isSuccessful()) {
                         System.out.println("calleddddddddddddddddddddddd---------student");
                         storage.write("stud_id", response.body().getstud_id());
                         storage.write("dm_id", response.body().getdm_id());
@@ -1836,7 +1949,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 
                         init();
 
-                       // notification();
+                        // notification();
 
                     } else {
 
@@ -1850,18 +1963,14 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                 }
             });
         } else {
-            if (storage.CheckLogin("emp_id", this))
-            {
+            if (storage.CheckLogin("emp_id", this)) {
                 ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
                 Call<LoginResponse> call = apiInterface.login_user_new_api_from_emp_id(String.valueOf(storage.read("emp_id", 3)));
-                call.enqueue(new Callback<LoginResponse>()
-                {
+                call.enqueue(new Callback<LoginResponse>() {
                     @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response)
-                    {
+                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
-                        if (response.isSuccessful())
-                        {
+                        if (response.isSuccessful()) {
                             System.out.println("calleddddddddddddddddddddddd---------emp");
 
                             storage.write("emp_id", response.body().getemp_id());
@@ -1882,10 +1991,8 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 
                             init();
 
-                         //   notification();
-                        }
-                        else
-                            {
+                            //   notification();
+                        } else {
 
                         }
 
@@ -1964,8 +2071,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
     }
 
 
-    public void notification()
-    {
+    public void notification() {
 //        final ProgressDialog progressDialog = new ProgressDialog(Main3Activity.this, R.style.MyTheme1);
 //        progressDialog.setCancelable(false);
 //        progressDialog.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
@@ -1986,37 +2092,30 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
             startActivity(intent);
             finish();
         } else {*/
-        if (storage.CheckLogin("stud_id", Main3Activity.this))
-        {
+        if (storage.CheckLogin("stud_id", Main3Activity.this)) {
             //******** student in student announcement*************
             call = apiInterface.get_stud_emp_notification("2", String.valueOf(storage.read("ac_id", 3)), String.valueOf(storage.read("dm_id", 3)), String.valueOf(storage.read("course_id", 3)), String.valueOf(storage.read("sm_id", 3)), String.valueOf(storage.read("intitute_id", 3)));
 
-            System.out.println("if student ::::::::::"+call.request());
-        }
-        else
-            {
-                String permenant_clg_ID = "";
+            System.out.println("if student ::::::::::" + call.request());
+        } else {
+            String permenant_clg_ID = "";
 
-                //*************** in some cases emp_permenant_college is null from api ************
-                if (String.valueOf(storage.read("emp_permenant_college",3)) == null ||String.valueOf(storage.read("emp_permenant_college",3)).compareToIgnoreCase("null") ==0||String.valueOf(storage.read("emp_permenant_college",3)).contentEquals(""))
-                {
-                    permenant_clg_ID = "0";
-                }
-
-                else
-                {
-                    permenant_clg_ID = String.valueOf(storage.read("emp_permenant_college",3));
-                }
+            //*************** in some cases emp_permenant_college is null from api ************
+            if (String.valueOf(storage.read("emp_permenant_college", 3)) == null || String.valueOf(storage.read("emp_permenant_college", 3)).compareToIgnoreCase("null") == 0 || String.valueOf(storage.read("emp_permenant_college", 3)).contentEquals("")) {
+                permenant_clg_ID = "0";
+            } else {
+                permenant_clg_ID = String.valueOf(storage.read("emp_permenant_college", 3));
+            }
             //********** student in emp announcement**********
             call2 = apiInterface.get_stud_emp_notification("2", permenant_clg_ID, String.valueOf(storage.read("emp_department_id", 3)), "0", "0", String.valueOf(storage.read("intitute_id", 3)));
-                System.out.println("student in emp ::::::::::"+call2.request());
+            System.out.println("student in emp ::::::::::" + call2.request());
 
 
             //********* emp in emp announcement************
             call1 = apiInterface.get_stud_emp_notification("1", permenant_clg_ID, String.valueOf(storage.read("emp_department_id", 3)), "0", "0", String.valueOf(storage.read("intitute_id", 3)));
 
-                System.out.println("student in emp call1:::::::: "+call1.request());
-                System.out.println("student in emp call2:::::::: "+call2.request());
+            System.out.println("student in emp call1:::::::: " + call1.request());
+            System.out.println("student in emp call2:::::::: " + call2.request());
         }
 
         final Call<ArrayList<NotificationResponse>> finalCall_emp = call1;
@@ -2024,82 +2123,64 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 
 //        System.out.println("call1 request ::::::"+call1.request());
 //        System.out.println("call request **************::::::"+call.request());
-       // System.out.println("call2 request print ::::::"+call2.request());
-        if (storage.CheckLogin("stud_id", Main3Activity.this))
-        {
+        // System.out.println("call2 request print ::::::"+call2.request());
+        if (storage.CheckLogin("stud_id", Main3Activity.this)) {
 
-            call.enqueue(new Callback<ArrayList<NotificationResponse>>()
-            {
+            call.enqueue(new Callback<ArrayList<NotificationResponse>>() {
                 @Override
-                public void onResponse(Call<ArrayList<NotificationResponse>> call, Response<ArrayList<NotificationResponse>> response)
-                {
+                public void onResponse(Call<ArrayList<NotificationResponse>> call, Response<ArrayList<NotificationResponse>> response) {
                     //Log.d("Er",response.toString());
-                    if (response.isSuccessful())
-                    {
+                    if (response.isSuccessful()) {
 //                    progressDialog.dismiss();
-                        if (response.body().size() >= 1)
-                        {
+                        if (response.body().size() >= 1) {
 
 //                            int size_response = response.body().size();
                             int size_response = response.body().size();
 //                        int size_response = 10;
 
 
-                            if (storage.CheckLogin("stud_id", Main3Activity.this))
-                            {
+                            if (storage.CheckLogin("stud_id", Main3Activity.this)) {
 
                                 System.out.println("size_response:::::::" + size_response);
                                 String num_act = String.valueOf(storage.read("Number", 3));
                                 int count_stud_announcement = Integer.parseInt(String.valueOf(login_master.read("count_stud_announcement", 1)));
 //                                int count_stud_announcement = Integer.parseInt(String.valueOf(login_master.read("count_stud_announcement", 1)));
                                 System.out.println("notify::::::::::::" + count_stud_announcement);
-                                if (size_response > count_stud_announcement)
-                                {
+                                if (size_response > count_stud_announcement) {
                                     int final_count_stud_ann = size_response - count_stud_announcement;
                                     System.out.println("final_num:::::::::::" + final_count_stud_ann);
                                     txt.setText(String.valueOf(final_count_stud_ann));
-                                }
-                                else
-                                    {
+                                } else {
                                     txt.setVisibility(View.GONE);
                                 }
                             }
 
-                        }
-                        else {
+                        } else {
                             txt.setVisibility(View.GONE);
                         }
 
-                    }
-                    else
-                        {
+                    } else {
 //                        progressDialog.dismiss();
                         Toast.makeText(Main3Activity.this, "Please try again later", Toast.LENGTH_LONG).show();
                     }
                 }
 
                 @Override
-                public void onFailure(Call<ArrayList<NotificationResponse>> call, Throwable t)
-                {
+                public void onFailure(Call<ArrayList<NotificationResponse>> call, Throwable t) {
 //                progressDialog.dismiss();
                 }
             });
 
-        }
-        else
-            {
+        } else {
 
 
-            finalCall1_stud.enqueue(new Callback<ArrayList<NotificationResponse>>()
-            {
+            finalCall1_stud.enqueue(new Callback<ArrayList<NotificationResponse>>() {
                 @Override
                 public void onResponse(Call<ArrayList<NotificationResponse>> finalCall1, Response<ArrayList<NotificationResponse>> response) {
                     //Log.d("Er",response.toString());
-                    if (response.isSuccessful())
-                    {
+                    if (response.isSuccessful()) {
 //                    progressDialog.dismiss();
-                        if (response.body().size() >= 1)
-                        {
+                        if (response.body().size() >= 1) {
 
 
                             int count_stud_emp_rsdponse = response.body().size();
@@ -2109,8 +2190,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                             System.out.println("count_stud_ann::::::::::::" + count_stud_ann);
 //
 
-                            if (count_stud_emp_rsdponse > count_stud_ann)
-                            {
+                            if (count_stud_emp_rsdponse > count_stud_ann) {
                                 final_count_stud_ann_emp = count_stud_emp_rsdponse - count_stud_ann;
                                 System.out.println("final_num:::::::::::" + final_count_stud_ann_emp);
                                 // txt.setText(String.valueOf(final_count_stud_ann_emp));
@@ -2119,17 +2199,13 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                         }
 
 
-                        finalCall_emp.enqueue(new Callback<ArrayList<NotificationResponse>>()
-                        {
+                        finalCall_emp.enqueue(new Callback<ArrayList<NotificationResponse>>() {
                             @Override
-                            public void onResponse(Call<ArrayList<NotificationResponse>> finalCall, Response<ArrayList<NotificationResponse>> response)
-                            {
+                            public void onResponse(Call<ArrayList<NotificationResponse>> finalCall, Response<ArrayList<NotificationResponse>> response) {
                                 //Log.d("Er",response.toString());
-                                if (response.isSuccessful())
-                                {
+                                if (response.isSuccessful()) {
 //                    progressDialog.dismiss();
-                                    if (response.body().size() >= 1)
-                                    {
+                                    if (response.body().size() >= 1) {
 
                                         int count_emp_resp = response.body().size();
                                         System.out.println("count_emp_resp::::::::" + count_emp_resp);
@@ -2137,8 +2213,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
                                         int temp = Integer.parseInt(String.valueOf(login_master.read("count_emp_ann_emp", 1)));
                                         System.out.println("count of emp in emp ann :::::::::::" + temp);
 
-                                        if (count_emp_resp > temp)
-                                        {
+                                        if (count_emp_resp > temp) {
                                             final_count_emp_ann_emp = count_emp_resp - temp;
                                             System.out.println("final_count_emp_ann_emp::::::::" + final_count_emp_ann_emp);
                                         }
@@ -2150,9 +2225,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 //                                        DialogUtils.Show_Toast(Main3Activity.this,"No Records Found");
 //                                    }
 
-                                }
-                                else
-                                    {
+                                } else {
                                     Toast.makeText(Main3Activity.this, "Please try again later", Toast.LENGTH_LONG).show();
                                 }
                             }

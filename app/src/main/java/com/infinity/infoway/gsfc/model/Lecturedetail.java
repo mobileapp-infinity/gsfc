@@ -3,10 +3,10 @@ package com.infinity.infoway.gsfc.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Lecturedetail
-{
+public class Lecturedetail implements Serializable {
     @SerializedName("sm_name")
     private String sm_name;
     @SerializedName("lect_no")
@@ -29,9 +29,13 @@ public class Lecturedetail
     private ArrayList<Lablist> lab_array;
     @SerializedName("emp_name")
     private String emp_name;
+    @SerializedName("lec_gaip")
+    private String lec_gaip;
 
 
-
+    public String getlec_gaip() {
+        return lec_gaip;
+    }
 
     public String getsm_name() {
         return sm_name;

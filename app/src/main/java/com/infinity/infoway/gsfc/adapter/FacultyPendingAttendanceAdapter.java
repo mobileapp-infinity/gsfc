@@ -12,16 +12,15 @@ import android.widget.TextView;
 
 import com.infinity.infoway.gsfc.R;
 import com.infinity.infoway.gsfc.activity.EmployeeFillAttendanceActivity;
+import com.infinity.infoway.gsfc.activity.EmployeeFillAttendanceActivity_configuration;
 import com.infinity.infoway.gsfc.model.FacultyPojo;
 
-public class FacultyPendingAttendanceAdapter extends BaseAdapter
-{
+public class FacultyPendingAttendanceAdapter extends BaseAdapter {
     Context ctx;
-    FacultyPojo facultyPojo ;
+    FacultyPojo facultyPojo;
 
 
-    class ViewHolder
-    {
+    class ViewHolder {
 
         ImageView iv_authority;
         LinearLayout ll_authority_adapter;
@@ -37,28 +36,24 @@ public class FacultyPendingAttendanceAdapter extends BaseAdapter
 
     ViewHolder viewHolder;
 
-    public FacultyPendingAttendanceAdapter(Context ctx, FacultyPojo facultyPojo)
-    {
+    public FacultyPendingAttendanceAdapter(Context ctx, FacultyPojo facultyPojo) {
         this.ctx = ctx;
         this.facultyPojo = facultyPojo;
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
 //        return enrollPojo.getEnroll().size();
         return facultyPojo.getTable().size();
     }
 
     @Override
-    public Object getItem(int i)
-    {
+    public Object getItem(int i) {
         return i;
     }
 
     @Override
-    public long getItemId(int i)
-    {
+    public long getItemId(int i) {
         return i;
     }
 
@@ -72,7 +67,7 @@ public class FacultyPendingAttendanceAdapter extends BaseAdapter
             viewHolder = new ViewHolder();
 
 
-            viewHolder.lladapterfacultyattendance = (LinearLayout)itemView. findViewById(R.id.ll_adapter_faculty_attendance);
+            viewHolder.lladapterfacultyattendance = (LinearLayout) itemView.findViewById(R.id.ll_adapter_faculty_attendance);
             viewHolder.txtclass = (TextView) itemView.findViewById(R.id.txt_class);
             viewHolder.txtlect = (TextView) itemView.findViewById(R.id.txt_lect);
             viewHolder.txtsub = (TextView) itemView.findViewById(R.id.txt_sub);
@@ -82,30 +77,26 @@ public class FacultyPendingAttendanceAdapter extends BaseAdapter
             viewHolder.txt_fill_attendance = (TextView) itemView.findViewById(R.id.txt_fill_attendance);
 
 
-
-
-
             itemView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) itemView.getTag();
         }
 
 
-        viewHolder.txtdate.setText(facultyPojo.getTable().get(i).getDl_date()+"");
-        viewHolder.txtsem.setText(facultyPojo.getTable().get(i).getSemester_name()+"");
-        viewHolder.txtabx.setText(facultyPojo.getTable().get(i).getBatch_name()+"");
-        viewHolder.txtsub.setText(facultyPojo.getTable().get(i).getSub_name()+"");
-        viewHolder.txtlect.setText(facultyPojo.getTable().get(i).getLecture_name()+"");
-        viewHolder.txtclass.setText(facultyPojo.getTable().get(i).getResourse_name()+"");
+        viewHolder.txtdate.setText(facultyPojo.getTable().get(i).getDl_date() + "");
+        viewHolder.txtsem.setText(facultyPojo.getTable().get(i).getSemester_name() + "");
+        viewHolder.txtabx.setText(facultyPojo.getTable().get(i).getBatch_name() + "");
+        viewHolder.txtsub.setText(facultyPojo.getTable().get(i).getSub_name() + "");
+        viewHolder.txtlect.setText(facultyPojo.getTable().get(i).getLecture_name() + "");
+        viewHolder.txtclass.setText(facultyPojo.getTable().get(i).getResourse_name() + "");
 
-        viewHolder.txt_fill_attendance.setOnClickListener(new View.OnClickListener()
-        {
+        viewHolder.txt_fill_attendance.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-             //ppppppppppppppppppppppppppppppp   Intent intent = new Intent(ctx, FillAttendanceActivityfaculty.class);
-                Intent intent = new Intent(ctx, EmployeeFillAttendanceActivity.class);
-                intent.putExtra("data",facultyPojo.getTable().get(i));
+            public void onClick(View view) {
+                //ppppppppppppppppppppppppppppppp   Intent intent = new Intent(ctx, FillAttendanceActivityfaculty.class);
+//                Intent intent = new Intent(ctx, EmployeeFillAttendanceActivity.class);
+                Intent intent = new Intent(ctx, EmployeeFillAttendanceActivity_configuration.class);
+                intent.putExtra("data", facultyPojo.getTable().get(i));
                 ctx.startActivity(intent);
             }
         });

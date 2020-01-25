@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.infinity.infoway.gsfc.R;
 import com.infinity.infoway.gsfc.activity.EmployeeFillAttendanceActivity;
+import com.infinity.infoway.gsfc.activity.EmployeeFillAttendanceActivity_configuration;
 import com.infinity.infoway.gsfc.model.StudentsDisplyaFillPojo;
 
 import java.util.ArrayList;
@@ -205,7 +206,7 @@ public class BenefitsAdapter extends BaseAdapter {
                 }
 
 //                FillAttendanceActivityfaculty.refresh();
-                EmployeeFillAttendanceActivity.refresh();
+                EmployeeFillAttendanceActivity_configuration.refresh();
 
             }
         });

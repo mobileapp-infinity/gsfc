@@ -208,6 +208,7 @@ public class Timetable extends AppCompatActivity
 
             Call<ArrayList<TimeTableResponse>> call = apiService.getEmployeeTimetable(String.valueOf(storage.read("emp_id",3)),String.valueOf(storage.read("emp_year_id",3)));
 
+                System.out.println("EMPLOYEE TIME TABLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+call.request());
             call.enqueue(new Callback<ArrayList<TimeTableResponse>>()
             {
                 @Override

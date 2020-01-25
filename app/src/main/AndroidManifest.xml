@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.infinity.infoway.gsfc">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permissio.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
@@ -22,10 +24,12 @@
         android:hardwareAccelerated="true"
         android:icon="@drawable/launcher_main"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:largeHeap="true"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon">
+        <activity android:name=".activity.Student_attendance_backup"></activity>
         <activity
             android:name=".activity.E_Learning"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
@@ -55,6 +59,9 @@
             </intent-filter>
             -->
         </activity>
+        <activity
+            android:name="com.infinity.infoway.gsfc.activity.EmployeeFillAttendanceActivity_configuration"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity android:name=".activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,7 +78,6 @@
             </intent-filter>
         </activity>
         -->
-
         <activity
             android:name=".activity.Main3Activity"
             android:theme="@style/MyMaterialTheme.Base" />
@@ -87,76 +93,60 @@
         <activity
             android:name=".activity.AssignmentActivity"
             android:theme="@style/MyMaterialTheme.Base" />
-
-
         <activity
             android:name=".activity.DirectivePageActivity"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.E_Learning_List"
             android:theme="@style/MyMaterialTheme.Base" />
-
-
-
         <activity
             android:name=".activity.EmployeeFillAttendanceActivity"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.FacultyAttendance"
             android:theme="@style/MyMaterialTheme.Base" />
-
-
-
-      <activity
+        <activity
             android:name=".activity.FillAttendanceActivityfaculty"
             android:theme="@style/MyMaterialTheme.Base" />
-
-       <activity
+        <activity
             android:name=".activity.HomeworkActivity"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.InternshipWorkReport"
             android:theme="@style/MyMaterialTheme.Base" />
-       <activity
+        <activity
             android:name=".activity.Leave_emp"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.LeaveStudentApply"
             android:theme="@style/MyMaterialTheme.Base" />
-       <activity
+        <activity
             android:name=".activity.NewEmpLectPlan"
             android:theme="@style/MyMaterialTheme.Base" />
-       <activity
+        <activity
             android:name=".activity.NewEmpLecturePlanDetail"
             android:theme="@style/MyMaterialTheme.Base" />
-
- <activity
+        <activity
             android:name=".activity.NewsGroupWise"
             android:theme="@style/MyMaterialTheme.Base" />
-       <activity
+        <activity
             android:name=".activity.Notification_Activity"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.PendingfeesActivity"
             android:theme="@style/MyMaterialTheme.Base" />
-       <activity
+        <activity
             android:name=".activity.PlacementActivity"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.Profile"
             android:theme="@style/MyMaterialTheme.Base" />
-
-
-
         <activity
             android:name=".activity.PunchInPunchOutActivity"
             android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.ViewInternshipWorkReportActivity"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.Employee_Attendance"
             android:theme="@style/MyMaterialTheme.Base" />
@@ -169,14 +159,13 @@
         <activity
             android:name=".activity.EmployeeLeave"
             android:theme="@style/MyMaterialTheme.Base" />
- <activity
+        <activity
             android:name=".activity.Student_Attendance"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.Syllabus"
             android:theme="@style/MyMaterialTheme.Base" />
-<activity
+        <activity
             android:name=".activity.testi"
             android:theme="@style/MyMaterialTheme.Base" />
 
@@ -198,8 +187,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 <action android:name="com.google.c2dm.intent.RECEIVE" />
             </intent-filter>
-        </service>
-        <!-- <receiver -->
+        </service> <!-- <receiver -->
         <!-- android:name="com.google.android.gcm.GCMBroadcastReceiver" -->
         <!-- android:permission="com.google.android.c2dm.permission.SEND"> -->
         <!-- <intent-filter> -->
@@ -257,11 +245,12 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
         <activity android:name=".activity.Login" />
-        <activity
+        <!--<activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" />-->
         <activity
             android:name=".activity.Lectureplan_Detail"
             android:theme="@style/MyMaterialTheme.Base" />
@@ -289,7 +278,6 @@
         <activity
             android:name=".activity.ExamDisplayTimeTable"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.ExamTimetableDetailActivity"
             android:theme="@style/MyMaterialTheme.Base" />
@@ -302,7 +290,6 @@
         <activity
             android:name=".activity.ViewLeaveApplication"
             android:theme="@style/MyMaterialTheme.Base" />
-
         <activity
             android:name=".activity.webViewDemo"
             android:theme="@style/MyMaterialTheme.Base" />
@@ -321,12 +308,11 @@
         <activity
             android:name=".activity.ResultActivity"
             android:configChanges="screenSize|orientation"
-            android:theme="@style/MyMaterialTheme.Base"></activity>
+            android:theme="@style/MyMaterialTheme.Base" />
         <activity
             android:name=".activity.ELerningStudentActivity"
             android:configChanges="screenSize|orientation"
             android:theme="@style/MyMaterialTheme.Base">
-
 
             <!--
             <intent-filter>
@@ -336,6 +322,215 @@
             </intent-filter>
             -->
         </activity>
+
+
+
+
+        <!--activities of hr app-->
+        <activity android:name=".HrAppActivities.StatisticsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+       <!-- <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/notify_launcher" />-->
+
+        <activity
+            android:name=".HrAppActivities.CoffDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.COffLeaveApprovalActitivty"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ForgotpasswordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ChangePasswordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.AttendanceReportActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.SlarySlipActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ApplyCancelLeaveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ViewCancelLeaveDetailsOnly"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.LeaveApplicationApproveReject"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ViewCancelLeaveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ViewApproveCancelLeaveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ViewLeaveListingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.MissPunchApprovedActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.AddMissPunchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.MissPunchUpdateActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.CancelLeaveApproveRejectActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.MissPunchApproval"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.MyMissPunchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HrAppActivities.LeaveBalanceActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <!--
+  <activity
+            android:name=".Activity.LeaveApprovalActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        -->
+        <activity
+            android:name=".HrAppActivities.ViewAllLeavePunchInOut"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ApproveLeaveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.AddLeaveAcivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ViewLeaveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".HrAppActivities.ProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+      <!--  <activity
+            android:name=".HrAppActivities.SplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <activity
+            android:name=".HrAppActivities.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <!--
+                    <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+        -->
+        <activity
+            android:name=".HrAppActivities.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="OPEN_ACTIVITY_1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!--
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+            -->
+        </activity> <!-- Firebase Notifications -->
+        <service
+            android:name=".HrService.MyFirebaseMessagingService"
+            android:exported="false">
+
+            <!--
+            <intent-filter>
+                <action android:name="OPEN_ACTIVITY_1" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".HrService.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service> <!-- ./Firebase Notifications -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.infinity.infoway.gsfc.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

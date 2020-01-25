@@ -7,6 +7,7 @@ import com.infinity.infoway.gsfc.model.ExamTTPojo;
 import com.infinity.infoway.gsfc.model.FcmResponse;
 import com.infinity.infoway.gsfc.model.Fee_Receipt_List;
 import com.infinity.infoway.gsfc.model.Fees;
+import com.infinity.infoway.gsfc.model.GetLatestVesionResponse;
 import com.infinity.infoway.gsfc.model.Holiday_next;
 import com.infinity.infoway.gsfc.model.LeaveResponse;
 import com.infinity.infoway.gsfc.model.LecturePlanEmployee;
@@ -76,8 +77,15 @@ public interface ApiInterface
     @GET("get_student_timetable_api_lopgin")
     Call<ArrayList<TimeTableResponse>> getStudentTimetable(@QueryMap Map<String, String> params);
 
-    @GET("check_version_api")
-    Call<ProfileResponse> checkversionupdate(@Query("version") int version);
+   /* @GET("check_version_api")
+    Call<GetLatestVesionResponse> checkversionupdate(@Query("version") int version); */
+
+    /*==========institute wise version update =======*/
+    @GET("check_version_api_Institute_Wise")
+    Call<GetLatestVesionResponse> checkversionupdate(@Query("version") int version);
+
+  /*  @GET("check_version_api")
+    Call<ProfileResponse> checkversionupdate(@Query("version") int version);*/
 
     @GET("get_student_forget_password_detail")
     Call<LoginResponse> forgotpassword(@Query("email") String version);

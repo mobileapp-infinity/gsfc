@@ -148,7 +148,6 @@
                    <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="---"
                         android:id="@+id/tvdivision"
                         android:paddingLeft="10dp"
                         android:layout_weight="0.25"
@@ -181,7 +180,6 @@
                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="---"
                     android:id="@+id/tvbatch"
                     android:paddingLeft="10dp"
                     android:layout_weight="0.25"/>
@@ -211,7 +209,6 @@
                <com.infinity.infoway.gsfc.CommonCls.CustomTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="---"
                     android:id="@+id/tvclassroom"
                     android:paddingLeft="10dp"
                     />

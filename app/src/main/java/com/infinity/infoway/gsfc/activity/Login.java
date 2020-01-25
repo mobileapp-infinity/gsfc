@@ -1,11 +1,16 @@
 package com.infinity.infoway.gsfc.activity;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -170,11 +175,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 //            }
 //
 //        }
-        if (cstorage.CheckLogin("emp_id", this)) {
-            if (cstorage.read("is_director", 3).equals("1")) {
+        if (cstorage.CheckLogin("emp_id", this))
+        {
+            if (cstorage.read("is_director", 3).equals("1"))
+            {
                 startActivity(new Intent(Login.this, DirectivePageActivity.class));
                 finish();
-            } else {
+            }
+            else
+                {
 
                 Intent intent = new Intent(Login.this, Main3Activity.class);
                 startActivity(intent);
@@ -182,7 +191,66 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             }
         }
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
 
+            if (!hasPermissions(Login.this, RunTimePerMissions)) {
+                ActivityCompat.requestPermissions(Login.this, RunTimePerMissions, MY_PERMISSIONS_REQUEST_READ_WRITE_STATE);
+            }
+        }
+    }
+
+    private static final int MY_PERMISSIONS_REQUEST_READ_WRITE_STATE = 100;
+    private final String[] RunTimePerMissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+
+    private static boolean hasPermissions(Context context, String... permissions)
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null)
+        {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        System.out.println("onRequestPermissionsResult!!!!!!!!!!!!!!!!!!!");
+
+        if (requestCode == MY_PERMISSIONS_REQUEST_READ_WRITE_STATE) {
+            // Received permission result for READ_PHONE_STATE permission.est.");
+            // Check if the only required permission has been granted
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                //  checkVersionInfoApiCall();
+            } else {
+
+                try {
+                    alertAlert(getResources().getString(R.string.permissions_has_not_grant));
+                } catch (Exception e) {
+
+                }
+            }
+        }
+
+    }
+
+    private void alertAlert(String msg) {
+        new android.app.AlertDialog.Builder(Login.this)
+                .setTitle(getResources().getString(R.string.permission_request))
+                .setMessage(msg + " So Reopen the app and grant permission for well uses of app")
+                .setCancelable(false)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setIcon(R.drawable.launcher_main)
+                .show();
     }
 
     public void findviews() {
@@ -279,8 +347,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
 
                             login_email_pojo = gson.fromJson(response, Login_Email_Pojo.class);
-                            if (login_email_pojo != null)
-                            {
+                            if (login_email_pojo != null) {
                                 storage.write("emp_id", login_email_pojo.getEmp_id());
                                 storage.write("emp_main_school_id", login_email_pojo.getEmp_main_school_id());
                                 storage.write("emp_username", login_email_pojo.getEmp_username());
@@ -352,9 +419,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 System.out.println("username:::" + etusername.getText().toString());
                 System.out.println("password::: final_Password" + final_Password);
                 System.out.println("password:::" + etpassword.getText().toString());
-                 Call<LoginResponse> call = apiService.StudentLogin(mParams);
+                Call<LoginResponse> call = apiService.StudentLogin(mParams);
 //                Call<LoginResponse> call = apiService.student_login_for_sims(mParams);
 
+                System.out.println("LOGIN FACULTY *************" + call.request());
                 call.enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -470,7 +538,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                             } else {
 
-                                        // *** only for SIMS
+                                // *** only for SIMS
 //                                Api_call_Authenticate_user_by_Api(progressDialog);
 
 
@@ -482,18 +550,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                 mParams.put("password", etpassword.getText().toString());
                                 final Call<LoginResponse> empcall = apiService.EmployeeLogin(mParams);
 
-                                empcall.enqueue(new Callback<LoginResponse>()
-                                {
+                                empcall.enqueue(new Callback<LoginResponse>() {
                                     @Override
-                                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response)
-                                    {
+                                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                                         progressDialog.dismiss();
-                                        if (response.isSuccessful())
-                                        {
-                                            if (response.body().getstatus().equals("1"))
-                                            {
-                                                if (response.body().getIs_director().equals("0"))
-                                                {
+                                        if (response.isSuccessful()) {
+                                            if (response.body().getstatus().equals("1")) {
+                                                if (response.body().getIs_director().equals("0")) {
                                                     progressDialog.dismiss();
 
                                                     storage.write("emp_id", response.body().getemp_id());
@@ -521,12 +584,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                                     Intent intent = new Intent(Login.this, Main3Activity.class);
                                                     startActivity(intent);
                                                     finish();
-                                                }
-                                                else if (response.body().getIs_director().equals("1"))
-                                                {
+                                                } else if (response.body().getIs_director().equals("1")) {
 
-                                                    if (response.body().getstatus().equals("1"))
-                                                    {
+                                                    if (response.body().getstatus().equals("1")) {
 
                                                         storage.write("emp_id", response.body().getemp_id());
                                                         storage.write("emp_main_school_id", response.body().getemp_main_school_id());
@@ -555,9 +615,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                                     }
                                                 }
 
-                                            }
-                                            else
-                                                {
+                                            } else {
                                                 Toast.makeText(Login.this, "Invalid Username/Password", Toast.LENGTH_LONG).show();
                                             }
 
@@ -773,7 +831,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.tvforgotpassword:
-                Intent intent = new Intent(Login.this,ForgotPassword.class);
+                Intent intent = new Intent(Login.this, ForgotPassword.class);
                 startActivity(intent);
 
 

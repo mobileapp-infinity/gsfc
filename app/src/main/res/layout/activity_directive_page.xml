@@ -540,7 +540,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1.8"
                         android:paddingLeft="5dp"
-                        android:text="Collage Display"
+                        android:text="College Display"
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold" />

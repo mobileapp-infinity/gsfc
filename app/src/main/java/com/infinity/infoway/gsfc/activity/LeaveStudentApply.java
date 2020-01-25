@@ -75,8 +75,7 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-public class LeaveStudentApply extends AppCompatActivity
-{
+public class LeaveStudentApply extends AppCompatActivity {
     Context ctx;
     LinearLayout lin_lec_header;
     ArrayList<String> leave_Type;
@@ -115,8 +114,7 @@ public class LeaveStudentApply extends AppCompatActivity
     /*1-Partially Leave
 2-Full Leave*/
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState)
-    {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.leave_student_actiivty);
         this.edfileupload = (CustomEditText) findViewById(R.id.file_upload);
@@ -161,23 +159,19 @@ public class LeaveStudentApply extends AppCompatActivity
         });
 
         setSupportActionBar(toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener()
-        {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 onBackPressed();
             }
         });
-        edfileupload.setOnClickListener(new View.OnClickListener()
-        {
+        edfileupload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 opendialog();
             }
         });
-        btnuploadfileassign.setOnClickListener(new View.OnClickListener()
-        {
+        btnuploadfileassign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 opendialog();
@@ -201,13 +195,10 @@ public class LeaveStudentApply extends AppCompatActivity
         }
         SpinnerSimpleAdapter spinnerSimpleAdapter = new SpinnerSimpleAdapter(ctx, leave_Type);
         spinleavetype.setAdapter(spinnerSimpleAdapter);
-        tvsave.setOnClickListener(new View.OnClickListener()
-        {
+        tvsave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                if (validateData())
-                {
+            public void onClick(View view) {
+                if (validateData()) {
                     CheckLeaveIsExistsOrNot();
                 }
 
@@ -238,8 +229,7 @@ public class LeaveStudentApply extends AppCompatActivity
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth)
-            {
+                                  int dayOfMonth) {
                 // TODO Auto-generated method stub
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
@@ -248,13 +238,11 @@ public class LeaveStudentApply extends AppCompatActivity
             }
 
         };
-        final DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener()
-        {
+        final DatePickerDialog.OnDateSetListener date2 = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                  int dayOfMonth)
-            {
+                                  int dayOfMonth) {
                 // TODO Auto-generated method stub
                 myCalendar2.set(Calendar.YEAR, year);
                 myCalendar2.set(Calendar.MONTH, monthOfYear);
@@ -264,33 +252,59 @@ public class LeaveStudentApply extends AppCompatActivity
             }
 
         };
-        edtfromdat.setOnClickListener(new View.OnClickListener()
-        {
+        edtfromdat.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                new DatePickerDialog(LeaveStudentApply.this, date1, myCalendar
+            public void onClick(View view) {
+
+
+
+                Date result = myCalendar.getTime();
+
+                DatePickerDialog d=  new DatePickerDialog(LeaveStudentApply.this, date1, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                        myCalendar.get(Calendar.DAY_OF_MONTH));
+                /*disable all dates older than current*/
+                d.getDatePicker().setMinDate(result.getTime());
+                d.show();
+
+              /*  new DatePickerDialog(LeaveStudentApply.this, date1, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();*/
             }
         });
-        edttodat.setOnClickListener(new View.OnClickListener()
-        {
+        edttodat.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
-                if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && (!edtfromdat.getText().toString().isEmpty() && !edtfromdat.getText().toString().contentEquals("")))
-                {
+            public void onClick(View view) {
+
+
+                Date result1 = myCalendar2.getTime();
+
+                DatePickerDialog datePickerDialog =   new DatePickerDialog(LeaveStudentApply.this, date2, myCalendar2
+                        .get(Calendar.YEAR), myCalendar2.get(Calendar.MONTH),
+                        myCalendar2.get(Calendar.DAY_OF_MONTH));
+
+                if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && (!edtfromdat.getText().toString().isEmpty() && !edtfromdat.getText().toString().contentEquals(""))) {
                     edttodat.setText(edtfromdat.getText().toString());
                     edttodat.setFocusable(false);
                     getLectures();
+                } else {
+                    /*disable all dates older than current*/
+                    datePickerDialog.getDatePicker().setMinDate(result1.getTime());
+                    datePickerDialog.show();
                 }
-                else
-                    {
+
+
+
+
+/*                if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && (!edtfromdat.getText().toString().isEmpty() && !edtfromdat.getText().toString().contentEquals(""))) {
+                    edttodat.setText(edtfromdat.getText().toString());
+                    edttodat.setFocusable(false);
+                    getLectures();
+                } else {
                     new DatePickerDialog(LeaveStudentApply.this, date2, myCalendar2
                             .get(Calendar.YEAR), myCalendar2.get(Calendar.MONTH),
                             myCalendar2.get(Calendar.DAY_OF_MONTH)).show();
-                }
+                }*/
 
 
             }
@@ -303,26 +317,21 @@ public class LeaveStudentApply extends AppCompatActivity
                 LEAVE_TYPE_ID = 0 + "";
                 lvlectures.setVisibility(View.GONE);
                 lin_lec_header.setVisibility(View.GONE);
-                if (i > 0)
-                {
+                if (i > 0) {
 
                     LEAVE_TYPE_ID = i + "";
 
                     // ****************** file is compusory or not 01 nov 2019 nirali ************************
-                   // get_leave_type_file_upload(i + "");
+                    // get_leave_type_file_upload(i + "");
 
-                    if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0)
-                    {
+                    if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0) {
 //                        getLectures();
-                        if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0)
-                        {
+                        if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0) {
                             lvlectures.setVisibility(View.VISIBLE);
                             lin_lec_header.setVisibility(View.VISIBLE);
                         }
 
-                    }
-                    else
-                        {
+                    } else {
                         lvlectures.setVisibility(View.GONE);
                         lin_lec_header.setVisibility(View.GONE);
                     }
@@ -332,18 +341,14 @@ public class LeaveStudentApply extends AppCompatActivity
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView)
-            {
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
-        spinleavekind.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l)
-            {
+        spinleavekind.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 KIND_OF_LEAVE_TYPE_ID = 0 + "";
-                if (i > 0)
-                {
+                if (i > 0) {
                     KIND_OF_LEAVE_TYPE_ID = leaveTypes.getTable().get(i - 1).getLt_id();
                     get_leave_type_file_upload(KIND_OF_LEAVE_TYPE_ID);
                 }
@@ -351,12 +356,10 @@ public class LeaveStudentApply extends AppCompatActivity
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView)
-            {
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
-
 
 
 //        getLectures();
@@ -379,7 +382,7 @@ public class LeaveStudentApply extends AppCompatActivity
                     lectureNo = lectureNo + "," + lectures.getTable().get(i).getDL_LEC_NO() + "";
                 }
             }
-            System.out.println("THIS ARE LECTURE NOS CheckLeaveIsExistsOrNot !!!!!!!!!!!!!" + lectureNo + "");
+            System.out.println("THIS ARE LECTURE NOS CheckLeaveIsExistsOrNot !!!!!!!!!!!!!!!!!!!!!!!!" + lectureNo + "");
             lectureNo = lectureNo.replaceFirst(",", "");
             System.out.println("THIS ARE LECTURE NOS CheckLeaveIsExistsOrNot :::::  " + lectureNo + "");
 
@@ -395,7 +398,7 @@ public class LeaveStudentApply extends AppCompatActivity
             @Override
             public void onResponse(String response)
             {
-                System.out.println("insert leave response " + response + "");
+                System.out.println("insert leave response :::::::::::::" + response + "");
 
                 Gson gson = new Gson();
                 CheckLeavePojo checkLeavePojo1 = gson.fromJson(response, CheckLeavePojo.class);
@@ -411,30 +414,32 @@ public class LeaveStudentApply extends AppCompatActivity
 
                                 if (LEAVE_TYPE_ID.compareToIgnoreCase("2") == 0)
                                 {
-
-                                    if (TO_DATE.after(FROM_DATE) || TO_DATE.equals(FROM_DATE))
+                                    if (TO_DATE != null && FROM_DATE != null)
                                     {
-                                        System.out.println("1111111111111111111111 ");
-                                        insert_student_leave_API();
-                                    }
-                                    else
+                                        if (TO_DATE.after(FROM_DATE) || TO_DATE.equals(FROM_DATE))
                                         {
-                                        DialogUtils.Show_Toast(LeaveStudentApply.this, " To-Date Should Be Greater Than From-Date ");
+                                            System.out.println("1111111111111111111111 ");
+                                            insert_student_leave_API();
+                                        }
+                                        else
+                                            {
+                                            DialogUtils.Show_Toast(LeaveStudentApply.this, " To-Date Should Be Greater Than From-Date ");
+                                        }
+
                                     }
 
-                                }
-                                else
-                                    {
 
-
-                                    System.out.println("2222222222222222222222222222222 ");
+                                } else {
+                                    System.out.println("2222222222222222222222222222222 ****************** #####################");
                                     insert_student_leave_API();
 
 
                                 }
 
 
-                            } else {
+                            }
+                            else
+                                {
                                 DialogUtils.Show_Toast(LeaveStudentApply.this, "Leave Alredy Exists");
                             }
                         }
@@ -456,8 +461,7 @@ public class LeaveStudentApply extends AppCompatActivity
 
     MarshMallowPermission marshMallowPermission = new MarshMallowPermission(this);
 
-    private void opendialog()
-    {
+    private void opendialog() {
         if (!marshMallowPermission.checkPermissionForExternalStorage()) {
             marshMallowPermission.requestPermissionForExternalStorage();
         } else {
@@ -479,11 +483,9 @@ public class LeaveStudentApply extends AppCompatActivity
                         Intent intent = new Intent(Intent.ACTION_PICK);
 //                        intent.setType("image/*");
                         // intent.setType("image/jpeg");
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-                        {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                             intent.setType(mimeTypes.length == 1 ? mimeTypes[0] : "*/*");
-                            if (mimeTypes.length > 0)
-                            {
+                            if (mimeTypes.length > 0) {
                                 intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
                             }
                         } else {
@@ -521,7 +523,7 @@ public class LeaveStudentApply extends AppCompatActivity
 //        if (adapter != null && adapter.getSelected() != null) {
 //            lectureNo = adapter.getSelected().toString();
 //        }
-        if ((lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0) && (adapter != null && adapter.getSelected() != null)&&lvlectures.getVisibility()==View.VISIBLE) {
+        if ((lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0) && (adapter != null && adapter.getSelected() != null) && lvlectures.getVisibility() == View.VISIBLE) {
             for (int i = 0; i < lectures.getTable().size(); i++) {
                 if (!adapter.getSelected().contains(lectures.getTable().get(i).getDL_LEC_NO() + "")) {
                     lectureNo = lectureNo + "," + lectures.getTable().get(i).getDL_LEC_NO() + "";
@@ -532,7 +534,7 @@ public class LeaveStudentApply extends AppCompatActivity
             System.out.println("THIS ARE LECTURE NOS:::::  " + lectureNo + "");
 
         }
-        if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && lectureNo.contentEquals("")&&lvlectures.getVisibility()==View.VISIBLE) {
+        if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && lectureNo.contentEquals("") && lvlectures.getVisibility() == View.VISIBLE) {
             //   if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0 &&lvlectures.getVisibility()==View.VISIBLE) {
             DialogUtils.Show_Toast(LeaveStudentApply.this, "Please Select Lectures");
             //  }
@@ -650,9 +652,9 @@ public class LeaveStudentApply extends AppCompatActivity
             DialogUtils.Show_Toast(LeaveStudentApply.this, "Please Select Leave Type ");
             flag = false;
             return false;
-        } else if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && adapter !=null && adapter.getSelected().size() == 0) {
-            System.out.println(" lectures.getTable().size()  "+ lectures.getTable().size()+"");
-            if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0 &&lvlectures.getVisibility()==View.VISIBLE) {
+        } else if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0 && adapter != null && adapter.getSelected().size() == 0) {
+            System.out.println(" lectures.getTable().size()  " + lectures.getTable().size() + "");
+            if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0 && lvlectures.getVisibility() == View.VISIBLE) {
                 DialogUtils.Show_Toast(LeaveStudentApply.this, "Please Select lectures ");
                 flag = false;
                 return false;
@@ -684,8 +686,7 @@ public class LeaveStudentApply extends AppCompatActivity
         return flag;
     }
 
-    private void updateLabel1()
-    {
+    private void updateLabel1() {
 //        String myFormat = "yyyy/MM/dd"; //In which you need put here
         String myFormat1 = "dd-MM-yyyy"; //In which you need put here
         String myFormat = "yyyy-MM-dd"; //In which you need put here
@@ -697,7 +698,7 @@ public class LeaveStudentApply extends AppCompatActivity
             FROM_DATE = sdf1.parse(sdf1.format(myCalendar.getTime()));
         } catch (ParseException e) {
             e.printStackTrace();
-            System.out.println("error in date::::::::::::::");
+            System.out.println("error in FROM_DATE::::::::::::::" + e.getMessage());
         }
 
         edtfromdat.setText(sdf.format(myCalendar.getTime()));
@@ -720,6 +721,7 @@ public class LeaveStudentApply extends AppCompatActivity
             TO_DATE = sdf.parse(sdf.format(myCalendar2.getTime()));
             System.out.println("TO_DATE:::::::::::::::::" + TO_DATE);
         } catch (ParseException e) {
+            System.out.println("error in TO_DATE :::::::::::::::" + e.getMessage());
             e.printStackTrace();
         }
 
@@ -774,7 +776,7 @@ public class LeaveStudentApply extends AppCompatActivity
     private void getKindOfLeaveType(String institute_id) {
         //    DialogUtils.showProgressDialog(LeaveStudentApply.this, "");
         String url = URl.get_leave_type_institute_wise_for_student + "institute_id=" + institute_id;
-        System.out.println("leave type display :::::::::::::::::::"+url);
+        System.out.println("leave type display :::::::::::::::::::" + url);
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -805,8 +807,7 @@ public class LeaveStudentApply extends AppCompatActivity
     LeaveLectureAdapter adapter;
     Lectures lectures;
 
-    private void getLectures()
-    {
+    private void getLectures() {
 
         String date_to = edttodat.getText().toString();
         System.out.println("date_to @@@@@@@@@@@@ " + date_to);
@@ -829,15 +830,13 @@ public class LeaveStudentApply extends AppCompatActivity
 */
         System.out.println("date_to in get lectures :::::: " + outputDateStr);
 //        DialogUtils.showProgressDialog(LeaveStudentApply.this, "");
-       /* String url = URl.Get_Date_Wise_Lecture_List_for_student_leave + "&institute_id=" + INSTITUTE_ID + "&sem_id=" + SEM_ID + "&div_id=" + DIV_ID + "&stud_id=" + STUDENT_ID + "&from_date=" + TODAY_DATE + "&year_id=" + YEAR_ID + ""; */
+        /* String url = URl.Get_Date_Wise_Lecture_List_for_student_leave + "&institute_id=" + INSTITUTE_ID + "&sem_id=" + SEM_ID + "&div_id=" + DIV_ID + "&stud_id=" + STUDENT_ID + "&from_date=" + TODAY_DATE + "&year_id=" + YEAR_ID + ""; */
 
         String url = URl.Get_Date_Wise_Lecture_List_for_student_leave + "&institute_id=" + INSTITUTE_ID + "&sem_id=" + SEM_ID + "&div_id=" + DIV_ID + "&stud_id=" + STUDENT_ID + "&from_date=" + outputDateStr + "&year_id=" + YEAR_ID + "";
         System.out.println("getLectures url " + url + "");
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>()
-        {
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
-            public void onResponse(String response)
-            {
+            public void onResponse(String response) {
                 Gson gson = new Gson();
                 System.out.println("response Get_Date_Wise_Lecture_List_for_student_leave " + response + "");
                 //   DialogUtils.hideProgressDialog();
@@ -846,20 +845,16 @@ public class LeaveStudentApply extends AppCompatActivity
                 spinleavetype.setAdapter(spinnerSimpleAdapter);*/
                 lectures = gson.fromJson(response, Lectures.class);
 
-                if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0)
-                {
+                if (lectures != null && lectures.getTable() != null && lectures.getTable().size() > 0) {
                     adapter = new LeaveLectureAdapter(lectures, ctx);
                     lvlectures.setAdapter(adapter);
-                    if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0)
-                    {
+                    if (LEAVE_TYPE_ID.compareToIgnoreCase("1") == 0) {
                         lvlectures.setVisibility(View.VISIBLE);
                         lin_lec_header.setVisibility(View.VISIBLE);
 
                         //      System.out.println("this is adpter settttttttttttttttttttttttttttttt:::::::::::::::::::: ");
 
-                    }
-                    else
-                    {
+                    } else {
                         lvlectures.setVisibility(View.GONE);
                         lin_lec_header.setVisibility(View.GONE);
                     }
@@ -909,8 +904,7 @@ public class LeaveStudentApply extends AppCompatActivity
     String TAG = "FILE UPLOAD ::::::::::::::: ";
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
         FILE_UPLOADED_OR_NOT = false;
@@ -985,8 +979,8 @@ public class LeaveStudentApply extends AppCompatActivity
 
                 Uri uri = data.getData();
                 String fileUrl = FileUtils.getPath(LeaveStudentApply.this, data.getData());
-                File     file1 = new File(fileUrl);
-                System.out.println("nmae "+file1.getName()+"");
+                File file1 = new File(fileUrl);
+                System.out.println("nmae " + file1.getName() + "");
 //                  String path= RealPathUtil.getRealPath(UploadActivityChanges.this,uri);
 //                String path= getPath(UploadActivityChanges.this,uri);
 //                String path = FileUtils.getPath(LeaveStudentApply.this, uri);
@@ -1034,8 +1028,7 @@ public class LeaveStudentApply extends AppCompatActivity
                     String file_name = file.getName() + "";
                     String ex = MimeTypeMap.getFileExtensionFromUrl(file.toString());
                     System.out.println("extension of file from googledrive using mimetype :::::::::::::" + ex);
-                    if (file_name.contains("."))
-                    {
+                    if (file_name.contains(".")) {
                         EXTENTION = file_name.substring(file_name.lastIndexOf("."), file_name.length()) + "";
                         System.out.println("this is extention !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " + EXTENTION + "");
 
@@ -1059,8 +1052,7 @@ public class LeaveStudentApply extends AppCompatActivity
 
     LeaveDocumentPojo leaveDocumentPojo;
 
-    private void sendPhotoToServer(final String data, final String stud_leave_id, final String name)
-    {
+    private void sendPhotoToServer(final String data, final String stud_leave_id, final String name) {
 
         DialogUtils.showProgressDialog(LeaveStudentApply.this, "");
         String Url = URl.Upload_Student_Leave_Document;
@@ -1069,29 +1061,24 @@ public class LeaveStudentApply extends AppCompatActivity
         Log.d(TAG, "sendProfileDataToServer: URL: " + Url);
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, Url,
-                new Response.Listener<String>()
-                {
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response)
-                    {
+                    public void onResponse(String response) {
                         DialogUtils.hideProgressDialog();
                         Log.d(TAG, "sendProfileDataToServer: Response: " + response + "");
                         // response
                         Log.d("Response", response);
 
-                        if (response.length() > 5)
-                        {
+                        if (response.length() > 5) {
                             Gson gson = new Gson();
                             leaveDocumentPojo = gson.fromJson(response, LeaveDocumentPojo.class);
 
-                            if (leaveDocumentPojo != null)
-                            {
-                                if (leaveDocumentPojo.getStatus().contentEquals("1"))
-                                {
+                            if (leaveDocumentPojo != null) {
+                                if (leaveDocumentPojo.getStatus().contentEquals("1")) {
                                     System.out.println("CALLEDDDDD leaveDocumentPojo NOT NULL STSATUS ONE >>>> ");
 //                                    DialogUtils.Show_Toast(LeaveStudentApply.this, leaveDocumentPojo.getMsg() + "");
                                     DialogUtils.Show_Toast(LeaveStudentApply.this, "Leave Added Successfully");
-                                  //  Intent intent = new Intent(LeaveStudentApply.this, ViewLeaveApplication.class);
+                                    //  Intent intent = new Intent(LeaveStudentApply.this, ViewLeaveApplication.class);
                                     //startActivity(intent);
                                     finish();
                                 }
@@ -1127,16 +1114,13 @@ public class LeaveStudentApply extends AppCompatActivity
                 }
         ) {
             @Override
-            protected Map<String, String> getParams()
-            {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("name", name);
                 params.put("stud_leave_id", stud_leave_id + "");
                 params.put("image", data);
 
-                for (String s : params.keySet())
-
-                {
+                for (String s : params.keySet()) {
                     System.out.println("key ::::" + s);
                     System.out.println("value:::::" + params.get(s));
                     Log.d(TAG, "getParams: request parameters" + params.toString());

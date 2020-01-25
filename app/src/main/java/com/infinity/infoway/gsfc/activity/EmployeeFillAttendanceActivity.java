@@ -39,6 +39,8 @@ import com.infinity.infoway.gsfc.adapter.BenefitsAdapter;
 import com.infinity.infoway.gsfc.adapter.StudentListAdapter;
 import com.infinity.infoway.gsfc.app.DataStorage;
 import com.infinity.infoway.gsfc.model.AbsentPojo;
+import com.infinity.infoway.gsfc.model.CheckAteendancePojo;
+import com.infinity.infoway.gsfc.model.ConfigurationAttPojo;
 import com.infinity.infoway.gsfc.model.FacultyPojo;
 import com.infinity.infoway.gsfc.model.MethodgetPojo;
 import com.infinity.infoway.gsfc.model.StudentsDisplyaFillPojo;
@@ -83,7 +85,10 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
     TopicPojo topic, topicTemp;
     private Switch switchmethod;
     RelativeLayout rl_bottom_ll;
+    ConfigurationAttPojo configurationAttPojo;
+    int CONFIGURATION = 0;
     String METHOD_TOPIC_NAME, METHOD_TOPIC_METHOD, METHOD_TOPIC_AID, METHOD_UNIT_ID;
+    CheckAteendancePojo checkAteendancePojo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,11 +184,16 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                 });
             }
         });
+
+        Api_call_Configuration_AttedanceDisplay();
         tvsave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //if (TOPIC_ID != null && !TOPIC_ID.contentEquals("")) {
-                Api_call_method_Get(String.valueOf(storage.read("emp_id", 3)), bean.getDiv_id() + "", bean.getSub_id() + "" + "", String.valueOf(storage.read("emp_year_id", 3)) + "", TOPIC_ID + "");
+
+                CheckAttendanceExistOrNot();
+
+//                Api_call_method_Get(String.valueOf(storage.read("emp_id", 3)), bean.getDiv_id() + "", bean.getSub_id() + "" + "", String.valueOf(storage.read("emp_year_id", 3)) + "", TOPIC_ID + "");
                 //} else {
                 // DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, "Please Select Topic");
                 // }
@@ -320,8 +330,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                             //   spintopic.setSelection(0);
                             spintopic.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
-                                public void onItemSelected(AdapterView<?> adapterView, View view, int ii, long l)
-                                {
+                                public void onItemSelected(AdapterView<?> adapterView, View view, int ii, long l) {
                                     // if (ii > 0) {
                                     TOPIC_ID = topicTemp.getTable().get(ii).getTopic_id() + "";
 //                                        TOPIC_ID =namesNH[ii+1] + "";
@@ -351,6 +360,173 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 
     }
 
+    private void CheckAttendanceExistOrNot()
+    {
+        String date_oldformat = bean.getDl_date() + "";//
+        if (date_oldformat != null && date_oldformat.length() > 4)
+        {
+            date_oldformat = date_oldformat + "-";
+            date_oldformat = date_oldformat.replace("/", "-");
+            System.out.println("date_oldformat " + date_oldformat + "");
+            String temp[] = date_oldformat.split("-");
+            strDate = temp[2] + "-" + temp[1] + "-" + temp[0];
+            System.out.println("New Format :) :   " + temp.length + "");
+            System.out.println("New Format strDate :) :   " + strDate + "");
+
+
+        }
+
+        String URLs = URl.Check_Attendance_Exists_Before_Fill_Attendance + "&course_id=" + bean.getCourse_id() + "&sem_id=" + bean.getSm_id() + "&division_id=" + bean.getDiv_id() + "&batch_id=" + bean.getBatch_id() + "&sub_id=" + bean.getSub_id() + "&emp_id=" + String.valueOf(storage.read("emp_id", 3)) + "&att_date=" + strDate + "&lec_no=" + bean.getLec_no() + "&year_id=" + String.valueOf(storage.read("emp_year_id", 3)) + "&institute_id=" + String.valueOf(storage.read("intitute_id", 3)) + "";
+
+        URLs = URLs.replace(" ", "%20");
+        System.out.println("Check_Attendance_Exists_Before_Fill_Attendance calls    " + URLs + "");
+        StringRequest req = new StringRequest(Request.Method.GET, URLs,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //DialogUtils.hideProgressDialog();
+                        response = response + "";
+
+                        System.out.println("THIS IS Check_Attendance_Exists_Before_Fill_Attendance RESPONSE     " + response + "");
+                        if (response.length() > 10) {
+
+
+                            Gson gson = new Gson();
+
+
+                            checkAteendancePojo = gson.fromJson(response, CheckAteendancePojo.class);
+                            if (checkAteendancePojo != null && checkAteendancePojo.getTable().size() > 0) {
+
+
+                                //already filed attendance
+                                DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, "Attendance Already Taken ");
+
+                            } else {
+                                // go to fill attendance
+                                /*check for configuration and validation*/
+
+
+                                Api_call_method_Get(String.valueOf(storage.read("emp_id", 3)), bean.getDiv_id() + "", bean.getSub_id() + "" + "", String.valueOf(storage.read("emp_year_id", 3)) + "", TOPIC_ID + "");
+
+                               /* if (CONFIGURATION == 1) {
+
+
+                                    Alterbate_method();
+
+
+                                } else if (CONFIGURATION == 2) {
+                                    Api_call_method_Get(String.valueOf(storage.read("emp_id", 3)), bean.getDiv_id() + "", bean.getSub_id() + "" + "", String.valueOf(storage.read("emp_year_id", 3)) + "", TOPIC_ID + "");
+
+                                }
+*/
+
+                            }
+
+                        } else {
+                            DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, "No Records Found");
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //DialogUtils.hideProgressDialog();
+            }
+        });
+        queue.add(req);
+
+
+    }
+
+    private void Api_call_Configuration_AttedanceDisplay() {
+        String URLs = URl.Get_Attendance_Method_Configuration_For_Fill_Attendance + "&college_id=" + String.valueOf(storage.read("emp_permenant_college", 3)) + "&institute_id=" + String.valueOf(storage.read("intitute_id", 3)) + "";
+        URLs = URLs.replace(" ", "%20");
+
+        System.out.println("Get_Attendance_Method_Configuration_For_Fill_Attendance calls    " + URLs + "");
+        StringRequest req = new StringRequest(Request.Method.GET, URLs,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //DialogUtils.hideProgressDialog();
+                        response = response + "";
+//                        response = "{" +
+//                                "\"Table\": [" +
+//                                "{" +
+//                                "\"ac_id\": 2," +
+//                                "\"ac_attendance_method\": 2" +
+//                                "}" +
+//                                "]" +
+//                                "}" + "";
+                        System.out.println("THIS IS Get_Attendance_Method_Configuration_For_Fill_Attendance RESPONSE      " + response + "");
+                        //response = "{\"Faculty\":" + response + "}";
+
+                        if (response.length() > 5) {
+
+                            Gson gson = new Gson();
+
+                            configurationAttPojo = gson.fromJson(response, ConfigurationAttPojo.class);
+
+                            if (configurationAttPojo != null) {
+
+                                if (configurationAttPojo.getTable().size() > 0) {
+
+
+
+                                    /*System.out.println("");
+                                    if (configurationAttPojo.getTable().get(0).getAc_attendance_method().contentEquals("1")) {//then dropdown of unit and topic will textbox
+                                        CONFIGURATION = 1;
+                                        lin_config.setVisibility(View.VISIBLE);
+                                        System.out.println("this is visible!!!!!!!!!!!!!!!!!");
+                                        spintopic.setVisibility(View.GONE);
+                                        if (bean.getLec_type().contentEquals("1")) {*//**theory type*//*
+                                            lv_teaching_method_att.setVisibility(View.VISIBLE);
+                                            ll_aid_parent.setVisibility(View.VISIBLE);
+                                            ll_teching_method.setVisibility(View.VISIBLE);
+                                            ed_topic.setVisibility(View.VISIBLE);
+                                            spin_topic_configuration_2.setVisibility(View.GONE);
+
+
+                                        } else {*//**2=practical type*//*
+                                            lin_config.setVisibility(View.VISIBLE);
+                                            //  lv_teaching_method_att.setVisibility(View.GONE);
+                                            ll_teching_method.setVisibility(View.GONE);
+                                            ll_aid_parent.setVisibility(View.GONE);
+                                            ed_topic.setVisibility(View.VISIBLE);
+                                            spin_topic_configuration_2.setVisibility(View.GONE);
+                                        }
+
+
+                                    } else {//then topic is dropdown and not compulsory
+                                        CONFIGURATION = 2;
+                                        System.out.println("this will gone!!!!!!!!!");
+                                        lin_config.setVisibility(View.GONE);
+                                        spintopic.setVisibility(View.VISIBLE);
+                                        ll_topic.setVisibility(View.VISIBLE);
+
+                                        //   ed_topic.setVisibility(View.GONE);
+                                        //     spin_topic_configuration_2.setVisibility(View.VISIBLE);
+
+
+                                    }*/
+
+
+                                }
+
+
+                            }
+
+
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //DialogUtils.hideProgressDialog();
+            }
+        });
+        queue.add(req);
+
+
+    }
 
     public void Api_call_student_display() {
         DialogUtils.showProgressDialog(EmployeeFillAttendanceActivity.this, "");
@@ -629,11 +805,9 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
             }
         });
 
-        dialogButtonCancel.setOnClickListener(new View.OnClickListener()
-        {
+        dialogButtonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 show.dismiss();
                 if (dailogCallBackCancelButtonClick != null)
                     dailogCallBackCancelButtonClick.onDialogCancelButtonClicked();
@@ -644,15 +818,11 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 
     MethodgetPojo methodgetPojo;
 
-    private void Api_call_method_Get(String emp_id, String div_id, String sub_id, String year_id, String topic_id)
-    {
+    private void Api_call_method_Get(String emp_id, String div_id, String sub_id, String year_id, String topic_id) {
 
-        if (topic_id == null || topic_id.contentEquals(""))
-        {
+        if (topic_id == null || topic_id.contentEquals("")) {
             topic_id = "0";
-        }
-        else
-        {
+        } else {
             topic_id = topic_id;
         }
         String URLs = URl.get_methods_from_api + "&emp_id=" + emp_id + "&div_id=" + div_id + "&sub_id=" + sub_id + "&year_id=" + year_id + "&topic_id=" + topic_id + "";
@@ -660,25 +830,21 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
         System.out.println("get_methods_from_api calls    " + URLs + "");
         final String finalTopic_id = topic_id;
         StringRequest req = new StringRequest(Request.Method.GET, URLs,
-                new com.android.volley.Response.Listener<String>()
-                {
+                new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response)
-                    {
+                    public void onResponse(String response) {
                         //DialogUtils.hideProgressDialog();
                         response = response + "";
                         System.out.println("THIS IS get_methods_from_api RESPONSE      " + response + "");
                         //response = "{\"Faculty\":" + response + "}";
 
-                        if (response.length() > 5)
-                        {
+                        if (response.length() > 5) {
 
                             Gson gson = new Gson();
 
                             methodgetPojo = gson.fromJson(response, MethodgetPojo.class);
 //                            if (methodgetPojo != null && methodgetPojo.getTable().size() > 0)
-                            if (methodgetPojo != null && methodgetPojo.getTable().size() > 0)
-                            {
+                            if (methodgetPojo != null && methodgetPojo.getTable().size() > 0) {
 
                                 METHOD_TOPIC_NAME = methodgetPojo.getTable().get(0).getTopic_name() + "";
                                 METHOD_TOPIC_METHOD = methodgetPojo.getTable().get(0).getTopic_method() + "";
@@ -686,9 +852,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                                 METHOD_UNIT_ID = methodgetPojo.getTable().get(0).getUnit_id() + "";
                                 Alterbate_method();
 
-                            }
-                            else if (finalTopic_id == null||finalTopic_id.contentEquals("0"))
-                            {
+                            } else if (finalTopic_id == null || finalTopic_id.contentEquals("0")) {
                                 Alterbate_method();
                             }
 
@@ -749,26 +913,20 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 //        System.out.println("selected_method==>>>>>>>>>>>>>>>>>> " + selected_method + "");
 
         // if (selected_method == 1 && edtattendancestudent.getText().toString().trim().isEmpty())
-        if (!switchmethod.isChecked() && !edtrollno.getText().toString().contentEquals(""))
-        {//Absant
+        if (!switchmethod.isChecked() && !edtrollno.getText().toString().contentEquals("")) {//Absant
 
 
             System.out.println("absent method");
-            if (edtrollno.getText().toString().trim().contentEquals(""))
-            {
+            if (edtrollno.getText().toString().trim().contentEquals("")) {
                 DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, "Please Enter Roll Number");
-            }
-            else
-            {
-                if (isNotEmpty())
-                {
+            } else {
+                if (isNotEmpty()) {
                     api_call_absent_student_by_alternate_method();
                 }
             }
 
 
-        } else if (switchmethod.isChecked() && !edtrollno.getText().toString().trim().contentEquals(""))
-        {//present
+        } else if (switchmethod.isChecked() && !edtrollno.getText().toString().trim().contentEquals("")) {//present
 
             System.out.println("present method");
             if (edtrollno.getText().toString().trim().contentEquals("")) {
@@ -834,45 +992,32 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
     String strDate = "";
 
     //    public void Api_call_of_class_wise_student_attendance_take(String Teaching_method_ID_class_wise, String status, String stud_ID,String homework)
-    public void Api_call_of_class_wise_student_attendance_take(String Teaching_method_ID_class_wise, String status, String homework, String ABSENT_ID, String PRESENT_ID)
-    {
-        if (METHOD_TOPIC_METHOD==null || METHOD_TOPIC_METHOD.contentEquals(""))
-        {
+    public void Api_call_of_class_wise_student_attendance_take(String Teaching_method_ID_class_wise, String status, String homework, String ABSENT_ID, String PRESENT_ID) {
+        if (METHOD_TOPIC_METHOD == null || METHOD_TOPIC_METHOD.contentEquals("")) {
             METHOD_TOPIC_METHOD = "0";
 //            METHOD_TOPIC_METHOD = "";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_METHOD = METHOD_TOPIC_METHOD;
         }
 
-        if (METHOD_TOPIC_AID == null || METHOD_TOPIC_AID.contentEquals(""))
-        {
-            METHOD_TOPIC_AID ="0";
+        if (METHOD_TOPIC_AID == null || METHOD_TOPIC_AID.contentEquals("")) {
+            METHOD_TOPIC_AID = "0";
 //            METHOD_TOPIC_AID ="";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_AID = METHOD_TOPIC_AID;
         }
 
-        if (METHOD_TOPIC_NAME ==null ||METHOD_TOPIC_NAME.contentEquals(""))
-        {
+        if (METHOD_TOPIC_NAME == null || METHOD_TOPIC_NAME.contentEquals("")) {
             METHOD_TOPIC_NAME = "";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_NAME = METHOD_TOPIC_NAME;
         }
 
-        if (METHOD_UNIT_ID ==null || METHOD_UNIT_ID.contentEquals(""))
-        {
-            METHOD_UNIT_ID ="0";
+        if (METHOD_UNIT_ID == null || METHOD_UNIT_ID.contentEquals("")) {
+            METHOD_UNIT_ID = "0";
 //            METHOD_UNIT_ID ="";
-        }
-        else
-        {
-            METHOD_UNIT_ID =METHOD_UNIT_ID;
+        } else {
+            METHOD_UNIT_ID = METHOD_UNIT_ID;
         }
 
         //  System.out.println("homework in in class  ::::::::::"+homework);
@@ -896,7 +1041,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                         //response = "{\"Faculty\":" + response + "}";
 
 
-                      //  System.out.println("THIS IS Insert_isrp_class_wise_attendance_API RESPONSE     " + response + "");
+                        //  System.out.println("THIS IS Insert_isrp_class_wise_attendance_API RESPONSE     " + response + "");
                         if (response.length() > 5) {
 
                             Gson gson = new Gson();
@@ -905,8 +1050,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                             if (absentPojo != null && absentPojo.getTable().size() > 0) {
 
 
-                                if (absentPojo.getTable().get(0).getError_code().contentEquals("1"))
-                                {
+                                if (absentPojo.getTable().get(0).getError_code().contentEquals("1")) {
                                     DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, absentPojo.getTable().get(0).getError_msg());
 
 
@@ -916,8 +1060,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 //                                    startActivity(intent);
 //                                    finish();
                                 }
-                                if (absentPojo.getTable().get(0).getError_code().contentEquals("2"))
-                                {
+                                if (absentPojo.getTable().get(0).getError_code().contentEquals("2")) {
                                     DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, absentPojo.getTable().get(0).getError_msg());
 
                                     finish();
@@ -940,47 +1083,34 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
         queue.add(req);
     }
 
-    public void api_call_absent_student_by_alternate_method()
-    {
+    public void api_call_absent_student_by_alternate_method() {
 
 
-        if (METHOD_TOPIC_METHOD == null || METHOD_TOPIC_METHOD.contentEquals(""))
-        {
+        if (METHOD_TOPIC_METHOD == null || METHOD_TOPIC_METHOD.contentEquals("")) {
             METHOD_TOPIC_METHOD = "0";
 //            METHOD_TOPIC_METHOD = "";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_METHOD = METHOD_TOPIC_METHOD;
         }
 
-        if (METHOD_TOPIC_AID == null || METHOD_TOPIC_AID.contentEquals(""))
-        {
-            METHOD_TOPIC_AID ="0";
+        if (METHOD_TOPIC_AID == null || METHOD_TOPIC_AID.contentEquals("")) {
+            METHOD_TOPIC_AID = "0";
 //            METHOD_TOPIC_AID ="";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_AID = METHOD_TOPIC_AID;
         }
 
-        if (METHOD_TOPIC_NAME == null ||METHOD_TOPIC_NAME.contentEquals(""))
-        {
+        if (METHOD_TOPIC_NAME == null || METHOD_TOPIC_NAME.contentEquals("")) {
             METHOD_TOPIC_NAME = "";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_NAME = METHOD_TOPIC_NAME;
         }
 
-        if (METHOD_UNIT_ID == null || METHOD_UNIT_ID.contentEquals(""))
-        {
-            METHOD_UNIT_ID ="0";
+        if (METHOD_UNIT_ID == null || METHOD_UNIT_ID.contentEquals("")) {
+            METHOD_UNIT_ID = "0";
 //            METHOD_UNIT_ID ="";
-        }
-        else
-        {
-            METHOD_UNIT_ID =METHOD_UNIT_ID;
+        } else {
+            METHOD_UNIT_ID = METHOD_UNIT_ID;
         }
 //        System.out.println("homework in absent ::::::::::" + homework);
 
@@ -996,11 +1126,9 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
         URLs = URLs.replace(" ", "%20");
         System.out.println("Absent_student_record_save calls    " + URLs + "");
         StringRequest req = new StringRequest(Request.Method.GET, URLs,
-                new com.android.volley.Response.Listener<String>()
-                {
+                new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response)
-                    {
+                    public void onResponse(String response) {
                         //DialogUtils.hideProgressDialog();
                         progressDialog.dismiss();
                         response = response + "";
@@ -1009,18 +1137,15 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 
 
                         //  System.out.println("THIS IS Absent_student_record_save RESPONSE     " + response + "");
-                        if (response.length() > 5)
-                        {
+                        if (response.length() > 5) {
 
                             Gson gson = new Gson();
 
                             absentPojo = gson.fromJson(response, AbsentPojo.class);
-                            if (absentPojo != null && absentPojo.getTable().size() > 0)
-                            {
+                            if (absentPojo != null && absentPojo.getTable().size() > 0) {
 
 
-                                if (absentPojo.getTable().get(0).getError_code().contentEquals("1"))
-                                {
+                                if (absentPojo.getTable().get(0).getError_code().contentEquals("1")) {
                                     DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, absentPojo.getTable().get(0).getError_msg());
                                     Api_call_update_stud_record();
 //
@@ -1030,8 +1155,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 
 
                                 }
-                                if (absentPojo.getTable().get(0).getError_code().contentEquals("2"))
-                                {
+                                if (absentPojo.getTable().get(0).getError_code().contentEquals("2")) {
                                     DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, absentPojo.getTable().get(0).getError_msg());
                                     finish();
                                     //Api_call_update_stud_record();
@@ -1046,9 +1170,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                             }
 
 
-                        }
-                        else
-                        {
+                        } else {
 
                         }
 
@@ -1067,47 +1189,34 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
         queue.add(req);
     }
 
-    private void api_call_Present_student_by_alternate_method()
-    {
+    private void api_call_Present_student_by_alternate_method() {
 
 
-        if (METHOD_TOPIC_METHOD==null || METHOD_TOPIC_METHOD.contentEquals(""))
-        {
+        if (METHOD_TOPIC_METHOD == null || METHOD_TOPIC_METHOD.contentEquals("")) {
             METHOD_TOPIC_METHOD = "0";
 //            METHOD_TOPIC_METHOD = "";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_METHOD = METHOD_TOPIC_METHOD;
         }
 
-        if (METHOD_TOPIC_AID == null || METHOD_TOPIC_AID.contentEquals(""))
-        {
-            METHOD_TOPIC_AID ="0";
+        if (METHOD_TOPIC_AID == null || METHOD_TOPIC_AID.contentEquals("")) {
+            METHOD_TOPIC_AID = "0";
 //            METHOD_TOPIC_AID ="";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_AID = METHOD_TOPIC_AID;
         }
 
-        if (METHOD_TOPIC_NAME ==null ||METHOD_TOPIC_NAME.contentEquals(""))
-        {
+        if (METHOD_TOPIC_NAME == null || METHOD_TOPIC_NAME.contentEquals("")) {
             METHOD_TOPIC_NAME = "";
-        }
-        else
-        {
+        } else {
             METHOD_TOPIC_NAME = METHOD_TOPIC_NAME;
         }
 
-        if (METHOD_UNIT_ID ==null || METHOD_UNIT_ID.contentEquals(""))
-        {
-            METHOD_UNIT_ID ="0";
+        if (METHOD_UNIT_ID == null || METHOD_UNIT_ID.contentEquals("")) {
+            METHOD_UNIT_ID = "0";
 //            METHOD_UNIT_ID ="";
-        }
-        else
-        {
-            METHOD_UNIT_ID =METHOD_UNIT_ID;
+        } else {
+            METHOD_UNIT_ID = METHOD_UNIT_ID;
         }
 //        System.out.println("homework in present ::::::::::"+homework);
         /*   String URLs = URl.Present_student_record_save + "&college_id=" + bean.getCollege_id() + "&sem_id=" + bean.getSm_id() + "&div_id=" + bean.getDiv_id() + "&course_id=" + bean.getCourse_id() + "&batch_id=" + bean.getBatch_id() + "&year_id=" + String.valueOf(storage.read("emp_year_id", 3)) + "&lecture_no=" + bean.getLec_no() + "&att_date=" + bean.getDl_date() + "&att_intime=" + "" + "&att_topic=" + METHOD_TOPIC_NAME + "&att_method=" + METHOD_TOPIC_METHOD + "&att_aid=" + METHOD_TOPIC_AID + "&att_flinnt=" + "0" + "&roll_no=" + edtrollno.getText().toString() + "&att_prac_the_status=" + bean.getLec_type() + "&version_id=" + bean.getDL_VERSION_ID() + "&emp_id=" + String.valueOf(storage.read("emp_id", 3)) + "&unit_id=" + METHOD_UNIT_ID + "&sub_id=" + bean.getSub_id() + "&att_homework=" + "" + "&created_by=" + String.valueOf(storage.read("emp_id", 3)) + "&created_ip=" + "1" + "";*/
@@ -1121,11 +1230,9 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
         URLs = URLs.replace(" ", "%20");
         System.out.println("Present_student_record_save calls    " + URLs + "");
         StringRequest req = new StringRequest(Request.Method.GET, URLs,
-                new com.android.volley.Response.Listener<String>()
-                {
+                new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response)
-                    {
+                    public void onResponse(String response) {
                         progressDialog.dismiss();
                         //DialogUtils.hideProgressDialog();
                         response = response + "";
@@ -1142,8 +1249,7 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
                             if (absentPojo != null && absentPojo.getTable().size() > 0) {
 
 
-                                if (absentPojo.getTable().get(0).getError_code().contentEquals("1"))
-                                {
+                                if (absentPojo.getTable().get(0).getError_code().contentEquals("1")) {
 
                                     DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, absentPojo.getTable().get(0).getError_msg());
                                     Api_call_update_stud_record();
@@ -1153,12 +1259,11 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 //                                    finish();
                                 }
 
-                                if (absentPojo.getTable().get(0).getError_code().contentEquals("2"))
-                                {
+                                if (absentPojo.getTable().get(0).getError_code().contentEquals("2")) {
 
                                     DialogUtils.Show_Toast(EmployeeFillAttendanceActivity.this, absentPojo.getTable().get(0).getError_msg());
                                     finish();
-                                   // Api_call_update_stud_record();
+                                    // Api_call_update_stud_record();
 
 //                                    Intent intent = new Intent(EmployeeFillAttendanceActivity.this, FacultyAttendance.class);
 //                                    startActivity(intent);
@@ -1193,17 +1298,14 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
         return flag;
     }
 
-    public void Api_call_update_stud_record()
-    {
+    public void Api_call_update_stud_record() {
         String URLs = URl.UPDATE_DAILY_LECTURE_PLANING_WISE_ATT_STATUS_API + "&course_id=" + bean.getCourse_id() + "&sem_id=" + bean.getSm_id() + "&div_id=" + bean.getDiv_id() + "&batch_id=" + bean.getBatch_id() + "&att_date=" + bean.getDl_date() + "&lec_type=" + bean.getLec_type() + "&emp_id=" + String.valueOf(storage.read("emp_id", 3)) + "&lecture_no=" + bean.getLec_no() + "&sub_id=" + bean.getSub_id() + "&res_id=" + bean.getDL_RECOURSE_ID() + "&version_id=" + bean.getDL_VERSION_ID() + "&modify_by=" + String.valueOf(storage.read("emp_id", 3)) + "&modify_ip=" + "1" + "";
         URLs = URLs.replace(" ", "%20");
         System.out.println("UPDATE_DAILY_LECTURE_PLANING_WISE_ATT_STATUS_API calls    " + URLs + "");
         StringRequest req = new StringRequest(Request.Method.GET, URLs,
-                new com.android.volley.Response.Listener<String>()
-                {
+                new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response)
-                    {
+                    public void onResponse(String response) {
                         //DialogUtils.hideProgressDialog();
                         response = response + "";
                         System.out.println("THIS IS UPDATE_DAILY_LECTURE_PLANING_WISE_ATT_STATUS_API RESPONSE      " + response + "");
@@ -1211,17 +1313,14 @@ public class EmployeeFillAttendanceActivity extends AppCompatActivity {
 
 
                         System.out.println("THIS IS UPDATE_DAILY_LECTURE_PLANING_WISE_ATT_STATUS_API RESPONSE     " + response + "");
-                        if (response.length() > 5)
-                        {
+                        if (response.length() > 5) {
 
                             Gson gson = new Gson();
 
                             UpdateAttpojo updateAttpojo = gson.fromJson(response, UpdateAttpojo.class);
-                            if (updateAttpojo != null && updateAttpojo.getUpdate().size()>0)
-                            {
+                            if (updateAttpojo != null && updateAttpojo.getUpdate().size() > 0) {
 
-                                if (updateAttpojo.getUpdate().get(0).getError_code().contentEquals("1"))
-                                {
+                                if (updateAttpojo.getUpdate().get(0).getError_code().contentEquals("1")) {
                                     // DialogUtils.Show_Toast(FillAttendanceActivityfaculty.this, updateAttpojo.getUpdate().get(0).getError_msg());
 
 //                                    Intent intent = new Intent(EmployeeFillAttendanceActivity.this, FacultyAttendance.class);

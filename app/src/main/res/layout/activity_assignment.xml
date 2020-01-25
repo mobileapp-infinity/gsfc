@@ -71,7 +71,7 @@
 
 
             <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/t1"
                 android:gravity="center"
@@ -83,18 +83,18 @@
                />
 
            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/asn"
                android:layout_weight="1"
                android:gravity="center"
-                android:text="Assignment-Name"
+                android:text="Assignment\nName"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                android:textSize="@dimen/Font_size_large"                />
 
            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Download"
                 android:textSize="@dimen/Font_size_large"

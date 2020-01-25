@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -49,6 +50,7 @@ public class ViewInternshipWorkReportActivity extends AppCompatActivity implemen
     CustomBoldTextView tv_no_records_leave;
     RequestQueue queue;
     DataStorage storage;
+    SwipeRefreshLayout swipe_refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -237,10 +239,23 @@ public class ViewInternshipWorkReportActivity extends AppCompatActivity implemen
         }
     }
 
+    public void shuffle(){
+        InternShipWorkreportAPICall();
+    }
     private void initView()
     {
         queue = Volley.newRequestQueue(ViewInternshipWorkReportActivity.this);
         storage = new DataStorage("Login_Detail",ViewInternshipWorkReportActivity.this);
+        swipe_refresh=  (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
+        swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+        {
+            @Override
+            public void onRefresh()
+            {
+                shuffle();
+                swipe_refresh.setRefreshing(false);
+            }
+        });
         tv_no_records_leave =(CustomBoldTextView)findViewById(R.id.tv_no_records_leave);
         title = (CustomTextView) findViewById(R.id.title);
         fab = (FloatingActionButton) findViewById(R.id.fab);

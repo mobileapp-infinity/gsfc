@@ -139,6 +139,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:lines="2"
+                    android:textSize="13dp"
                     android:text="Lesson Plan"
                     android:textColor="@color/black"
                     android:visibility="visible" />

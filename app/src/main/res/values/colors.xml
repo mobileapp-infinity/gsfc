@@ -22,7 +22,7 @@
     <color name="prsnt">#303C6C</color>
     <color name="allpresent">#A8D1E7</color>
     <color name="remaining_">#3B8BEA</color>
-    <color name="absent">#08bdd3 </color>
+    <color name="absent">#08bdd3</color>
     <color name="remaining">#fc4444</color>
     <color name="suspend">#13a76b</color>
     <color name="holiday">#8839b1</color>
@@ -91,7 +91,7 @@
     <color name="lllecture2">#80DCF1ED</color>
     <color name="rllectureheader2">#16A085</color>
     <color name="llimagelecture2">#0C7C66</color>
-<color name="violet">#2A1B3C</color>
+    <color name="violet">#2A1B3C</color>
     <color name="lllecture3">#80DEE3E6</color>
     <color name="rllectureheader3">#3D518A</color>
 
@@ -118,4 +118,26 @@
     <color name="light_yello">#F4F9E5</color>
     <!--<color name="gy_btn">#314455</color>-->
     <color name="pink">#CC2D6F</color>
+
+
+    <color name="colorPrimary1">#FA0B11</color>
+    <color name="colorPrimaryDark1">#FFFA0B11</color>
+    <!--    <color name="colorPrimaryDark">#FFFFFF</color>-->
+    <color name="colorAccent12">#D81B60</color>
+    <color name="red1">#E21E23</color>
+    <color name="white1">#FFFFFF</color>
+    <color name="test">#FCF6F6</color>
+    <color name="black1">#030303</color>
+    <color name="grey1">#D3D3D3</color>
+    <color name="bg_drawer_select">#DFDFDF</color>
+    <color name="dark_black">#2B2A29</color>
+    <color name="drawer_bg">#6A6A6A</color>
+    <color name="text">#979797</color>
+    <color name="OFFWHITE1">#F3F3F3</color>
+    <color name="calc">#BABEC1</color>
+    <color name="levave_balance">#97989C</color>
+    <color name="switch_color">#23BF76</color>
+    <color name="drawer_new_bg">#F1F1F3</color>
+    <color name="row_color_yellow">#FFFF67</color>
+    <color name="row_color_green">#029A4E</color>
 </resources>

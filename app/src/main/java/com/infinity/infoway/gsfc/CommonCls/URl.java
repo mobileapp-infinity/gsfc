@@ -16,7 +16,7 @@ public class URl extends Application
 //    public static String SIMS_JAU_URL = "http://jau.icrp.in/API_Student_Panel_JSON_Icampus.asmx/";
 
 
-    // **************for authenticate employee of SIMS *************
+    // **************for authenticate employee of SIMS Nirali 5aug2019 *************
     public static String SiMS_URL_FOR_EMPLOYEE_LOGIN = "http://online.jau.in/api/";
 
     public static String Authenticate_user_by_validation = SiMS_URL_FOR_EMPLOYEE_LOGIN + "jau_credentials.php?";
@@ -74,11 +74,17 @@ public class URl extends Application
     /*for leave Pragna */ //for leavee student
 
     public static String get_leave_type_file_upload = GSFC_JAU_URL + "get_leave_type_file_upload?";
+
     public static String get_leave_type_institute_wise_for_student = GSFC_JAU_URL + "get_leave_type_institute_wise_for_student?";
+
     public static String insert_student_leave_API = GSFC_JAU_URL + "insert_student_leave_API?";
+
     public static String Get_Date_Wise_Lecture_List_for_student_leave = GSFC_JAU_URL + "Get_Date_Wise_Lecture_List_for_student_leave?";
+
     public static String Upload_Student_Leave_Document = GSFC_JAU_URL + "Upload_Student_Leave_Document?";
+
     public static String get_student_leave_application_data_API = GSFC_JAU_URL + "get_student_leave_application_data_API?";
+
     public static String Get_E_Learning_File_Master_Detail_Group_Wise_API = GSFC_JAU_URL + "Get_E_Learning_File_Master_Detail_Group_Wise_API?";
     //assignment employee
 
@@ -136,6 +142,12 @@ public class URl extends Application
     //**** check leave exist in lecture or not ****** nirali 01 nov 2019 ****
     public static String Check_Student_Leave_Exist_API = GSFC_JAU_URL + "Check_Student_Leave_Exist_API?";
 
+    public static String get_student_attendance_api = GSFC_JAU_URL + "get_student_attendance_api?";
+
+
+    public static String Get_Attendance_Method_Configuration_For_Fill_Attendance = GSFC_JAU_URL + "Get_Attendance_Method_Configuration_For_Fill_Attendance?";
+
+    public static String Check_Attendance_Exists_Before_Fill_Attendance = GSFC_JAU_URL + "Check_Attendance_Exists_Before_Fill_Attendance?";
 
 
 
