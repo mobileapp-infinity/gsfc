@@ -452,7 +452,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         return mValues.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder
+    {
         final View mView;
         ImageView imglecture;
         final TextView tvhdivision, tvLectureNo, tvSemester, tvDivision, tvBatch, tvClassroom, tvendtime, tvstarttime;
@@ -460,7 +461,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         ArrayList<Lecturedetail> mItem;
         RelativeLayout rllectureheader;
 
-        ViewHolder(View view) {
+        ViewHolder(View view)
+        {
             super(view);
             mView = view;
             tvLectureNo = (TextView) view.findViewById(R.id.idlecture);
@@ -483,7 +485,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         }
 
         @Override
-        public String toString() {
+        public String toString()
+        {
             return super.toString() + " '" + tvSemester.getText() + "'";
         }
     }

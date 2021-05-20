@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:titleTextColor="@color/green"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            app:layout_collapseMode="pin"
-            android:background="@color/footer_agree"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            app:contentInsetStartWithNavigation="0dp"
-
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/white"
-                android:gravity="center_vertical">
-
-               <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-                    android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="My Attendance"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="17sp"
-                    android:textColor="@color/black" />
-            </RelativeLayout>
-
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
+    android:layout_height="match_parent"
+    tools:context=".fragment.LectWiseAttendance">
 
 
     <ScrollView
@@ -176,7 +136,7 @@
                         android:src="@drawable/calendar" />
 
                     <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-                        android:id="@+id/tvFromDate"
+                        android:id="@+id/tvFromDatelect"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
@@ -367,7 +327,7 @@
                 </TableLayout>
 
                 <TableLayout
-                    android:id="@+id/table1"
+                    android:id="@+id/tableLayoutlect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"

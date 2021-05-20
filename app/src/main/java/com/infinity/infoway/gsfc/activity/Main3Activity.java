@@ -151,6 +151,9 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
 
     private ImageView imgdashboard, iv_payroll;
 
+    // added by harsh
+    private ImageView ivnewAttendance;
+
     int final_count_stud_ann_emp, final_count_emp_ann_emp, final_emp_ann_count;
 
     private ImageView pendingfeesimg;
@@ -608,6 +611,9 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
         this.studentlayout = (LinearLayout) findViewById(R.id.studentlayout);
         this.imgfeedback = (ImageView) findViewById(R.id.imgfeedback);
         this.imgdashboard = (ImageView) findViewById(R.id.img_dashboard);
+        // added by harsh
+        this.ivnewAttendance = (ImageView) findViewById(R.id.iv_newAttendance);
+        this.ivnewAttendance.setOnClickListener(this);
         this.iv_payroll = (ImageView) findViewById(R.id.iv_payroll);
         this.iv_payroll.setOnClickListener(this);
         this.txtfeedback = (TextView) findViewById(R.id.txtfeedback);
@@ -885,6 +891,11 @@ public class Main3Activity extends AppCompatActivity implements View.OnClickList
             case R.id.emp_nav_el:
                 Intent in_emp_nav_el = new Intent(Main3Activity.this, E_Learning_List.class);
                 startActivity(in_emp_nav_el);
+                break;
+        // added by harsh
+            case R.id.iv_newAttendance:
+                Intent in_iv_newAttendance = new Intent(Main3Activity.this, NewAttendanceActivty.class);
+                startActivity(in_iv_newAttendance);
                 break;
             case R.id.iv_internship_work_report:
                 Intent intent_internship = new Intent(Main3Activity.this, ViewInternshipWorkReportActivity.class);
@@ -1369,7 +1380,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 //                }
 //
 //                else {
-                Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_Attendance.class);
+                Intent intentimgsyllabus = new Intent(Main3Activity.this, NewAttendanceActivty.class);
 //                Intent intentimgsyllabus = new Intent(Main3Activity.this, Student_attendance_backup.class);
                 startActivity(intentimgsyllabus);
                 // }
@@ -1530,7 +1541,7 @@ Student Link: http://online.jau.in/mobileapp/students/index.php?uid=2010457852*/
 
             case R.id.nav_attendance:
                 if (storage.CheckLogin("stud_id", Main3Activity.this)) {
-                    intentattendance = new Intent(Main3Activity.this, Student_Attendance.class);
+                    intentattendance = new Intent(Main3Activity.this, NewAttendanceActivty.class);
 //                    intentattendance = new Intent(Main3Activity.this, Student_attendance_backup.class);
                     overridePendingTransition(R.anim.slide_up, R.anim.blink);
                     startActivity(intentattendance);

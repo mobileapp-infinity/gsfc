@@ -14,8 +14,15 @@ android
                         targetSdkVersion 29
 //                        versionCode 18
                         /*first signed version after add update code*/
-                        versionCode 20
-                        versionName "1.1"
+ //                       versionCode 20
+ //                       versionName "1.1"
+
+//                        versionCode 21
+//                        versionName "2.1"
+//version code 22 n 2.2 added by harsh
+                        versionCode 22
+                        versionName "2.2"
+
                         renderscriptTargetApi 25
                         renderscriptSupportModeEnabled true
                         /*for vector images support****** nirali 11 nov 2019*/

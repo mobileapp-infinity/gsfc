@@ -29,7 +29,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:icon">
-        <activity android:name=".activity.Student_attendance_backup"></activity>
+        <activity android:name=".activity.NewAttendanceActivty"></activity>
+        <activity android:name=".activity.Student_attendance_backup" />
         <activity
             android:name=".activity.E_Learning"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
@@ -60,7 +61,7 @@
             -->
         </activity>
         <activity
-            android:name="com.infinity.infoway.gsfc.activity.EmployeeFillAttendanceActivity_configuration"
+            android:name=".activity.EmployeeFillAttendanceActivity_configuration"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity android:name=".activity.SplashScreen">
             <intent-filter>
@@ -247,10 +248,12 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".activity.Login" />
-        <!--<activity
+        <!--
+<activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />-->
+            android:theme="@style/AppTheme.NoActionBar" />
+        -->
         <activity
             android:name=".activity.Lectureplan_Detail"
             android:theme="@style/MyMaterialTheme.Base" />
@@ -321,21 +324,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
-        </activity>
-
-
-
-
-        <!--activities of hr app-->
-        <activity android:name=".HrAppActivities.StatisticsActivity"
+        </activity> <!-- activities of hr app -->
+        <activity
+            android:name=".HrAppActivities.StatisticsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
-
-       <!-- <meta-data
+            android:windowSoftInputMode="adjustPan" />
+        <!--
+ <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/notify_launcher" />-->
-
+            android:resource="@drawable/notify_launcher" />
+        -->
         <activity
             android:name=".HrAppActivities.CoffDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
@@ -462,7 +461,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
-      <!--  <activity
+        <!--
+  <activity
             android:name=".HrAppActivities.SplashActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"
             android:theme="@style/AppTheme.NoActionBar">
@@ -471,7 +471,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
         <activity
             android:name=".HrAppActivities.LoginActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale"

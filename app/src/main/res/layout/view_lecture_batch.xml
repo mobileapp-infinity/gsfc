@@ -10,30 +10,32 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
-        android:weightSum="1">
+        android:weightSum="2">
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Batch"
+            android:text="Batch  "
             android:textColor="@color/fees"
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.75"
+            android:layout_weight="0.8"
             />
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text=" : "
+            android:text=": "
+           android:layout_weight=".1"
             android:textStyle="bold"/>
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvbatch"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="---"
+
             android:paddingLeft="10dp"
-            android:layout_weight="0.25"
+            android:layout_weight="1.1"
             />
 
     </LinearLayout>
@@ -43,30 +45,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
-        android:weightSum="1">
+        android:weightSum="2">
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Facutly"
+            android:text="Faculty   "
             android:textColor="@color/fees"
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.75"
+            android:layout_weight="0.8"
             />
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text=" : "
+            android:text=": "
+           android:layout_weight="0.1"
             android:textStyle="bold"/>
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvfaculty"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="---"
             android:paddingLeft="10dp"
-            android:layout_weight="0.25"
+            android:layout_weight="1.1"
             />
 
     </LinearLayout>
@@ -76,30 +79,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
-        android:weightSum="1">
+        android:weightSum="2">
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Subject"
+            android:text="Subject  "
             android:textColor="@color/fees"
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.75"
+            android:layout_weight="0.8"
             />
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text=" : "
+            android:text=": "
+           android:layout_weight=".1"
             android:textStyle="bold"/>
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvsubject"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="---"
             android:paddingLeft="10dp"
-            android:layout_weight="0.25"
+            android:layout_weight="1.1"
             />
 
     </LinearLayout>
@@ -112,12 +116,13 @@
         android:orientation="horizontal"
         android:layout_marginTop="5dp"
              android:layout_gravity="fill"
-        android:weightSum="1">
+        android:weightSum="2">
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Classroom     "
+            android:text="Classroom "
+           android:layout_weight="0.8"
             android:textColor="@color/fees"
             android:layout_marginLeft="5dp"
             android:layout_gravity="fill"
@@ -125,16 +130,18 @@
             />
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text=" : "
+            android:text=": "
+           android:layout_weight=".1"
             android:textStyle="bold"/>
 
        <com.infinity.infoway.gsfc.CommonCls.CustomTextView
             android:id="@+id/tvclassroom"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="---"
+           android:layout_weight="1.1"
             android:layout_gravity="fill"
             android:paddingLeft="10dp"
              />

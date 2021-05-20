@@ -1,5 +1,6 @@
 package com.infinity.infoway.gsfc.rest;
 
+import com.infinity.infoway.gsfc.model.AttData;
 import com.infinity.infoway.gsfc.model.ChartDataRemainingAttendance;
 import com.infinity.infoway.gsfc.model.EmployeeAttendanceResponse;
 import com.infinity.infoway.gsfc.model.ExamDetailPOJO;
@@ -265,6 +266,14 @@ public interface ApiInterface
     @GET("login_user_new_api_from_emp_id")
     @Streaming
     Call<LoginResponse>login_user_new_api_from_emp_id(@Query("emp_id") String emp_id);
+
+    // added by harsh lathigara
+
+    @GET("get_subject_name_to_display_attendance_in_student_profile")
+    @Streaming
+    Call<ArrayList<AttData>> get_sub_wise_att(@QueryMap Map<String, String> params);
+    // added by harsh lathigara
+
 
 
     // ************************* file upload using multipart retrofit ****************

@@ -360,12 +360,12 @@
 
         </LinearLayout>
 
-
+        <!--// making gone to e learninig-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
@@ -412,6 +412,36 @@
                 android:gravity="center"
                 android:lines="2"
                 android:text="Placement"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_newAttendance"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:visibility="invisible"
+                android:src="@drawable/new_placement" />
+
+            <com.infinity.infoway.gsfc.CommonCls.CustomTextView
+                android:id="@+id/newAttendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lines="2"
+                android:text="Attendance"
                 android:textColor="@color/black"
                 android:textSize="13dp"
                 android:visibility="visible" />

@@ -145,6 +145,13 @@ public class URl extends Application
     public static String get_student_attendance_api = GSFC_JAU_URL + "get_student_attendance_api?";
 
 
+    // added by harsh
+
+    public static String get_subject_name_to_display_attendance_in_student_profile = GSFC_JAU_URL + "get_subject_name_to_display_attendance_in_student_profile?";
+    // added by harsh
+
+
+
     public static String Get_Attendance_Method_Configuration_For_Fill_Attendance = GSFC_JAU_URL + "Get_Attendance_Method_Configuration_For_Fill_Attendance?";
 
     public static String Check_Attendance_Exists_Before_Fill_Attendance = GSFC_JAU_URL + "Check_Attendance_Exists_Before_Fill_Attendance?";
